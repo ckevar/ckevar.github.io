@@ -134,7 +134,7 @@ nav .fa {
 	text-decoration: none;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 761px) {
 
 	.profile {
 		top: 40%;
@@ -253,7 +253,7 @@ nav .fa {
 	color: #eee;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 761px) {
 	.rows {
 		flex-direction: column;
 	}
