@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width">
+	<title>Christian K. Alvarado</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,700;1,600&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="js/foo.js"></script>
+</head>
+<body>
+	<section class="header">
+	<nav> 
+		<div class="nav-links" id="navLinks">
+			<i class="fa fa-times" onclick="hideMenu()"></i>
+			<ul>
+				<li><a href="">HOME</a></li>
+				<li><a href="#education_section_id" id="EDUCATION_id">EDUCATION</a></li>
+				<li><a href="#experience_section_id" id="EXPERIENCE_id">EXPERIENCE</a></li>
+				<li><a href="#project_section_id" id="PROJECTS_id">PROJECTS</a></li>
+				<li><a href="#misc_section_id" >MISC</a></li>
+			</ul>
+		</div>
+		<i class="fa fa-bars" onclick="showMenu()"></i>
+	</nav>
+
+
+	<div class="profile">
+		<div class="profile-col">
+			<img src="https://www.dropbox.com/s/rsv660r7yep0igl/profile2.jpeg?dl=1">
+			<div class="profile-lan">
+				<ul>
+						<li onmouseover="switchESP()">ESPAÑOL</li>
+						<li onmouseover="switchENG()">ENGLISH</li>
+						<li onmouseover="switchITA()">ITALIANO</li>
+				</ul>
+			</div>
+		</div>
+		<div class="profile-col">
+			<h1 id="greetings_id">Hi, I'm Christian<br>K. Alvarado</h1>
+			<p id="currentPosition_id">Embedded Computing Systems Student</p>
+		</div>
+	</div>
+
+
+	<div class="contact">
+		<div class="contact-row">
+			<i class="fa fa-envelope"></i>
+			<p>ckevar@gmail.com</p>
+		</div>
+		<div class="contact-row">
+			<i class="fa fa-phone"></i>
+			<p>(+39) 3312364423</p>
+		</div>
+		<div class="contact-row"> <a id="downloadble_link_cv" href="https://www.dropbox.com/s/2c2afcie6ya960l/ChristianAlvarado_CV_English.pdf?dl=1" target="_blank">
+			<i class="fa fa-download"></i>
+			<p id="download_CV_id">Download CV</p>
+		</a>
+		</div>
+	</div>
+
+	</section>
+
+	<!-- education -->
+
+	<section class="education_section" id="education_section_id">
+		<div class="section_title">
+			<h1 id="education_history_id">Education History</h1>	
+		</div>
+		<div class="rows">
+			<div class="ed_col">
+				<h2 class="section_subtitle">UNIVERSIDAD TECNOLOGICA DEL PERU,<br>Lima - Peru</h2>
+				<ul>
+					<li id="bachelor_id">
+						Bachelor in Mechatronics Engineering, 2013.
+					</li>
+					<li id="member_cidi_id">
+						Member, Center of Research and Developtment of Engineering.
+					</li>
+				</ul>
+			</div>
+
+			<div class="ed_col">
+				<h2 class="section_subtitle">SCUOLA SUPERIORE SANT'ANNA - UNIPI,<br>Pisa - Italia</h2>
+				<ul>
+					<li id="MSc_ECS_id">
+						MSc. (Student) Embedded Computing Systems.
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</section >
+
+
+	<!-- work experience -->
+
+	<section class="experience_section" id="experience_section_id">
+		<div class="section_title">
+			<h1 id="work_experience_id">Work Experience</h1>
+		</div>
+		<div class="rows">
+
+			<div class="we_col">
+				<h2 class="section_subtitle" id="technical_assistant_id">TECHNICAL ASSISTANT</h2>
+				<h3>Peruvian Space Agency - CONIDA<br>| 2016 - 2018</h3>
+				<ul>
+					<li><a id="technical_assistant_id_desc_0" href="http://lagoproject.net/" target="_blank">Framework development to analyze and present Water Cherenkov Detectors data from the Peruvian andes (Latin American Giant Observatory - LAGO Project).</a>
+						
+					</li>
+					<li> <a id="technical_assistant_id_desc_1" href="https://busquedas.elperuano.pe/normaslegales/autorizan-viaje-de-personal-de-diversas-entidades-a-la-estac-resolucion-ministerial-no-0900re-2017-1600476-1/" target="_blank">Member, Scientific expedition Antartica ANTAR XXV to King George island for installing and running a Water Cherenkov Detector, 2018.</a>
+						
+					</li>
+				</ul>
+			</div>
+
+			<div class="we_col">
+				<h2 class="section_subtitle" id="research_assistant_id">RESEARCH ASSISTANT</h2>
+				<h3>Peruvian Space Agency - CONIDA<br>| 2014 - 2016</h3> 
+				<p id="research_assistant_desc_id">Software design to receive and present data from high weather balloon.</p>
+			</div>
+
+			<div class="we_col">
+				<h2 class="section_subtitle" id="research_intern_id">RESEARCH INTERN</h2>
+				<h3>Peruvian Space Agency - CONIDA<br>| 2013 - 2014</h3> 
+				<p id="research_intern_desc_id">Test and calibration of instruments for high weather balloon.</p>
+			</div>
+
+		</div>
+		
+	</section>
+
+	<!-- Projects section  -->
+	<section class="project_section" id="project_section_id">
+		<div class="section_title">
+			<h1 id="prjects_id">Projects</h1>
+		</div>
+		<div class="rows">
+
+			<div class="project_col">
+				<h2 class="section_subtitle" id="online_weather_fetcher_id"><a href="https://github.com/ckevar/ErikaOS-OnlineWeatherStation" target="_blank">Online Weather Fetcher</a></h2>
+				<h3>Scuola Superiore Sant'Anna<br>| 2022</h3>
+				<p id="online_weather_fetcher_desc_id">Uses STM32f4-discovery and ESP8266 to fetch and display weather information from Openweather.org by a location requested on IP-API.com.</p>
+			</div>			
+
+			<div class="project_col">
+				<h2 class="section_subtitle" id="real_time_digital_watch_id"><a href="https://github.com/ckevar/ErikaOS-RealTime-watch" target="_blank">Real-Time Digital Watch</a></h2>
+				<h3>Scuola Superiore Sant'Anna<br>| 2022</h3>
+				<p id="real_time_digital_watch_desc_id">It implements a digital watch using Erika OS on a STM32F4-discovery board.</p>
+			</div>
+
+			<div class="project_col">
+				<h2 class="section_subtitle" id="anomaly_class_mamo_id"><a href="https://drive.google.com/file/d/1loFB4FMETT-Py7MgOK0bdtUVWzU4V3Nu/view?usp=sharing" target="_blank">Anomaly Classification on Mamographies</a> </h2>
+				<h3>UNIPI<br>| 2021</h3>
+				<ul>
+					<li id="anomaly_class_mamo_desc0_id">Evaluation with Tensorflow of from-scratch, VGG16 and InceptionV3 models to classify benign and malignant masses.</li>
+					<li id="anomaly_class_mamo_desc1_id">A composite classifier was design with an Opinion Rating approach.</li>
+				</ul>
+			</div>
+		</div>
+		<div class="rows">
+
+			<div class="project_col">
+				<h2 class="section_subtitle" id="unicycle_id"><a href="https://docs.google.com/presentation/d/16F-4-toFyhm7ucHIvdPBGHjJG4ufvoOkitv7iV6bB7g/edit?usp=sharing" target="_blank">Unicycle: Gyroscope Precession and Trajectory Optimization</a></h2>
+				<h3>Scuola Superiore Sant'Anna<br>| 2020</h3>
+				<ul>
+					<li id="unicycle_desc0_id">Simulation on Matlab of underactuated unicycle robot that uses gyroscope precession to control the yaw angle.</li>
+					<li id="unicycle_desc1_id">The trajectory is planned by solving a nonlinear problem constrained by the robot's dynamics.</li>
+				</ul>
+			</div>
+		
+			<div class="project_col">
+				<h2 class="section_subtitle"><a href="https://www.dropbox.com/s/5zm9fgy5z7sat1a/CARe_Prototype.pdf?dl=0" target="_blank" id="care_id">CARe: Prototype of a Distraction Detector and Health Monitoring for Car Drivers</a> </h2>
+				<h3>UNIPI<br>| 2020</h3>
+				<ul>
+					<li id="care_desc0_id">Real-time eye tracking and heart rate monitoring by exploting Open-CV face recognition API and a PPG sensor for the heartbeat.</li>
+					<li><a id="care_desc1_id" href="https://github.com/ckevar/care-proto" target="_blank">Implemented in C/C++ on a Raspberry Pi 2.</a></li>
+				</ul>
+			</div>
+
+			<div class="project_col">
+				<h2 class="section_subtitle"><a href="https://github.com/ckevar/IIR-Filter" target="_blank" id="iir_filter_vhdl_id">IIR Filter on VHDL</a> </h2>
+				<h3>UNIPI<br>| 2019</h3>
+				<p id="iir_filter_vhdl_desc_id">An IIR Filter for signals between 1kHz and 10kHz.</p>
+			</div>
+
+		</div>
+		
+	</section>
+
+	<!-- misc -->
+
+	<section class="misc_section" id="misc_section_id">
+		<div class="section_title">
+			<h1 id="misc_title">Misc</h1>	
+		</div>
+		<div class="rows">
+			<div class="misc_col">
+				<h2 class="section_subtitle" id="awards_id">Awards</h2>
+				<ul>
+					<li id="award_1_id">Grant winner for best international student, 2019.</li>
+					<li id="award_0_id">Grant winner for international incoming students, 2018.</li>
+				</ul>
+			</div>
+
+			<div class="misc_col">
+				<h2 class="section_subtitle" id="publications_id">Publications</h2>
+				<ul>
+					<li ><a href="https://pos.sissa.it/301/352/" target="_blank">The Cosmic rays web monitoring of the LAGO project, 2017, Proceedings of Science PoS (ICRC2017) 352.</a></li>
+					<li><a href="https://pos.sissa.it/301/351/" target="_blank">The Water Cherenkov Detector Array of the LAGO Project in Huancayo - Peru, 2017, Proceedings of Science PoS (ICRC2017) 351.</a></li>
+						
+				</ul>
+			</div>
+		</div>
+		<div class="rows">
+
+			<div class="misc_col hobs_stre_class strength_class">
+				<h2 class="section_subtitle" id="strength_id">Strength</h2>
+				<div class="rows2">
+					
+					<p class="rows2_elements">C</p>
+					<p class="rows2_elements">C++</p>
+					<p class="rows2_elements">Embedded C</p>
+					<p class="rows2_elements">VHDL</p>
+					<p class="rows2_elements">Shell</p>
+					<p class="rows2_elements">Python</p>
+					<p class="rows2_elements">Matlab</p>
+					<p class="rows2_elements">Octave</p>
+					<p class="rows2_elements">HTML</p>
+					<p class="rows2_elements">Javascript</p>
+					<p class="rows2_elements">CSS</p>
+					<p class="rows2_elements">Sopdworks</p>
+					<p class="rows2_elements">XVR</p>
+					<p class="rows2_elements">Gazebo</p>
+					<p class="rows2_elements">Vivado</p>
+					<p class="rows2_elements">Tensorflow</p>
+					<p class="rows2_elements">ROS</p>
+					<p class="rows2_elements">Window OS</p>
+					<p class="rows2_elements">Ubuntu based OS</p>
+					<p class="rows2_elements">Erika RTOS</p>
+					<p class="rows2_elements">Raspberry</p>
+					<p class="rows2_elements">STM32F4</p>
+					<p class="rows2_elements">ARDRONE</p>
+					<p class="rows2_elements">Stellaris</p>
+					<p class="rows2_elements">Teensy LC</p>
+				</div>
+			</div>
+
+			<div class="misc_col hobs_stre_class">
+				<h2 class="section_subtitle" id="hobbies_id">Hobbies</h2>
+				<div class="rows2 hobbies_class">
+					<a class="rows2_elements" href="https://ckevar.mypixieset.com/" id="photography_id">Photography</a>
+					<p class="rows2_elements" id="baking_id">Baking</p>
+					<p class="rows2_elements" id="cooking_id">Cooking</p>
+					<p class="rows2_elements" id="guitar_id">Guitar playing</p>
+				</div>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="footer">
+		<h4>Christian Kevin Alvarado Rimas</h4>
+		<div class="icons">
+			<i class="fa fa-instagram"><a href="https://www.instagram.com/ckevar/"> ckevar</a></i>
+			<i class="fa fa-phone">(+39) 3312364423</i>
+			<i class="fa fa-envelope-o"> ckevar@gmail.com</i>
+			<i class="fa fa-download"><a id="footer_downloadble_link_cv" href="https://www.dropbox.com/s/2c2afcie6ya960l/ChristianAlvarado_CV_English.pdf?dl=1"> CV</a></i>
+		</div>
+	</section>
+
+</body>
+
+<!-- javascript toggle menu -->
+<script type="text/javascript">
+	var navLinks = document.getElementById("navLinks");
+	function showMenu() {
+		navLinks.style.right = "0";
+	}
+	function hideMenu() {
+		navLinks.style.right = "-200px";
+	}
+</script>
+
+
+</html>
