@@ -19,7 +19,6 @@ function switchENG() {
 	switchLAN(eng_lang, 1);
 }
 
-
 function switchITA() {
 	switchLAN(ita_lang, 2);
 }
