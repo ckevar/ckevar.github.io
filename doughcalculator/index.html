@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="google-signin-scope" content="profile email">
+    <!-- <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="34306858084-r488ik83fedb7sgggfj9ft4lgmurjnhe.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script> -->
   </head>
   <body>
-    <div class="g-signin2" data-onsuccess="onSignIn()" data-theme="dark"></div>
+    <!-- <div class="g-signin2" data-onsuccess="onSignIn()" data-theme="dark"></div> -->
+    <div id="g_id_onload" data-client_id="34306858084-r488ik83fedb7sgggfj9ft4lgmurjnhe.apps.googleusercontent.com" data-callback="handleCredentialResponse">
+</div>
+
     <script>
+    	
+  function handleCredentialResponse(response) {
+     // decodeJwtResponse() is a custom function defined by you
+     // to decode the credential response.
+     const responsePayload = decodeJwtResponse(response.credential);
+
+     console.log("ID: " + responsePayload.sub);
+     console.log('Full Name: ' + responsePayload.name);
+     console.log('Given Name: ' + responsePayload.given_name);
+     console.log('Family Name: ' + responsePayload.family_name);
+     console.log("Image URL: " + responsePayload.picture);
+     console.log("Email: " + responsePayload.email);
+  }
+
+
       function onSignIn(googleUser) {
       	console.log("Helo");
         // Useful data for your client-side scripts:
