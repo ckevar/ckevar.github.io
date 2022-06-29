@@ -13,7 +13,7 @@
     	function clickme() {
     		fetch("https://2cj2ftp0e0.execute-api.us-east-1.amazonaws.com/default/telegramCook", {
     			method: 'get',
-    			mode: 'cors'
+    			mode: 'no-cors'
     		}).then(function(response){
     			console.log(response.text());
     		});
