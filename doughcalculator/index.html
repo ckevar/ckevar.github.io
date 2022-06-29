@@ -1,67 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="34306858084-r488ik83fedb7sgggfj9ft4lgmurjnhe.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script> -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
   </head>
   <body>
-    <!-- <div class="g-signin2" data-onsuccess="onSignIn()" data-theme="dark"></div> -->
     <div id="g_id_onload" data-client_id="34306858084-r488ik83fedb7sgggfj9ft4lgmurjnhe.apps.googleusercontent.com" data-callback="handleCredentialResponse" style="position: absolute; top: 100px; right: 30px;
-            width: 0; height: 0; z-index: 1001;">
-     <!-- <div id="g_id_onload"
-      data-prompt_parent_id="g_id_onload"
-      data-cancel_on_tap_outside="false"
-      style="position: absolute; left: 79%; top: 124px; width: 0; height: 0; z-index: 1001;">
- </div> -->
- 
-</div>
+            width: 0; height: 0; z-index: 1001;"></div>
 	<div id="buttonDiv"></div>
+	<button onclick="clickme()">click me</button>
     <script>
-    	
-  function handleCredentialResponse(response) {
-     // decodeJwtResponse() is a custom function defined by you
-     // to decode the credential response.
-     console.log(response.credential);
-     const responsePayload = decodeJwtResponse(response.credential);
 
-     console.log("ID: " + responsePayload.sub);
-     console.log('Full Name: ' + responsePayload.name);
-     console.log('Given Name: ' + responsePayload.given_name);
-     console.log('Family Name: ' + responsePayload.family_name);
-     console.log("Image URL: " + responsePayload.picture);
-     console.log("Email: " + responsePayload.email);
-  }
+    	function clickme() {
+    		fetch("https://2cj2ftp0e0.execute-api.us-east-1.amazonaws.com/default/telegramCook", {
+    			method: 'get'
+    		}).then(function(response){
+    			console.log(response.text());
+    		});
 
-window.onload = function () {
-  /*google.accounts.id.initialize({
-    client_id: "YOUR_GOOGLE_CLIENT_ID", // Replace with your Google Client ID
-    callback: handleCredentialResponse // We choose to handle the callback in client side, so we include a reference to a function that will handle the response
-  });*/
-  // You can skip the next instruction if you don't want to show the "Sign-in" button
-  google.accounts.id.renderButton(
-    document.getElementById("buttonDiv"), // Ensure the element exist and it is a div to display correcctly
-    { theme: "outline", size: "large" }  // Customization attributes
-  );
-  google.accounts.id.prompt(); // Display the One Tap dialog
-}
+    		// oReq = new XMLHttpRequest();
+    		// oReq.open("GET", "https://2cj2ftp0e0.execute-api.us-east-1.amazonaws.com/default/telegramCook", true);
+    		// oReq.send();
+    	}
+		function handleCredentialResponse(response) {
+			// decodeJwtResponse() is a custom function defined by you
+			// to decode the credential response.
+			console.log(response.credential);
+			const responsePayload = decodeJwtResponse(response.credential);
 
-      function onSignIn(googleUser) {
-      	console.log("Helo");
-        // Useful data for your client-side scripts:
-        var profile = googleUser.getBasicProfile();
-        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-        console.log('Full Name: ' + profile.getName());
-        console.log('Given Name: ' + profile.getGivenName());
-        console.log('Family Name: ' + profile.getFamilyName());
-        console.log("Image URL: " + profile.getImageUrl());
-        console.log("Email: " + profile.getEmail());
+			console.log("ID: " + responsePayload.sub);
+			console.log('Full Name: ' + responsePayload.name);
+			console.log('Given Name: ' + responsePayload.given_name);
+			console.log('Family Name: ' + responsePayload.family_name);
+			console.log("Image URL: " + responsePayload.picture);
+			console.log("Email: " + responsePayload.email);
+		}
 
-        // The ID token you need to pass to your backend:
-        var id_token = googleUser.getAuthResponse().id_token;
-        console.log("ID Token: " + id_token);
-      }
+		window.onload = function () {
+			/*google.accounts.id.initialize({
+				client_id: "YOUR_GOOGLE_CLIENT_ID", // Replace with your Google Client ID
+				callback: handleCredentialResponse // We choose to handle the callback in client side, so we include a reference to a function that will handle the response
+			});*/
+			// You can skip the next instruction if you don't want to show the "Sign-in" button
+	  		google.accounts.id.renderButton(
+	    		document.getElementById("buttonDiv"), // Ensure the element exist and it is a div to display correcctly
+	    		{ theme: "outline", size: "large" }  // Customization attributes
+	  		);
+	  		google.accounts.id.prompt(); // Display the One Tap dialog
+		}
+
     </script>
   </body>
 </html>
