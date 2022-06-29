@@ -12,7 +12,8 @@
 
     	function clickme() {
     		fetch("https://2cj2ftp0e0.execute-api.us-east-1.amazonaws.com/default/telegramCook", {
-    			method: 'get'
+    			method: 'get',
+    			mode: 'cors'
     		}).then(function(response){
     			console.log(response.text());
     		});
