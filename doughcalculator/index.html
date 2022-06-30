@@ -23,10 +23,11 @@
 			// to decode the credential response.
 			console.log(response.credential);
 			console.log(JSON.stringify({type: "gauth", credential: response.credential}));
-			
+
 			fetch("https://2cj2ftp0e0.execute-api.us-east-1.amazonaws.com/default/telegramCook", {
     			method: 'post',
-    			body: JSON.stringify({type: "gauth", credential: response.credential})
+    			body: JSON.stringify({type: "gauth", credential: response.credential}),
+    			mode: 'no-cors'
     		}).then(function(response2){
     			console.log(response.text());
     		});
