@@ -11,30 +11,24 @@
     <script>
 
     	function clickme() {
-    		    // https://2cj2ftp0e0.execute-api.us-east-1.amazonaws.com/default/telegramCook
-    		    // https://pt8z9qx3r4.execute-api.us-east-1.amazonaws.com/default/telegramCook
     		fetch("https://2cj2ftp0e0.execute-api.us-east-1.amazonaws.com/default/telegramCook", {
     			method: 'post',
     		}).then(function(response){
     			console.log(response.text());
     		});
-
-    		// oReq = new XMLHttpRequest();
-    		// oReq.open("GET", "https://2cj2ftp0e0.execute-api.us-east-1.amazonaws.com/default/telegramCook", true);
-    		// oReq.send();
     	}
+
 		function handleCredentialResponse(response) {
 			// decodeJwtResponse() is a custom function defined by you
 			// to decode the credential response.
 			console.log(response.credential);
-			const responsePayload = decodeJwtResponse(response.credential);
 
-			console.log("ID: " + responsePayload.sub);
-			console.log('Full Name: ' + responsePayload.name);
-			console.log('Given Name: ' + responsePayload.given_name);
-			console.log('Family Name: ' + responsePayload.family_name);
-			console.log("Image URL: " + responsePayload.picture);
-			console.log("Email: " + responsePayload.email);
+			fetch("https://2cj2ftp0e0.execute-api.us-east-1.amazonaws.com/default/telegramCook", {
+    			method: 'post',
+    			body: JSON.stringify({type: "gauth", credential: response.credential})
+    		}).then(function(response2){
+    			console.log(response.text());
+    		});
 		}
 
 		window.onload = function () {
