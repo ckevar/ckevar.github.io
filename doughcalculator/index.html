@@ -2,12 +2,29 @@
 <html lang="en">
   <head>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,700;1,600&display=swap" rel="stylesheet">
   </head>
   <body>
     <div id="g_id_onload" data-client_id="34306858084-r488ik83fedb7sgggfj9ft4lgmurjnhe.apps.googleusercontent.com" data-callback="handleCredentialResponse" style="position: absolute; top: 100px; right: 30px;
             width: 0; height: 0; z-index: 1001;"></div>
-	<div id="buttonDiv"></div>
-	<button onclick="clickme()">click me</button>
+	<div class="loggin">
+		<div class="loggin-col loggin-col-left">
+			<div class="loggin-col-left-content">
+				<h1>Your Space,<br>Your Life.</h1>
+				<p>It's time to show up who you are, built your CV with us.</p>	
+			</div>
+		</div>
+		<div class="loggin-col">
+			<div class="loggin-col-left-content">
+				<h2>Let's Prepare for Launch</h2>
+				<div id="buttonDiv" ></div>				
+			</div>
+		</div>
+	</div>
+
     <script>
 
     	function clickme() {
@@ -19,21 +36,10 @@
     	}
 
 		function handleCredentialResponse(response) {
-			// decodeJwtResponse() is a custom function defined by you
-			// to decode the credential response.
-			//console.log(response.credential);
-			//console.log(JSON.stringify({type: "gauth", credential: response.credential}));
-
-			// fetch("https://2cj2ftp0e0.execute-api.us-east-1.amazonaws.com/default/telegramCook", {
-   //  			method: 'post',
-   //  			body: JSON.stringify({type: "gauth", credential: response.credential}),
-   //  			mode: 'cors'
-   //  		}).then(function(response2){
-   //  			console.log(response2.text());
-   //  		});
    			function reqListener() {
    				console.log(this.responseText);
-   			};
+   			}
+
    			var oReq = new XMLHttpRequest(); 
    			oReq.addEventListener("load", reqListener);
    			oReq.open("POST", "https://2cj2ftp0e0.execute-api.us-east-1.amazonaws.com/default/telegramCook", true);
@@ -48,7 +54,7 @@
 			// You can skip the next instruction if you don't want to show the "Sign-in" button
 	  		google.accounts.id.renderButton(
 	    		document.getElementById("buttonDiv"), // Ensure the element exist and it is a div to display correcctly
-	    		{ theme: "outline", size: "large" }  // Customization attributes
+	    		{ theme: "filled_black", size: "large" }  // Customization attributes
 	  		);
 	  		google.accounts.id.prompt(); // Display the One Tap dialog
 		}
