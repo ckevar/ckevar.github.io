@@ -10,11 +10,11 @@
   <body>
     <div id="g_id_onload" data-client_id="34306858084-r488ik83fedb7sgggfj9ft4lgmurjnhe.apps.googleusercontent.com" data-callback="handleCredentialResponse" style="position: absolute; top: 100px; right: 30px;
             width: 0; height: 0; z-index: 1001;"></div>
-	<div class="loggin">
+	<div class="loggin" id="loggin_id">
 		<div class="loggin-col loggin-col-left">
 			<div class="loggin-col-left-content">
 				<h1>Your Space,<br>Your Life.</h1>
-				<p>It's time to show up who you are, built your CV with us.</p>	
+				<p>You career starts here, built your CV with us.</p>	
 			</div>
 		</div>
 		<div class="loggin-col">
@@ -27,19 +27,11 @@
 
     <script>
 
-    	function clickme() {
-    		fetch("https://2cj2ftp0e0.execute-api.us-east-1.amazonaws.com/default/telegramCook", {
-    			method: 'post',
-    		}).then(function(response){
-    			console.log(response.text());
-    		});
-    	}
-
 		function handleCredentialResponse(response) {
    			function reqListener() {
-   				console.log(this.responseText);
+   				var jsonr = JSON.parse(this.responseText);
    			}
-
+   			console.log(response.credential);
    			var oReq = new XMLHttpRequest(); 
    			oReq.addEventListener("load", reqListener);
    			oReq.open("POST", "https://2cj2ftp0e0.execute-api.us-east-1.amazonaws.com/default/telegramCook", true);
