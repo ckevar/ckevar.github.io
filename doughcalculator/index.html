@@ -14,7 +14,7 @@
 		<div class="loggin-col loggin-col-left">
 			<div class="loggin-col-left-content">
 				<h1>Your Space,<br>Your Life.</h1>
-				<p>You career starts here, built your CV with us.</p>	
+				<p>Your career starts here, built your CV with us.</p>	
 			</div>
 		</div>
 		<div class="loggin-col">
@@ -25,11 +25,19 @@
 		</div>
 	</div>
 
+	<div class="oops" id="oops_id"></div>
+
     <script>
 
 		function handleCredentialResponse(response) {
    			function reqListener() {
    				var jsonr = JSON.parse(this.responseText);
+   				document.getElementById("loggin_id").style.display = "none";
+   				document.getElementById("oops_id").style.display = "flex";
+   				//if(jsonr.status == "user not available") {
+   				//window.location.replace("oops.html");
+   				//}
+
    			}
    			console.log(response.credential);
    			var oReq = new XMLHttpRequest(); 

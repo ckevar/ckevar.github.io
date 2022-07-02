@@ -6,7 +6,6 @@
 
 .loggin {
 	width: 100%;
-	/*position: absolute;*/
 	height: 100vh;
 	margin: auto;
 	display: flex;
@@ -70,4 +69,8 @@
 	.loggin-col-left-content h2 {
 		font-size: 40px;
 	}
+}
+
+.oops {
+	display: hidden;
 }

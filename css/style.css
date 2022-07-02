@@ -414,3 +414,7 @@ nav .fa {
 	margin-top: 20px;
 	font-weight: 600;
 }
+
+.oops {
+	display: hidden;
+}
