@@ -8,7 +8,7 @@
 	width: 100%;
 	height: 100vh;
 	margin: auto;
-	display: flex;
+	display: none;
 	flex-wrap: wrap;
 }
 
@@ -72,5 +72,14 @@
 }
 
 .oops {
-	display: hidden;
+	display: block;
+	width: 100%;
+	height: 100vh;
+}
+.oops-text {
+	color: #202124;
+}
+
+.oops-text h1 {
+	font-size: 2em;
 }

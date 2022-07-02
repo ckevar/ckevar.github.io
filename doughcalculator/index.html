@@ -25,7 +25,12 @@
 		</div>
 	</div>
 
-	<div class="oops" id="oops_id"></div>
+	<div class="oops" id="oops_id">
+		<div class="oops-text">
+			<h1>404</h1>
+			<p>We couldn't find what you're looking for</p>
+		</div>
+	</div>
 
     <script>
 
@@ -33,7 +38,7 @@
    			function reqListener() {
    				var jsonr = JSON.parse(this.responseText);
    				document.getElementById("loggin_id").style.display = "none";
-   				document.getElementById("oops_id").style.display = "flex";
+   				document.getElementById("oops_id").style.display = "block";
    				//if(jsonr.status == "user not available") {
    				//window.location.replace("oops.html");
    				//}
