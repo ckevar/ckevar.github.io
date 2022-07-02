@@ -12,13 +12,13 @@
             width: 0; height: 0; z-index: 1001;"></div>
 	<div class="loggin" id="loggin_id">
 		<div class="loggin-col loggin-col-left">
-			<div class="loggin-col-left-content">
+			<div class="loggin-col-content">
 				<h1>Your Space,<br>Your Life.</h1>
 				<p>Your career starts here, built your CV with us.</p>	
 			</div>
 		</div>
 		<div class="loggin-col">
-			<div class="loggin-col-left-content">
+			<div class="loggin-col-content">
 				<h2>Let's Prepare for Launch</h2>
 				<div id="buttonDiv" ></div>				
 			</div>
@@ -28,7 +28,7 @@
 	<div class="oops" id="oops_id">
 		<div class="oops-text">
 			<h1>404</h1>
-			<p>We couldn't find what you're looking for</p>
+			<p id="reasons404">We couldn't find what you're looking for.</p>
 		</div>
 	</div>
 
@@ -39,6 +39,7 @@
    				var jsonr = JSON.parse(this.responseText);
    				document.getElementById("loggin_id").style.display = "none";
    				document.getElementById("oops_id").style.display = "block";
+   				// document.getElementById("reasons404").innerHTML = "lol";
    				//if(jsonr.status == "user not available") {
    				//window.location.replace("oops.html");
    				//}

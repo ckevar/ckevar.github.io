@@ -8,7 +8,7 @@
 	width: 100%;
 	height: 100vh;
 	margin: auto;
-	display: none;
+	display: flex;
 	flex-wrap: wrap;
 }
 
@@ -25,26 +25,51 @@
 	height: 100%;
 }
 
-.loggin-col-left-content {
+.loggin-col-content {
 	width: 80%;
 	margin: auto;
 	margin-top: 35vh;
 }
 
-.loggin-col-left-content h1 {
-	font-size: 60px;
+.loggin-col-content h1 {
+	font-size: 4em;
 	font-weight: 200;
 }
-
-.loggin-col-left-content p {
-	font-weight: 200;
-}
-
-.loggin-col-left-content h2 {
-	font-size: 60px;
+.loggin-col-content h2 {
+	font-size: 4em;
 	font-weight: 200;
 	color: #202124;
 
+}
+.loggin-col-content p {
+	font-weight: 200;
+}
+
+
+
+.oops {
+	width: 100%;
+	height: 100vh;
+	display: none;
+
+}
+.oops-text {
+	color: #202124;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.oops-text h1 {
+	font-size: 14em;
+	font-weight: 200;
+}
+
+.oops-text p {
+	font-size: 2em;
+	font-weight: 200;
 }
 
 @media (max-width: 1000px) {
@@ -52,34 +77,29 @@
 		height: 48vh;
 	}
 
-	.loggin-col-left-content {
+	.loggin-col-content {
 		width: 80%;
 		margin: auto;
-		margin-top: 15vh;
+		margin-top: 12vh;
 	}
 
-	.loggin-col-left-content h1 {
-		font-size: 40px;
+	.loggin-col-content h1 {
+		font-size: 8vw;
 	}
 
-	.loggin-col-left-content p {
-		font-size: 15px;
+	.loggin-col-content h2 {
+		font-size: 8vw;
 	}
 
-	.loggin-col-left-content h2 {
-		font-size: 40px;
+	.loggin-col-content p {
+		font-size: 2vh;
 	}
-}
 
-.oops {
-	display: block;
-	width: 100%;
-	height: 100vh;
-}
-.oops-text {
-	color: #202124;
-}
-
-.oops-text h1 {
-	font-size: 2em;
+	
+	.oops h1 {
+		font-size: 20vw;
+	}
+	.oops p {
+		font-size: 2.5vh;
+	}
 }
