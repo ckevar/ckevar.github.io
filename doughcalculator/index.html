@@ -216,8 +216,9 @@
 
     <script>
 		function handleCredentialResponse(response) {
-   			function reqListener() {
-   				var jsonr = JSON.parse(this.responseText);
+			
+   			function reqListener(jsonr) {
+   				// var jsonr = JSON.parse(this.responseText);
    				document.getElementById("loggin_id").style.display = "none";
    				console.log(jsonr);
    				if(jsonr.status == "user not available") {
@@ -238,11 +239,25 @@
    				}
 
    			}
+   			/*
    			// console.log(response.credential);
    			var oReq = new XMLHttpRequest(); 
    			oReq.addEventListener("load", reqListener);
    			oReq.open("POST", "https://2cj2ftp0e0.execute-api.us-east-1.amazonaws.com/default/telegramCook", true);
    			oReq.send(JSON.stringify({type: "gauth", credential: response.credential}));
+   			*/
+   			var response = await fetch('https://2cj2ftp0e0.execute-api.us-east-1.amazonaws.com/default/telegramCook', {
+   				method: 'POST',
+   				mode: 'no-cors'
+   				headers: {
+   					'Content-Type':'application/json',
+   				},
+   				body: JSON.stringify({type: "gauth", credential: response.credential})
+   			});
+   			if(response.ok){
+   				let json = await response.json();
+   				reqListener(json);
+   			}
 		}
 
 		window.onload = function () {
