@@ -150,6 +150,7 @@
 	font-weight: 200;
 	margin-top: 1em;
 }
+
 .floatingmenu i {
 	position: absolute;
 	top: 2%;
@@ -201,5 +202,54 @@
 		width: 80vw;
 		height: 60vh;
 		margin: 20vh auto;
+		border-radius: 10px;
 	}
+
+	.register h2 {
+		font-size: 4rem;
+		margin-bottom: 2em;
+	}
+
+	.register form label {
+		font-size: 2.10rem;
+	}
+
+
+	.register form input {
+		height: 3em;
+		font-size: 1.7rem;
+		border-radius: 10px;
+	}
+
+
+	.register form button {
+		font-size: 2.10rem;
+		border-radius: 4em;
+	}
+
+	.floatingmenu {
+		width: 60vw;
+		height: 70vh;
+		border-radius: 15px;
+		box-shadow: 5px 10px 8px #202124;
+
+	}
+
+	.floatingmenu h2 {
+		font-size: 2.5em;
+	}
+
+	.floatingmenu i {
+		font-size: 2em;
+		left: 93%;
+	}
+
+	.optionmenus-selection {
+		margin: 1em;
+		background-color: #202124;
+		color: white;
+		border: 1px solid #202124;
+		border-radius: 4px;
+	}
+
 }
