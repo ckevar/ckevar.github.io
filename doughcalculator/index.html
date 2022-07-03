@@ -68,6 +68,82 @@
  			closeMenuLS("sectionsmenuid", "sectionslistid", "sectionsid");
  		}
 
+   	 	function register() {
+   	 		function popMI(msg) {
+   	 			var popMIdiv = document.getElementById("missingInformation");
+   	 			popMIdiv.style.display = "block";
+    			popMIdiv.style.color = "white";
+    			popMIdiv.style.background = "red";
+    			document.getElementById("missingInformationMSG").innerHTML = msg;
+   	 		}
+
+   	 		function checkPopMenusLS(divToCheck, msg) {
+   	 			var sectionsList = document.getElementById(divToCheck);
+				if(sectionsList.children.length == 0) {
+					popMI(msg);
+					return 1;
+				}
+				else if (!sectionsList.children[0].value) {
+					popMI(msg);
+					return 1;
+				}
+				else if (sectionsList.children[0].value == "Remove") {
+					popMI(msg);
+					return 1;
+				}
+   	 		}
+
+   	 		function reqListener() {
+   				var jsonr = JSON.parse(this.responseText);
+   				document.getElementById("loggin_id").style.display = "none";
+
+   				if(jsonr.status == "user not available") {
+   					document.getElementById("oops_id").style.display = "block";
+   					document.getElementById("reasons404").innerHTML = "User not available";
+
+   				} else if (jsonr.status == "token timeout") {
+   					document.getElementById("oops_id").style.display = "block";
+   					document.getElementById("reasons404").innerHTML = "Token Issues";
+
+   				} else if (jsonr.status = ="newUser") {
+   					document.getElementById("register_id").style.display = "flex";
+
+   				} else {
+   					document.getElementById("oops_id").style.display = "block";
+   				}
+
+   			}
+
+   			var nameSTR = document.getElementById("nameid").value;
+    		if(!name) {
+    			popMI("Your <b>name</b> is missing");
+    			return;
+    		}
+    		
+    		var lastNameSTR = !document.getElementById("lastNameid").value;
+    		if(!lastName) {
+    			popMI("Your <b>last name</b> is missing");
+    			return;
+    		}
+    		if (checkPopMenusLS("languageslistid", "I think at least you speak <b>English</br>"))
+    			return;
+
+    		if (checkPopMenusLS("sectionslistid", "You need minimum a <b>Greetings</b> section"))
+    			return;
+
+    		
+   			var oReq = new XMLHttpRequest(); 
+   			oReq.addEventListener("load", reqListener);
+   			oReq.open("POST", "https://2cj2ftp0e0.execute-api.us-east-1.amazonaws.com/default/telegramCook", true);
+   			oReq.send(JSON.stringify({name: nameSTR, lastName: lastNameSTR}));
+			
+
+    	}
+
+    	function closeMissInformation() {
+    			document.getElementById("missingInformation").style.display = "none";
+    	}
+
 	</script>
 
   </head>
@@ -111,7 +187,7 @@
 			<label for="sectionsid">Sections</label>
 			<input type="text" id="sectionsid" onclick="popupSections()">
 			
-			<button type="button">Register</button>
+			<button type="button" onclick="register()">Register</button>
 
 		</form>
 		
@@ -122,7 +198,7 @@
  		<div id="languageslistid">
  		</div>
  		<i class="fa fa-times" onclick="closelanguagesmenu()"></i>
- 		<p>To remove just select remove</p>
+ 		<p>To remove just select <b>Remove Language</b></p>
  	</div>
 
  	<div class="floatingmenu" id="sectionsmenuid">
@@ -130,13 +206,16 @@
  		<div id="sectionslistid">
  		</div>
  		<i class="fa fa-times" onclick="closesectionsmenu()"></i>
- 		<p>To remove just select remove</p>
+ 		<p>To remove just select <b>Remove Section</b></p>
+ 	</div>
+
+ 	<div class="floatingmenu mi" id="missingInformation">
+ 		<h2 id="missingInformationMSG"><b>Something</b> is missing</h2>
+ 		<i class="fa fa-times" onclick="closeMissInformation()"></i>
  	</div>
  	
 
     <script>
-
-
 		function handleCredentialResponse(response) {
    			function reqListener() {
    				var jsonr = JSON.parse(this.responseText);
@@ -150,8 +229,10 @@
    					document.getElementById("oops_id").style.display = "block";
    					document.getElementById("reasons404").innerHTML = "Token Issues";
 
-   				} else if (jsonr.status = ="newUser") {
+   				} else if (jsonr.status == "newUser") {
    					document.getElementById("register_id").style.display = "flex";
+					document.getElementById("nameid").value = jsonr.name;
+					document.getElementById("lastNameid").value = jsonr.lastName;
 
    				} else {
    					document.getElementById("oops_id").style.display = "block";

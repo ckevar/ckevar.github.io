@@ -9,7 +9,7 @@
 	height: 100vh;
 	margin: auto;
 	/*display: flex; /* UNCOMMENT, COMMENT*/
-	display: none; /* UNCOMMENT, COMMENT*/
+	display: flex; /* UNCOMMENT, COMMENT*/
 	flex-wrap: wrap;
 }
 
@@ -74,11 +74,10 @@
 }
 
 .register {
-	/*position: absolute;*/
 	width: 60vw;
 	height: 80vh;
 	margin: 10vh auto;
-	display: flex;
+	display: none;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
@@ -144,6 +143,7 @@
 	transform: translate(-50%, -50%);
 	border-radius: 5px;
 	text-align: center;
+	box-shadow: 5px 10px 8px #202124;
 }
 
 .floatingmenu h2 {
@@ -155,7 +155,14 @@
 	position: absolute;
 	top: 2%;
 	left: 94%;
-	background: white;
+	/*background: white;*/
+}
+
+.mi h2 {
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .optionmenus-selection {
@@ -231,7 +238,7 @@
 		width: 60vw;
 		height: 70vh;
 		border-radius: 15px;
-		box-shadow: 5px 10px 8px #202124;
+		/*box-shadow: 5px 10px 8px #202124;*/
 
 	}
 
@@ -246,10 +253,8 @@
 
 	.optionmenus-selection {
 		margin: 1em;
-		background-color: #202124;
-		color: white;
-		border: 1px solid #202124;
-		border-radius: 4px;
+		border-radius: 8px;
+		font-size: 2em;
 	}
 
 }
