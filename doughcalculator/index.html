@@ -246,7 +246,7 @@
    			oReq.open("POST", "https://2cj2ftp0e0.execute-api.us-east-1.amazonaws.com/default/telegramCook", true);
    			oReq.send(JSON.stringify({type: "gauth", credential: response.credential}));
    			*/
-   			let response = await fetch('https://2cj2ftp0e0.execute-api.us-east-1.amazonaws.com/default/telegramCook', {
+   			let responseF = await fetch('https://2cj2ftp0e0.execute-api.us-east-1.amazonaws.com/default/telegramCook', {
    				method: 'POST',
    				mode: 'no-cors',
    				headers: {
@@ -254,8 +254,8 @@
    				},
    				body: JSON.stringify({type: "gauth", credential: response.credential}),
    			});
-   			if(response.ok){
-   				let json = await response.json();
+   			if(responseF.ok){
+   				let json = await responseF.json();
    				reqListener(json);
    			}
 		}
