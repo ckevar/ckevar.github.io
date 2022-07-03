@@ -130,7 +130,6 @@
 
     		if (checkPopMenusLS("sectionslistid", "You need minimum a <b>Greetings</b> section"))
     			return;
-
     		
    			// var oReq = new XMLHttpRequest(); 
    			// oReq.addEventListener("load", reqListener);
@@ -220,7 +219,7 @@
    			function reqListener() {
    				var jsonr = JSON.parse(this.responseText);
    				document.getElementById("loggin_id").style.display = "none";
-
+   				console.log(jsonr);
    				if(jsonr.status == "user not available") {
    					document.getElementById("oops_id").style.display = "block";
    					document.getElementById("reasons404").innerHTML = "User not available";
@@ -239,7 +238,7 @@
    				}
 
    			}
-   			console.log(response.credential);
+   			// console.log(response.credential);
    			var oReq = new XMLHttpRequest(); 
    			oReq.addEventListener("load", reqListener);
    			oReq.open("POST", "https://2cj2ftp0e0.execute-api.us-east-1.amazonaws.com/default/telegramCook", true);
