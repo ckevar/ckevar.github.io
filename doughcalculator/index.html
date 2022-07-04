@@ -254,8 +254,8 @@
    				},
    				body: JSON.stringify({type:"gauth", credential:response.credential}),
    			}).then((responseF) => {
-   				console.log(responseF);
-   				return responseF.json();
+   				let json = await responseF.json();
+   				return json;
    			}).then((data) => {
    				console.log("here");
    				reqListener(data);
