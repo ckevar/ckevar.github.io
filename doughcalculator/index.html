@@ -254,6 +254,7 @@
    				},
    				body: JSON.stringify({type: "gauth", credential: response.credential}),
    			}).then((responseF) => {
+   				console.log(responseF);
    				return responseF.json();
    			}).then((data) => {
    				console.log("here");
