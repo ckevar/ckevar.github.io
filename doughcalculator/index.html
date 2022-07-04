@@ -253,12 +253,13 @@
    					'Content-Type':'application/json',
    				},
    				body: JSON.stringify({type: "gauth", credential: response.credential}),
-   			}).then(responseF => {
-   				console.log('here');
-   				console.log(responseF);
-   				let json = responseF.json();
+   			}).then((responseF) => {
+   				return responseF.json();
    				console.log(json);
-   				reqListener(json);
+   			}).then((data) => {
+   				console.log("here");
+   				reqListener(data);
+
    			}).catch(error => {
    				console.log(error)
    			});
