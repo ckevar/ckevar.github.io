@@ -256,7 +256,7 @@
    			}).then(responseF => {
    				console.log('here');
    				console.log(responseF);
-   				let json = await responseF.json();
+   				let json = responseF.json();
    				console.log(json);
    				reqListener(json);
    			}).catch(error => {
