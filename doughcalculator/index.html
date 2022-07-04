@@ -11,7 +11,7 @@
 		
 		var languageOptions = '<option value="" selected hidden disabled>Choose here</option> <option value="Remove">Remove Language</option> <option value="Afrikaans">Afrikaans</option> <option value="Albanian">Albanian</option> <option value="Amharic">Amharic</option> <option value="Arabic">Arabic</option> <option value="Armenian">Armenian</option> <option value="Assamese">Assamese</option> <option value="Aymara">Aymara</option> <option value="Azerbaijani">Azerbaijani</option> <option value="Bambara">Bambara</option> <option value="Basque">Basque</option> <option value="Belarusian">Belarusian</option> <option value="Bengali">Bengali</option> <option value="Bhojpuri">Bhojpuri</option> <option value="Bosnian">Bosnian</option> <option value="Bulgarian">Bulgarian</option> <option value="Catalan">Catalan</option> <option value="Cebuano">Cebuano</option> <option value="Chewa">Chewa</option> <option value="Chinese">Chinese (Simplified)</option> <option value="Chinese">Chinese (Traditional)</option> <option value="Corsican">Corsican</option> <option value="Croatian">Croatian</option> <option value="Czech">Czech</option> <option value="Danish">Danish</option> <option value="Dhivehi">Dhivehi</option> <option value="Dogri">Dogri</option> <option value="Dutch">Dutch</option> <option value="English">English</option> <option value="Esperanto">Esperanto</option> <option value="Estonian">Estonian</option> <option value="Ewe">Ewe</option> <option value="Filipino">Filipino</option> <option value="Finnish">Finnish</option> <option value="French">French</option> <option value="Frisian">Frisian</option> <option value="Galician">Galician</option> <option value="Georgian">Georgian</option> <option value="German">German</option> <option value="Greek">Greek</option> <option value="Guarani">Guarani</option> <option value="Gujarati">Gujarati</option> <option value="Haitian">Haitian Creole</option> <option value="Hausa">Hausa</option> <option value="Hawaiian">Hawaiian</option> <option value="Hebrew">Hebrew</option> <option value="Hindi">Hindi</option> <option value="Hmong">Hmong</option> <option value="Hungarian">Hungarian</option> <option value="Icelandic">Icelandic</option> <option value="Igbo">Igbo</option> <option value="Ilocano">Ilocano</option> <option value="Indonesian">Indonesian</option> <option value="Irish">Irish</option> <option value="Italian">Italian</option> <option value="Japanese">Japanese</option> <option value="Javanese">Javanese</option> <option value="Kannada">Kannada</option> <option value="Kazakh">Kazakh</option> <option value="Khmer">Khmer</option> <option value="Kinyarwanda">Kinyarwanda</option> <option value="Konkani">Konkani</option> <option value="Korean">Korean</option> <option value="Krio">Krio</option> <option value="Kurdish">Kurdish (Kurmanji)</option> <option value="Kurdish">Kurdish (Sorani)</option> <option value="Kyrgyz">Kyrgyz</option> <option value="Lao">Lao</option> <option value="Latin">Latin</option> <option value="Latvian">Latvian</option> <option value="Lingala">Lingala</option> <option value="Lithuanian">Lithuanian</option> <option value="Luganda">Luganda</option> <option value="Luxembourgish">Luxembourgish</option> <option value="Macedonian">Macedonian</option> <option value="Maithili">Maithili</option> <option value="Malagasy">Malagasy</option> <option value="Malay">Malay</option> <option value="Malayalam">Malayalam</option> <option value="Maltese">Maltese</option> <option value="Maori">Maori</option> <option value="Marathi">Marathi</option> <option value="Meiteilon">Meiteilon (Manipuri)</option> <option value="Mizo">Mizo</option> <option value="Mongolian">Mongolian</option> <option value="Myanmar">Myanmar (Burmese)</option> <option value="Nepali">Nepali</option> <option value="Norwegian">Norwegian</option> <option value="Odia">Odia (Oriya)</option> <option value="Oromo">Oromo</option> <option value="Pashto">Pashto</option> <option value="Persian">Persian</option> <option value="Polish">Polish</option> <option value="Portuguese">Portuguese</option> <option value="Punjabi">Punjabi</option> <option value="Quechua">Quechua</option> <option value="Romanian">Romanian</option> <option value="Russian">Russian</option> <option value="Samoan">Samoan</option> <option value="Sanskrit">Sanskrit</option> <option value="Scots">Scots Gaelic</option> <option value="Sepedi">Sepedi</option> <option value="Serbian">Serbian</option> <option value="Shona">Shona</option> <option value="Sindhi">Sindhi</option> <option value="Sinhala">Sinhala</option> <option value="Slovak">Slovak</option> <option value="Slovenian">Slovenian</option> <option value="Somali">Somali</option> <option value="Sotho">Sotho</option> <option value="Spanish">Spanish</option> <option value="Sundanese">Sundanese</option> <option value="Swahili">Swahili</option> <option value="Swedish">Swedish</option> <option value="Tajik">Tajik</option> <option value="Tamil">Tamil</option> <option value="Tatar">Tatar</option> <option value="Telugu">Telugu</option> <option value="Thai">Thai</option> <option value="Tigrinya">Tigrinya</option> <option value="Tsonga">Tsonga</option> <option value="Turkish">Turkish</option> <option value="Turkmen">Turkmen</option> <option value="Twi">Twi</option> <option value="Ukrainian">Ukrainian</option> <option value="Urdu">Urdu</option> <option value="Uyghur">Uyghur</option> <option value="Uzbek">Uzbek</option> <option value="Vietnamese">Vietnamese</option> <option value="Welsh">Welsh</option> <option value="Xhosa">Xhosa</option> <option value="Yiddish">Yiddish</option> <option value="Yoruba">Yoruba</option> <option value="Zulu">Zulu</option>';
 		sectionsOptions = '<option value="" selected hidden disabled>Choose here</option> <option value="Remove">Remove Section</option> <option value="Greetings">Greetings</option> <option value="Education">Education</option> <option value="Experience">Experience</option> <option value="Projects">Projects</option> <option value="Press">Press</option> <option value="Photography">Photography</option> <option value="Misc">Misc</option>';
-
+		let username = '';
 		function addNewOptionLS(elemnt, fooNameToAdd, divWhereToAdd, optionsToAdd) {
 			if (elemnt) {
 				if (elemnt.value == "Remove") return;
@@ -114,14 +114,12 @@
 
    			}
 
-   			var nameSTR = document.getElementById("nameid").value;
-    		if(!nameSTR) {
+    		if(!document.getElementById("nameid").value) {
     			popMI("Your <b>name</b> is missing");
     			return;
     		}
     		
-    		var lastNameSTR = !document.getElementById("lastNameid").value;
-    		if(!lastNameSTR) {
+    		if(!document.getElementById("lastNameid").value) {
     			popMI("Your <b>last name</b> is missing");
     			return;
     		}
@@ -131,16 +129,71 @@
     		if (checkPopMenusLS("sectionslistid", "You need minimum a <b>Greetings</b> section"))
     			return;
     		
-   			// var oReq = new XMLHttpRequest(); 
-   			// oReq.addEventListener("load", reqListener);
-   			// oReq.open("POST", "https://2cj2ftp0e0.execute-api.us-east-1.amazonaws.com/default/telegramCook", true);
-   			// oReq.send(JSON.stringify({name: nameSTR, lastName: lastNameSTR}));
+    		document.getElementById("agreementid").style.display = 'block';
 			
 
     	}
 
-    	function closeMissInformation() {
-    			document.getElementById("missingInformation").style.display = "none";
+    	function closeFloatingMenu(fm) {
+    			fm.parentElement.style.display = "none";
+    	}
+
+    	function agreementfoo(decision) {
+    		function getLS(divToGetElements) {
+    			var listOptions = document.getElementById(divToGetElements);
+    			var valueList = [];
+    			var j = 0;
+    			for (var i = 0; i < listOptions.children.length; i++) {
+    				if (listOptions.children[i].value) {
+    					valueList[j] = listOptions.children[i].value;
+    					j = j + 1;
+    				}
+    			}
+    			return valueList;
+
+    		}
+    		function submitToApi(contentBody, whatToDoOnArrival) {
+				fetch('https://2cj2ftp0e0.execute-api.us-east-1.amazonaws.com/default/telegramCook', {
+   					method: 'POST',
+   					mode: 'cors',
+   					headers: {
+   						'Content-Type':'application/json',
+   					},
+   					body: contentBody,
+				}).then(responseF => {console.log(responseF); return responseF.json();})
+				.then((data) => {
+					whatToDoOnArrival(data);
+				}).catch(error => {
+					console.log(error)
+				});
+    		}
+    		function onArrival(data) {
+    			console.log(data);
+    		}
+    		if (decision.value == "agree") {
+    			var req = {};
+    			var agr = {};
+    			
+    			agr['content'] = document.getElementById("agreementcontetid").innerHTML;
+    			agr['agreed'] = true;
+    			agr['signed_at'] = new Date().getTime();
+
+    			req['username'] = username;
+    			req['agreement'] = agr;
+    			req['name'] = document.getElementById("nameid").value; 
+    			req['lastName'] = document.getElementById("lastNameid").value; 
+    			req['languages'] = getLS("languageslistid");
+    			req['sections'] = getLS("sectionslistid");
+    			console.log(req);
+    			submitToApi(JSON.stringify(req), onArrival);
+    			
+
+    		} else if (decision.value == "cancel") {
+    			console.log("user canceled at");
+    			window.location.reload();
+    			return false;
+    		}
+
     	}
 
 	</script>
@@ -210,9 +263,15 @@
 
  	<div class="floatingmenu mi" id="missingInformation">
  		<h2 id="missingInformationMSG"><b>Something</b> is missing</h2>
- 		<i class="fa fa-times" onclick="closeMissInformation()"></i>
+ 		<i class="fa fa-times" onclick="closeFloatingMenu(this)"></i>
  	</div>
  	
+ 	<div class="floatingmenu agreementclass" id="agreementid">
+ 		<p id="agreementcontetid">All information you're providing in this web page will be stored in our server and only you will be able to share them.</p>
+ 		<button type="button" onclick="agreementfoo(this)" value="agree">I AGREE</button>
+ 		<button type="button" onclick="agreementfoo(this)" value="cancel">CANCEL</button>
+ 		<i class="fa fa-times" onclick="closeFloatingMenu(this)"></i>
+ 	</div>
 
     <script>
 		function handleCredentialResponse(response) {
@@ -233,32 +292,24 @@
    					document.getElementById("register_id").style.display = "flex";
 					document.getElementById("nameid").value = jsonr.name;
 					document.getElementById("lastNameid").value = jsonr.lastName;
+					username = jsonr.username;
 
    				} else {
    					document.getElementById("oops_id").style.display = "block";
    				}
 
    			}
-   			/*
-   			// console.log(response.credential);
-   			var oReq = new XMLHttpRequest(); 
-   			oReq.addEventListener("load", reqListener);
-   			oReq.open("POST", "https://2cj2ftp0e0.execute-api.us-east-1.amazonaws.com/default/telegramCook", true);
-   			oReq.send(JSON.stringify({type: "gauth", credential: response.credential}));
-   			*/
+   	
    			fetch('https://2cj2ftp0e0.execute-api.us-east-1.amazonaws.com/default/telegramCook', {
    				method: 'POST',
    				mode: 'cors',
    				headers: {
    					'Content-Type':'application/json',
    				},
-   				// 'credentials': 'include',
    				body: JSON.stringify({type:"gauth", credential:response.credential}),
    			}).then(responseF => {console.log(responseF); return responseF.json();})
    			.then((data) => {
-   				console.log("here");
    				reqListener(data);
-
    			}).catch(error => {
    				console.log(error)
    			});
