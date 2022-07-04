@@ -178,6 +178,7 @@
     			agr['agreed'] = true;
     			agr['signed_at'] = new Date().getTime();
 
+    			req['type'] = "createUser";
     			req['username'] = username;
     			req['agreement'] = agr;
     			req['name'] = document.getElementById("nameid").value; 
