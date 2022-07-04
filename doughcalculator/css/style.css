@@ -9,7 +9,7 @@
 	height: 100vh;
 	margin: auto;
 	/*display: flex; /* UNCOMMENT, COMMENT*/
-	display: none; /* UNCOMMENT, COMMENT*/
+	display: flex; /* UNCOMMENT, COMMENT*/
 	flex-wrap: wrap;
 }
 
