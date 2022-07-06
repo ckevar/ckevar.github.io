@@ -10,10 +10,244 @@
 	<script type="text/javascript">
 		
 		var languageOptions = '<option value="" selected hidden disabled>Choose here</option> <option value="Remove">Remove Language</option> <option value="Afrikaans">Afrikaans</option> <option value="Albanian">Albanian</option> <option value="Amharic">Amharic</option> <option value="Arabic">Arabic</option> <option value="Armenian">Armenian</option> <option value="Assamese">Assamese</option> <option value="Aymara">Aymara</option> <option value="Azerbaijani">Azerbaijani</option> <option value="Bambara">Bambara</option> <option value="Basque">Basque</option> <option value="Belarusian">Belarusian</option> <option value="Bengali">Bengali</option> <option value="Bhojpuri">Bhojpuri</option> <option value="Bosnian">Bosnian</option> <option value="Bulgarian">Bulgarian</option> <option value="Catalan">Catalan</option> <option value="Cebuano">Cebuano</option> <option value="Chewa">Chewa</option> <option value="Chinese">Chinese (Simplified)</option> <option value="Chinese">Chinese (Traditional)</option> <option value="Corsican">Corsican</option> <option value="Croatian">Croatian</option> <option value="Czech">Czech</option> <option value="Danish">Danish</option> <option value="Dhivehi">Dhivehi</option> <option value="Dogri">Dogri</option> <option value="Dutch">Dutch</option> <option value="English">English</option> <option value="Esperanto">Esperanto</option> <option value="Estonian">Estonian</option> <option value="Ewe">Ewe</option> <option value="Filipino">Filipino</option> <option value="Finnish">Finnish</option> <option value="French">French</option> <option value="Frisian">Frisian</option> <option value="Galician">Galician</option> <option value="Georgian">Georgian</option> <option value="German">German</option> <option value="Greek">Greek</option> <option value="Guarani">Guarani</option> <option value="Gujarati">Gujarati</option> <option value="Haitian">Haitian Creole</option> <option value="Hausa">Hausa</option> <option value="Hawaiian">Hawaiian</option> <option value="Hebrew">Hebrew</option> <option value="Hindi">Hindi</option> <option value="Hmong">Hmong</option> <option value="Hungarian">Hungarian</option> <option value="Icelandic">Icelandic</option> <option value="Igbo">Igbo</option> <option value="Ilocano">Ilocano</option> <option value="Indonesian">Indonesian</option> <option value="Irish">Irish</option> <option value="Italian">Italian</option> <option value="Japanese">Japanese</option> <option value="Javanese">Javanese</option> <option value="Kannada">Kannada</option> <option value="Kazakh">Kazakh</option> <option value="Khmer">Khmer</option> <option value="Kinyarwanda">Kinyarwanda</option> <option value="Konkani">Konkani</option> <option value="Korean">Korean</option> <option value="Krio">Krio</option> <option value="Kurdish">Kurdish (Kurmanji)</option> <option value="Kurdish">Kurdish (Sorani)</option> <option value="Kyrgyz">Kyrgyz</option> <option value="Lao">Lao</option> <option value="Latin">Latin</option> <option value="Latvian">Latvian</option> <option value="Lingala">Lingala</option> <option value="Lithuanian">Lithuanian</option> <option value="Luganda">Luganda</option> <option value="Luxembourgish">Luxembourgish</option> <option value="Macedonian">Macedonian</option> <option value="Maithili">Maithili</option> <option value="Malagasy">Malagasy</option> <option value="Malay">Malay</option> <option value="Malayalam">Malayalam</option> <option value="Maltese">Maltese</option> <option value="Maori">Maori</option> <option value="Marathi">Marathi</option> <option value="Meiteilon">Meiteilon (Manipuri)</option> <option value="Mizo">Mizo</option> <option value="Mongolian">Mongolian</option> <option value="Myanmar">Myanmar (Burmese)</option> <option value="Nepali">Nepali</option> <option value="Norwegian">Norwegian</option> <option value="Odia">Odia (Oriya)</option> <option value="Oromo">Oromo</option> <option value="Pashto">Pashto</option> <option value="Persian">Persian</option> <option value="Polish">Polish</option> <option value="Portuguese">Portuguese</option> <option value="Punjabi">Punjabi</option> <option value="Quechua">Quechua</option> <option value="Romanian">Romanian</option> <option value="Russian">Russian</option> <option value="Samoan">Samoan</option> <option value="Sanskrit">Sanskrit</option> <option value="Scots">Scots Gaelic</option> <option value="Sepedi">Sepedi</option> <option value="Serbian">Serbian</option> <option value="Shona">Shona</option> <option value="Sindhi">Sindhi</option> <option value="Sinhala">Sinhala</option> <option value="Slovak">Slovak</option> <option value="Slovenian">Slovenian</option> <option value="Somali">Somali</option> <option value="Sotho">Sotho</option> <option value="Spanish">Spanish</option> <option value="Sundanese">Sundanese</option> <option value="Swahili">Swahili</option> <option value="Swedish">Swedish</option> <option value="Tajik">Tajik</option> <option value="Tamil">Tamil</option> <option value="Tatar">Tatar</option> <option value="Telugu">Telugu</option> <option value="Thai">Thai</option> <option value="Tigrinya">Tigrinya</option> <option value="Tsonga">Tsonga</option> <option value="Turkish">Turkish</option> <option value="Turkmen">Turkmen</option> <option value="Twi">Twi</option> <option value="Ukrainian">Ukrainian</option> <option value="Urdu">Urdu</option> <option value="Uyghur">Uyghur</option> <option value="Uzbek">Uzbek</option> <option value="Vietnamese">Vietnamese</option> <option value="Welsh">Welsh</option> <option value="Xhosa">Xhosa</option> <option value="Yiddish">Yiddish</option> <option value="Yoruba">Yoruba</option> <option value="Zulu">Zulu</option>';
-		sectionsOptions = '<option value="" selected hidden disabled>Choose here</option> <option value="Remove">Remove Section</option> <option value="Greetings">Greetings</option> <option value="Education">Education</option> <option value="Experience">Experience</option> <option value="Projects">Projects</option> <option value="Press">Press</option> <option value="Photography">Photography</option> <option value="Misc">Misc</option>';
+		sectionsOptions = '<option value="" selected hidden disabled>Choose here</option> <option value="Remove">Remove Section</option> <option value="Profile">Profile</option> <option value="Education">Education</option> <option value="Experience">Experience</option> <option value="Projects">Projects</option> <option value="Press">Press</option> <option value="Photography">Photography</option> <option value="Misc">Misc</option>';
 		let username = '';
 		let token;
-		function addNewOptionLS(elemnt, fooNameToAdd, divWhereToAdd, optionsToAdd) {
+		let usr = JSON.parse('{"username": "ckevar19", "name": "Chris", "lastName": "Alvarado", "languages": ["Spanish", "English"], "sections": ["Profile", "Education", "Experience"], "status": "existingUser"}')
+
+		function oopsHandler(message) {
+			if (message)
+				document.getElementById("reasons404").innerHTML = message;
+
+			document.getElementById("oops_id").style.display = "block";
+		}
+
+		/********************************************************/
+		/*LANGUAGESFUNCTIONS*/
+
+		function selectDefaultLang(elemnt) {
+			if (elemnt.value == "Edit") {
+				if(usr['default_language']) elemnt.value = usr['default_language']
+				else elemnt.selectedIndex = 0;
+				return;
+			}
+			usr['default_language'] = elemnt.value; 
+		}
+		
+		function editMenuLanguage() {
+			popupLanguages();
+		}
+
+ 		function updateUsrListLanguages(divToHide) {
+ 			function checkSameLanguages(value) {
+ 				for (var i = 0; i < usr.languages.length; i++) {
+ 					if (usr.languages[i] == value) return false;
+ 				}
+ 				return true;
+ 			}
+
+ 			document.getElementById(divToHide).style.display = "none";
+
+ 			const listOptions = document.getElementById("languageslistid");
+ 			var arrayToRemove = [];
+ 			var arrayToAdd = [];
+ 			
+ 			for (var i = 0; i < listOptions.children.length; i++) {
+ 				const value = listOptions.children[i].value; 
+ 				if (value) {
+	 				if(value == "Remove") arrayToRemove.push(i);
+	 				else if (checkSameLanguages(value)) arrayToAdd.push(value);
+ 				}
+
+ 			}
+
+ 			for (var i = 0; i < arrayToRemove.length; i++) {
+ 				const j = arrayToRemove[i] - i; 
+				if (j == 0) usr.languages.shift();
+				else usr.languages.splice(j,j);
+				listOptions.children[j].remove();
+ 			}
+
+ 			for(var i = 0; i < arrayToAdd.length; i++)
+ 				usr.languages.push(arrayToAdd[i]);
+
+ 			showUsrLanguages(usr);
+ 		}
+
+ 		/********************************************************/
+		/*USER FUNCTIONS*/
+
+		function showUsrLanguages() {
+			function listLanguages(value, att){
+				const lang = document.createElement('option');
+				for (var i = 0; i < att.length; i++) {
+					lang.setAttribute(att[i].name, att[i].value);
+				}
+				lang.innerHTML = value;
+				langualistusr.appendChild(lang);
+				addNewOptionLS(null, "addNewLanguage(this)", "languageslistid", languageOptions, value);
+			}
+			var langualistusr = document.getElementById("langualistusr");
+			document.getElementById("userinfo").style.display = 'block';
+
+			removeAllChildren(langualistusr);
+			removeAllChildren(document.getElementById("languageslistid"));
+
+			for (var i = 0; i < usr.languages.length; i++) {
+				listLanguages(usr.languages[i], [{name:"value", value:usr.languages[i]}]);
+			}
+			listLanguages("Edit", [{name:"value", value:"Edit"},{name:"onclick",value:"editMenuLanguage()"}]);
+		}
+
+		function showUsrSections() {
+			class CheckBoxClass {
+				constructor(label) {
+					this.container = document.createElement('button');
+					this.container.innerHTML = label;
+				}
+			}
+			class ItemClass {
+				constructor(tag, type, translation, link) {
+					this.container = document.createElement('div');
+					this.container.setAttribute('class', 'UsrItemContainer');
+					this.members = {};
+					
+					this.input = document.createElement(tag);
+
+					this.input.setAttribute('type', type)
+					
+					if (type == 'text') {					
+						this.input.setAttribute('class', 'usrItemInputText')
+						if (translation)
+							this.translation = new CheckBoxClass("Translation");
+					}
+
+					if(link)
+						this.link = new CheckBoxClass("Link");
+					
+					// Apending Child
+					this.container.appendChild(this.input);
+					if(translation)
+						this.container.appendChild(this.translation.container);
+					if(link)
+						this.container.appendChild(this.link.container);
+
+				}
+			}
+
+			class SubSectionClass {
+				constructor() {
+					this.form = document.createElement('div');
+					this.form.setAttribute("class","usrSubsection");
+
+					this.items = {}
+					this.items['title'] = [true, new ItemClass('input', 'text', true, true)];
+					this.items['subtitle'] = [true, new ItemClass('input','text', true, true)];
+					this.items['location'] = [true, new ItemClass('input','text', false, false)];
+					this.items['date'] = [true, new ItemClass('input','date', false, false)];
+					this.items['description'] = [true, new ItemClass('textarea', 'text', true, true)];
+
+				}
+				loadPlaceHolder(title, subtitle, location, description) {
+					this.items['title'][1].input.setAttribute("placeholder", title);
+					this.items['subtitle'][1].input.setAttribute("placeholder", subtitle);
+					this.items['location'][1].input.setAttribute("placeholder", location);
+					this.items['description'][1].input.setAttribute("placeholder", description);
+				}
+				disableItem(name) {
+					this.items[name][0] = false;
+				}
+				addRemoveBtn() {
+					this.close = document.createElement("i");
+					this.close.setAttribute("class", "fa fa-times");
+					this.form.appendChild(this.close);
+				}
+				render () {
+
+					for (const [key, value] of Object.entries(this.items)) {
+						if (value[0])
+							this.form.appendChild(value[1].container)
+					}
+					return this.form;
+				}
+			}
+			class SectionClass {
+				constructor(name) {
+					this.name = name;
+					this.container = document.createElement('div');
+					this.title = document.createElement('h3');
+					this.title.innerHTML = this.name;
+					this.subsections = [];
+					this.subsectionBool = false;
+				}
+				createSubsection() {
+					this.subsections.push(new SubSectionClass());
+				}
+				loadPlaceHolder(i, title, subtitle, place, description) {
+					this.subsections[i].loadPlaceHolder(title, subtitle, place, description);
+				}
+				addsubsectionButton (label) {
+					this.addSubsectionBtn = document.createElement('button');
+					this.addSubsectionBtn.setAttribute('class','addSubsectionBtnClass');
+					this.addSubsectionBtn.setAttribute('onclick','addSubsectionFoo(this)');
+					this.addSubsectionBtn.innerHTML = label;
+					this.subsectionBool = true;
+				}
+				addRemoveBtn (i) {
+					this.subsections[i].addRemoveBtn();
+				}
+				render() {
+					this.container.appendChild(this.title);
+
+
+					for (var i = 0; i < this.subsections.length; i++) {
+						this.container.appendChild(this.subsections[i].render());
+					}
+					if(this.subsectionBool)
+						this.container.appendChild(this.addSubsectionBtn);
+					return this.container;
+				}
+			}
+			const userinfo = document.getElementById("userinfo");
+
+
+			for (var i = 0; i < usr.sections.length; i++) {
+				const usrSection = new SectionClass(usr.sections[i]);
+				if (usr[usr.sections[i]]) {
+					// TODO: Iterate over section items and create subsections
+				} else {
+					usrSection.createSubsection();
+					if(usr.sections[i] == "Profile") {					
+						usrSection.loadPlaceHolder(0, "Hey! I'm your name", "Download CV", "Current position", "What are you passionate about?");
+						usrSection.subsections[0].disableItem('date');
+
+					} else if (usr.sections[i] == "Education") {
+						usrSection.loadPlaceHolder(0, "University/College/Institute Name", null, "Where it was", "Write something important you did there.");
+						usrSection.subsections[0].disableItem('subtitle');
+						usrSection.addsubsectionButton("Add Education");
+
+					} else if (usr.sections[i] == "Experience") {
+						usrSection.loadPlaceHolder(0, "Your position", "Company Name", "Where it was", "Write something important you did there.");
+						usrSection.addsubsectionButton("Add Experience");
+
+					}
+				}
+				userinfo.appendChild(usrSection.render());
+			}
+		}
+		function displayUserInfo() {
+			showUsrLanguages();
+			showUsrSections();
+		}
+
+		/**********************************************/
+		/*HELPER FUNCTIONS*/
+		function removeAllChildren(parent) {
+			while(parent.firstChild)
+				parent.removeChild(parent.firstChild);
+		}
+
+		function addNewOptionLS(elemnt, fooNameToAdd, divWhereToAdd, optionsToAdd, setSelected) {
 			if (elemnt) {
 				if (elemnt.value == "Remove") return;
 			}
@@ -21,6 +255,8 @@
 			selectChild.setAttribute("onchange",fooNameToAdd);
 			selectChild.setAttribute("class","optionmenus-selection");
 			selectChild.innerHTML = optionsToAdd; 
+			if (setSelected)
+				selectChild.value = setSelected;
 			document.getElementById(divWhereToAdd).appendChild(selectChild);
 		}
 
@@ -36,29 +272,38 @@
     		var value = '';
     		
     		for (var i = 0; i < listOptions.children.length; i++) {
-    			if (listOptions.children[i].value == "Remove") {
-    				listOptions.children[i].remove();
-    			} else if (listOptions.children[i].value)
-    				value = value + listOptions.children[i].value + ', ';
+    			const childrenValue = listOptions.children[i].value;
+    			if (childrenValue) {
+	    			if (childrenValue == "Remove") listOptions.children[i].remove();
+	    			else value = value + childrenValue + ', ';
+    			}
     		}
 
     		document.getElementById(inputToWrite).value = value;
 		}
 
+		/*****************************************************************/
+		/*FLOATING MENU FUNCTIONS*/
 		function addNewLanguage(elemnt){
-			addNewOptionLS(elemnt, "addNewLanguage(this)", "languageslistid", languageOptions);
+			addNewOptionLS(elemnt, "addNewLanguage(this)", "languageslistid", languageOptions, null);
 		}
 
     	function popupLanguages() {
     		popupMenuLS("languageslistid", addNewLanguage, "languagesmenuid");
  		}
 
+
+
  		function closelanguagesmenu() {
- 			closeMenuLS("languagesmenuid", "languageslistid", "languagesid");
+ 			if(document.getElementById("userinfo").style.display == "block")
+ 				updateUsrListLanguages("languagesmenuid");
+ 			else
+ 				closeMenuLS("languagesmenuid", "languageslistid", "languagesid");
+
  		}
 
  		function addNewSection(elemnt) {
-			addNewOptionLS(elemnt, "addNewSection(this)", "sectionslistid", sectionsOptions);	
+			addNewOptionLS(elemnt, "addNewSection(this)", "sectionslistid", sectionsOptions, null);	
  		}
 
  		function popupSections() {
@@ -68,7 +313,8 @@
  		function closesectionsmenu() {
  			closeMenuLS("sectionsmenuid", "sectionslistid", "sectionsid");
  		}
-
+ 		/*********************************************************************/
+ 		/*REGISTER FUNCTIONS*/
    	 	function registerFoo() {
    	 		function popMI(msg) {
    	 			var popMIdiv = document.getElementById("missingInformation");
@@ -94,27 +340,6 @@
 				}
    	 		}
 
-   	 		function reqListener() {
-   				var jsonr = JSON.parse(this.responseText);
-   				document.getElementById("loggin_id").style.display = "none";
-
-   				if(jsonr.status == "user not available") {
-   					document.getElementById("oops_id").style.display = "block";
-   					document.getElementById("reasons404").innerHTML = "User not available";
-
-   				} else if (jsonr.status == "token timeout") {
-   					document.getElementById("oops_id").style.display = "block";
-   					document.getElementById("reasons404").innerHTML = "Token Issues";
-
-   				} else if (jsonr.status == "newUser") {
-   					document.getElementById("register_id").style.display = "flex";
-
-   				} else {
-   					document.getElementById("oops_id").style.display = "block";
-   				}
-
-   			}
-
     		if(!document.getElementById("nameid").value) {
     			popMI("Your <b>name</b> is missing");
     			return;
@@ -131,8 +356,6 @@
     			return;
     		
     		document.getElementById("agreementid").style.display = 'block';
-			
-
     	}
 
     	function closeFloatingMenu(fm) {
@@ -169,7 +392,26 @@
 				});
     		}
     		function onArrival(data) {
-    			console.log(data);
+    			jsonr = JSON.parse(data);
+    			document.getElementById("agreementid").style.display = "none";
+    			document.getElementById("register_id").style.display = "none";
+    			
+    			if (jsonr.status == "User not available")
+    				oopsHandler("Google Authentication failed.");
+    			
+    			else if (jsonr.status == "Token Timeout.")
+    				oopsHandler("Token Issues.");
+    			
+    			else if (jsonr.status == "something went wrong")
+    				oopsHandler("Something went really wrong.");
+    			
+    			else if (jsonr.status == "user created") {
+    				displayUserInfo(jsonr);
+    			}
+    			else
+    				oopsHandler();
+
+
     		}
     		if (decision.value == "agree") {
     			var req = {};
@@ -198,7 +440,7 @@
     		}
 
     	}
-
+    	/*******************************************************************/
 	</script>
 
   </head>
@@ -223,7 +465,7 @@
 	<div class="oops" id="oops_id">
 		<div class="oops-text">
 			<h1>404</h1>
-			<p id="reasons404">We couldn't find what you're looking for.</p>
+			<p id="reasons404">Oops, we couldn't find what you're looking for.</p>
 		</div>
 	</div>
 
@@ -246,6 +488,14 @@
 
 		</form>
 		
+ 	</div>
+
+ 	<div id="userinfo">
+ 		<h2 id="welcomeuser">Welcome Chris!</h2>
+		<div>
+			<h3>Select your CV default language:</h3>
+			<select class="optionmenus-selection" id="langualistusr" onchange="selectDefaultLang(this)"></select>
+		</div>
  	</div>
 
 	<div class="floatingmenu" id="languagesmenuid">
@@ -276,6 +526,8 @@
  		<i class="fa fa-times" onclick="closeFloatingMenu(this)"></i>
  	</div>
 
+ 	
+
     <script>
 		function handleCredentialResponse(response) {
 			
@@ -284,12 +536,10 @@
    				document.getElementById("loggin_id").style.display = "none";
    				console.log(jsonr);
    				if(jsonr.status == "user not available") {
-   					document.getElementById("oops_id").style.display = "block";
-   					document.getElementById("reasons404").innerHTML = "User not available";
+  					oopsHandler("User not available");
 
    				} else if (jsonr.status == "token timeout") {
-   					document.getElementById("oops_id").style.display = "block";
-   					document.getElementById("reasons404").innerHTML = "Token Issues";
+  					oopsHandler("Token Issues");
 
    				} else if (jsonr.status == "newUser") {
    					document.getElementById("register_id").style.display = "flex";
@@ -299,13 +549,10 @@
 					token = jsonr.token;
 
    				} else {
-   					document.getElementById("oops_id").style.display = "block";
+   					oopsHandler();
    				}
 
    			}
-
-   			/*function fetchplus = (url, options = {}, retries) => 
-   				fetch(url, options)*/
    	
    			fetch('https://2cj2ftp0e0.execute-api.us-east-1.amazonaws.com/default/telegramCook', {
    				method: 'POST',

@@ -95,6 +95,8 @@ nav .fa {
 	position: relative;
 	color: #fff;
 	font-weight: 600;
+	font-size: 1em;
+	cursor: pointer;
 }
 
 .profile-lan ul li::after{
@@ -134,24 +136,27 @@ nav .fa {
 	text-decoration: none;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
 
 	.profile {
-		top: 40%;
+		top: 35%;
 		flex-direction: column;
 	}
+	.profile-col {
+		padding-top: 2em;
+	}
 	.profile-col img {
-		height: 150px;
+		height: 500px;
 	}
 
 	.profile-col h1{
 		text-align: center;
-		font-size: 25px;
+		font-size: 5em;
 	}
 
 	.profile-col p{
 		text-align: center;
-		font-size: 14px;
+		font-size: 2em;
 	}
 
 	nav .fa {
@@ -189,13 +194,15 @@ nav .fa {
 	}
 	.contact {
 		flex-direction: column;
-		top: 75%;
+		top: 70%;
 	}
 	.contact .contact-row{
-		font-size: 14;
+		font-size: 2em;
+		padding: 1em;
 	}
 	.profile-lan ul li {
-		font-size: 12px;
+		font-size: 1.7em;
+		padding: 2em;
 	}
 }
 
@@ -253,7 +260,7 @@ nav .fa {
 	color: #eee;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
 	.rows {
 		flex-direction: column;
 	}
