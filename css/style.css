@@ -171,7 +171,6 @@ nav .fa {
 	}
 	nav .fa-bars{
 		color: #fc0;
-		/*margin-left: 75vw;*/
 		padding-left: 75vw;
 	}
 	.nav-links {
@@ -180,8 +179,7 @@ nav .fa {
 		height: 100vh;
 		width: 50%;
 		top: 0;
-		right: -53%;
-		text-anchor: left;
+		right: -50%;
 		z-index: 2;
 		transition: 1s;
 
