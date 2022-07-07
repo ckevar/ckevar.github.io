@@ -281,6 +281,25 @@ nav .fa {
 	.rows {
 		flex-direction: column;
 	}
+	.section_title h1 {
+		font-size: 3.7em;
+	}
+	.rows h3 {
+		font-size: 2em;
+	}
+	.section_subtitle {
+		font-size: 2.5em;
+	}
+
+	.rows ul li {
+		font-size: 1.7em;
+	}
+	.rows p {
+		font-size: 1.7em;
+	}
+	.rows2_elements {
+		font-size: 1.7em;
+	}
 }
 
 /*Work experience*/
@@ -322,6 +341,7 @@ nav .fa {
 .we_col ul li:hover::after{
 	width: 100%;
 }
+
 /*Project section*/
 .project_section {
 	width: 80%;
@@ -398,14 +418,18 @@ nav .fa {
 	align-items: center;
 	flex-wrap: wrap;
 }
+.rows2 > * {
+	flex-grow: 1;
+}
 .rows2_elements {
 	color: #fff;
-	text-decoration: none;
+	/*text-decoration: none;*/
 	border-radius: 10px;
 	background: #fc0;
 	color: #1d2a42;
 	padding: 1% 2%;
 	margin:2%; 
+	text-align: center;
 }
 
 .hobbies_class {
@@ -439,3 +463,16 @@ nav .fa {
 	font-weight: 600;
 }
 
+@media (max-width: 1000px) {
+	.footer h4 {
+		font-size: 1.5em;
+	}
+
+	.footer a {
+		font-size: 1.3em;
+	}
+
+	.footer i {
+		font-size: 1.3em;
+	}
+}
