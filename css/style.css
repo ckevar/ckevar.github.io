@@ -200,12 +200,15 @@ nav .fa {
 	.contact {
 		flex-direction: column;
 		top: 80vh;
+		width: 24em;
+		margin-left: calc(50% - 12em);
 	}
 	.contact .contact-row {
 		font-size: 2em;
 		padding: 0.1em;
 		display: flex;
-		flex-direction: row; 
+		flex-direction: row;
+		margin: 0; 
 	}
 	.contact .contact-row i {
 		padding-left: 1em;
