@@ -263,7 +263,13 @@ nav .fa {
 	padding-top: 100px;
 	flex-wrap: wrap;
 }
-
+.rows > * {
+	margin: 5% 1em;
+}
+.rows .ed_col {
+	flex-basis: calc(700px - 31%);
+	flex-grow: 1;
+}
 .rows .project_col {
 	flex-basis: calc(700px - 31%);
 	flex-grow: 1;
@@ -274,11 +280,14 @@ nav .fa {
 	flex-grow: 1;
 }
 
+.rows .misc_col {
+	flex-grow: 1;
+	flex-basis: calc(700px - 31%);
+}
+
 .ed_col {
-	flex-basis: 48%; 
 	background: #1d2a42;
 	border-radius: 10px;
-	margin-bottom: 5%;
 	padding: 20px 12px;
 	box-sizing: border-box;
 }
@@ -332,9 +341,42 @@ nav .fa {
 }
 .we_col ul li a {
 	color: #111;
-	/*text-decoration: none;*/
-
+	text-decoration: none;
 }
+
+a {
+	position: relative;
+	text-decoration: none;
+}
+
+a[href*="http"]::before {
+	font-family: FontAwesome;
+	content: '\f08e';
+	position: absolute;
+	left: 101%;
+	top: 0.3em;
+	color: #9f8415;
+}
+
+a[href*=".pdf?0"]::before {
+	font-family: FontAwesome;
+	content: '\f1c1';
+}
+
+a[href*="github"]::before {
+	font-family: FontAwesome;
+	content: '\f09b';
+}
+
+a[href*="_CV_"]::before {
+	content: '';
+}
+
+a[id^="photography_id"]::before {
+	left: 87%;
+	color: #1d2a42;
+}
+
 
 .we_col ul li::after{
 	content: '';
@@ -420,6 +462,10 @@ nav .fa {
 	width: 100%;
 }
 
+.misc_col ul {
+	margin: 1em;
+}
+
 .rows2{
 	display: flex;
 	justify-content: space-between;
@@ -431,18 +477,13 @@ nav .fa {
 }
 .rows2_elements {
 	color: #fff;
-	/*text-decoration: none;*/
+	text-decoration: none;
 	border-radius: 10px;
 	background: #fc0;
 	color: #1d2a42;
 	padding: 1% 2%;
 	margin:2%; 
 	text-align: center;
-}
-
-.hobbies_class {
-	top:30%;
-	position: relative;
 }
 
 .hobbies_class a {
@@ -472,6 +513,10 @@ nav .fa {
 }
 
 @media (max-width: 1000px) {
+	.misc_col ul {
+		margin: 2em;
+	}
+
 	.footer h4 {
 		font-size: 1.5em;
 	}
