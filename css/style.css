@@ -148,7 +148,7 @@ nav .fa {
 	}
 	.profile-col img {
 		height: min(50vw, 25vh);
-		background-color: pink;
+		/*background-color: pink;*/
 		border: 1em solid #fc0;
 	}
 
@@ -199,11 +199,17 @@ nav .fa {
 	}
 	.contact {
 		flex-direction: column;
-		top: 70vh;
+		top: 80vh;
 	}
 	.contact .contact-row {
 		font-size: 2em;
 		padding: 0.1em;
+		display: flex;
+		flex-direction: row; 
+	}
+	.contact .contact-row i {
+		padding-left: 1em;
+		padding-right: 1em;
 	}
 	.profile-lan ul li {
 		font-size: 1.7em;
