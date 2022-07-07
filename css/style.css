@@ -261,6 +261,17 @@ nav .fa {
 	display: flex;
 	justify-content: space-between; 
 	padding-top: 100px;
+	flex-wrap: wrap;
+}
+
+.rows .project_col {
+	flex-basis: calc(700px - 31%);
+	flex-grow: 1;
+}
+
+.rows .we_col {
+	flex-basis: calc(700px - 31%);
+	flex-grow: 1;
 }
 
 .ed_col {
@@ -278,9 +289,6 @@ nav .fa {
 }
 
 @media (max-width: 1000px) {
-	.rows {
-		flex-direction: column;
-	}
 	.section_title h1 {
 		font-size: 3.7em;
 	}
