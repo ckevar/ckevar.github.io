@@ -140,7 +140,7 @@ nav .fa {
 @media (max-width: 1000px) {
 
 	.profile {
-		/*top: 16em;*/
+		top: 40%;
 		flex-direction: column;
 	}
 	.profile-col {
