@@ -140,20 +140,21 @@ nav .fa {
 @media (max-width: 1000px) {
 
 	.profile {
-		top: 40%;
+		top: 40vh;
 		flex-direction: column;
 	}
 	.profile-col {
-		padding-top: 2em;
+		padding-top: 0em;
 	}
 	.profile-col img {
-		height: 30em;
+		height: min(50vw, 25vh);
+		background-color: pink;
 		border: 1em solid #fc0;
 	}
 
 	.profile-col h1{
 		text-align: center;
-		font-size: 5em;
+		font-size: 5vh;
 	}
 
 	.profile-col p{
@@ -198,15 +199,18 @@ nav .fa {
 	}
 	.contact {
 		flex-direction: column;
-		top: 70%;
+		top: 70vh;
 	}
-	.contact .contact-row{
+	.contact .contact-row {
 		font-size: 2em;
-		padding: 1em;
+		padding: 0.1em;
 	}
 	.profile-lan ul li {
 		font-size: 1.7em;
-		padding: 2em;
+		padding-top: 1em;
+		padding-bottom: 0.5em;
+		padding-left: 2em;
+		padding-right: 2em;
 	}
 }
 
