@@ -71,7 +71,8 @@ nav .fa {
 
 .profile-col img {
 	height: 300px;
-	border-radius: 50%
+	border-radius: 50%;
+	border: 0.5em solid #fc0;
 }
 
 .profile-col h1 {
@@ -148,6 +149,7 @@ nav .fa {
 	.profile-col img {
 		height: 30em;
 		background-color: pink;
+		border: 1em solid #fc0;
 	}
 
 	.profile-col h1{
