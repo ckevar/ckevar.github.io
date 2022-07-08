@@ -175,14 +175,16 @@ a[href*="ckevar"] {
 a[href*="ckevar"]::before {
 	content: 'created by';
 	position: absolute;
-	top: -15%;
+	top: -20%;
+	left: 0%;
+	font-family: 'Poppins', sans-serif;
 	font-size: 0.5em;
 }
 
 a[href*="ckevar"]::after {
 	content: '';
 	position: absolute;
-	height: 0.2em;
+	height: 0.15em;
 	width: 100%;
 	top: 90%;
 	left: 50%;
