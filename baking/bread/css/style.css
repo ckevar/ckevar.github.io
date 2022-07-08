@@ -151,6 +151,7 @@ input[type=range] {
 .footer ul {
 	margin-left: 1em;
 }
+
 a {
 	position: relative;
 	text-decoration: none;
@@ -158,6 +159,7 @@ a {
 	text-decoration: none;
 	font-weight: 200;
 }
+
 a[href*="http"]::before {
 	font-family: FontAwesome;
 	content: '\f08e';
@@ -166,12 +168,14 @@ a[href*="http"]::before {
 	top: 0.3em;
 	color: white;
 }
+
 a[href*="ckevar"] {
 	position: absolute;
 	top: 0.7em;
 	left: 1em;
 	font-size: 1.5em;
 }
+
 a[href*="ckevar"]::before {
 	content: 'created by';
 	position: absolute;
@@ -214,7 +218,6 @@ a[href*="ckevar"]::after {
 		font-size: 4.5em;
 	}
 
-
 	form label,
 	form select,
 	form input {
@@ -230,6 +233,14 @@ a[href*="ckevar"]::after {
 		text-align: left;
 		margin-top: 0.95em;
 	}
+	.footer {
+		padding-top: 10em;
+	}
+
+	a[href*="ckevar"] {
+		font-size: 3em;
+	}
+
 }
 
 /*slide*/
