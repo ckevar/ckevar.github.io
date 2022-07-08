@@ -149,13 +149,26 @@ input[type=range] {
 		margin-top: 3%;
 		height: 20%;
 	}
+
 	h2{
 		font-size: 4.5em;
 	}
+
+
 	form label,
 	form select,
 	form input {
 		font-size: 2em;
+	}
+	.pizzaIngredient h3 {
+		font-size: 2em;
+		font-weight: 400;
+	}
+
+	.pizzaIngredient p {
+		font-size: 1.5em;
+		text-align: left;
+		margin-top: 0.95em;
 	}
 }
 
