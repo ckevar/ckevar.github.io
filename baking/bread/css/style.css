@@ -139,11 +139,18 @@ input[type=range] {
 	#listLang {
 		position: relative;
 		left: calc(50% - 4em);
-		top: 0;
+		top: 1em;
+		font-size: 2em;
+	}
+	.pizza_container {
+		margin-top: 6%;
 	}
 	.pizza_recipe {
 		margin-top: 3%;
 		height: 20%;
+	}
+	h2{
+		font-size: 4.5em;
 	}
 	form label,
 	form select,
@@ -174,7 +181,7 @@ input[type=range]::-webkit-slider-runnable-track {
 }
 input[type=range]::-webkit-slider-thumb {
   box-shadow: 0px 0px 0px #FFFFFF;
-  border: 1px solid #202124;
+  border: 2px solid #202124;
   height: 30px;
   width: 15px;
   border-radius: 5px;
