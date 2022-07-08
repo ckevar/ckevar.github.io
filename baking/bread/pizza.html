@@ -117,6 +117,7 @@
 		
 		if (pizza.oven == "homeOven")
 			twp = twp + 2;
+
 		if((pizza.leavenType == "freshYeast") || (pizza.leavenType == "dryYeast"))
 			twp = twp + pizza.leavenAmount;
 
@@ -129,24 +130,33 @@
 
 		if ((pizza.leavenType == "sourdough")) {
 			pizza.yeast = Math.round(pizza.flour * pizza.leavenAmount / 100);
-			pizza.flour = Math.round(pizza.flour - pizza.yeast / 2);
-			pizza.water = Math.round(pizza.water - pizza.yeast / 2);
+			pizza.flour = (pizza.flour - pizza.yeast / 2);
+			pizza.water = (pizza.water - pizza.yeast / 2);
 		} else if (pizza.leavenType == "motherYeast") {
 			pizza.yeast = Math.round(pizza.flour * pizza.leavenAmount / 100);
 			if((pizza.yeast % 3) == 1) 
 				pizza.yeast = pizza.yeast - 1;
 			else if ((pizza.yeast % 3) == 2) 
 				pizza.yeast = pizza.yeast + 1;
-			pizza.flour = Math.round(pizza.flour - pizza.yeast * 2 / 3);
-			pizza.water = Math.round(pizza.water - pizza.yeast * 1 / 3);
+			pizza.flour = (pizza.flour - pizza.yeast * 2 / 3);
+			pizza.water = (pizza.water - pizza.yeast * 1 / 3);
 		} else {
-			pizza.yeast = pizza.flour * pizza.leavenAmount / 100;
+			pizza.yeast = (pizza.flour * pizza.leavenAmount / 100);
+			// fresh yeast = (gr_flour x 23) / (percentage_hydration * fermentation_hour * ferementation_temperature);
+			pizza.ft = pizza.flour * 23 / (pizza.hydration * 4 * pizza.yeast)
+			if (pizza.leavenType == "dryYeast")
+				pizza.ft = pizza.ft / 3;
+
+			document.getElementById("fermentationTimeHours").innerHTML = pizza.ft.toPrecision(4)+'h';
 		}
+		pizza.flour = Math.round(pizza.flour);
+		pizza.water = Math.round(pizza.water);
+
 		document.getElementById("flourWeight").innerHTML = pizza.flour.toString() + 'g';
 		document.getElementById("waterWeight").innerHTML = pizza.water.toString() + 'g';
 		document.getElementById('saltWeight').innerHTML = pizza.salty.toString() + 'g';
 		document.getElementById('sugarWeight').innerHTML = pizza.sugar.toString() + 'g';
-		document.getElementById('levainWeight').innerHTML = pizza.yeast.toString() + 'g';
+		document.getElementById('levainWeight').innerHTML = pizza.yeast.toPrecision(4) + 'g';
 	}
 	function pizzaSaltFoo(arg) {
 		val = arg.value / 10;
@@ -164,7 +174,7 @@
 		const levtype = document.getElementById("levainTypeSelector").value;
 		var val = 0;
 		if((levtype == "freshYeast") || levtype == "dryYeast")
-			val = arg.value / 10;
+			val = arg.value / 100;
 		else 
 			val = arg.value;
 		document.getElementById("levainAmountId").innerHTML = pizzaVar.lang[pizzaVar.langDefault].content.levainAmount.label + ' ' + val.toString();
