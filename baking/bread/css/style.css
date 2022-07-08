@@ -155,8 +155,8 @@ a {
 	position: relative;
 	text-decoration: none;
 	color: white;
-	font-weight: 200;
 	text-decoration: none;
+	font-weight: 200;
 }
 a[href*="http"]::before {
 	font-family: FontAwesome;
