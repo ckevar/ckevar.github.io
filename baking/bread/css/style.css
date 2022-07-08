@@ -85,9 +85,8 @@ select{
 }
 
 .pizza_recipe {
-/*	background-color: #e5e5e5;
-	border-radius: 1em;*/
-	/*position: relative;*/
+	background-color: #e5e5e5;
+	border-radius: 1em;
 }
 
 
@@ -134,21 +133,23 @@ input[type=range] {
 }
 
 @media (max-width: 1000px) {
+	section {
+		margin-top: 4em;
+	}
+	#listLang {
+		position: relative;
+		left: calc(50% - 4em);
+		top: 0;
+	}
 	.pizza_recipe {
-		margin-top: 10em;
+		margin-top: 3%;
 		height: 20%;
-		background-color: pink;
 	}
-/*	h1 {
-		margin-top: 2em;
-	}*/
-	/*.pizza_container {*/
-/*		margin-top: 2em;
+	form label,
+	form select,
+	form input {
+		font-size: 2em;
 	}
-	.pizza_col {
-		height: 58vh;
-	}*/
-
 }
 
 /*slide*/
