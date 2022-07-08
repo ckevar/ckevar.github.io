@@ -120,7 +120,6 @@ nav .fa {
 	margin: auto;
 	color: #fff;
 	text-align: center;
-	/*padding-top: 100px;*/
 	top: 85%;
 	position: absolute;
 }
@@ -148,7 +147,6 @@ nav .fa {
 	}
 	.profile-col img {
 		height: min(50vw, 25vh);
-		/*background-color: pink;*/
 		border: 1em solid #fc0;
 	}
 
@@ -288,7 +286,7 @@ nav .fa {
 .ed_col {
 	background: #1d2a42;
 	border-radius: 10px;
-	padding: 20px 12px;
+	padding: 2em;
 	box-sizing: border-box;
 }
 
@@ -440,7 +438,7 @@ a[id^="photography_id"]::before {
 	background: #1d2a42;
 	border-radius: 10px;
 	margin-bottom: 5%;
-	padding: 20px 12px;
+	padding: 1.5em;
 	box-sizing: border-box;
 }
 .misc_col a {
@@ -513,10 +511,6 @@ a[id^="photography_id"]::before {
 }
 
 @media (max-width: 1000px) {
-	.misc_col ul {
-		margin: 2em;
-	}
-
 	.footer h4 {
 		font-size: 1.5em;
 	}
