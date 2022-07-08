@@ -156,7 +156,7 @@
 		document.getElementById("waterWeight").innerHTML = pizza.water.toString() + 'g';
 		document.getElementById('saltWeight').innerHTML = pizza.salty.toString() + 'g';
 		document.getElementById('sugarWeight').innerHTML = pizza.sugar.toString() + 'g';
-		document.getElementById('levainWeight').innerHTML = pizza.yeast.toPrecision(4) + 'g';
+		document.getElementById('levainWeight').innerHTML = pizza.yeast.toPrecision(3) + 'g';
 	}
 	function pizzaSaltFoo(arg) {
 		val = arg.value / 10;
@@ -187,6 +187,8 @@
 
 		document.getElementById("levainName").innerHTML = pizzaVar.lang[pizzaVar.langDefault].content.levainType.option[selector.selectedIndex];
 		const levainAmnt = document.getElementById("levainAmountInId");
+		document.getElementById("fermentationTimeHours").style.display = 'block';
+		document.getElementById("fermentationTimeId").style.display = 'block';
 		if(selector.value == "freshYeast") {
 			levainAmnt.min = 40;
 			levainAmnt.max = 60;
@@ -198,6 +200,9 @@
 		else if ((selector.value == "sourdough") || (selector.value == "motherYeast")) {
 			levainAmnt.min = 10;
 			levainAmnt.max = 20;
+			document.getElementById("fermentationTimeHours").style.display = 'none';
+			document.getElementById("fermentationTimeId").style.display = 'none';
+
 		}
 		levainAmountFoo(levainAmnt);
 		computePizza();
