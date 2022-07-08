@@ -230,9 +230,8 @@
 		document.getElementById("sugarId").innerHTML = pizzaVar.lang[j].content.ingredients[3]
 		document.getElementById("fermentationTimeId").innerHTML = pizzaVar.lang[j].content.ingredients[4];
 		const selector = document.getElementById("levainTypeSelector"); 
-		document.getElementById("levainName").innerHTML = pizzaVar.lang[pizzaVar.langDefault].content.levainType.option[selector.selectedIndex]
-		// document.getElementById("fermentationTimeHours").innerHTML = pizzaVar.lang[j].content
-		// document.getElementById("levainWeight").innerHTML = pizzaVar.lang[j].content
+		document.getElementById("levainName").innerHTML = pizzaVar.lang[pizzaVar.langDefault].content.levainType.option[selector.selectedIndex];
+		computePizza();
 	}
 
 </script>
