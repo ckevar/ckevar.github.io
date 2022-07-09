@@ -181,11 +181,13 @@ a[href*="http"]::before {
 	color: white;
 }
 
+/* FOOTER LOGO, footer logo */
 a[href*="ckevar"] {
 	position: absolute;
 	top: 0.7em;
 	left: 1em;
 	font-size: 1.5em;
+	color: #aaa;
 }
 
 a[href*="ckevar"]::before {
