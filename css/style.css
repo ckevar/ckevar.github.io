@@ -493,15 +493,25 @@ a[id^="baking_id"]::before
 .footer {
 	width: 100%;
 	text-align: center;
-	padding: 30px 0;
+	padding: 4em 0;
 	background: #fc0;
 	color: #1d2a42;
+	position: relative;
 }
-.icons .fa {
+.icons {
+	width: 60%;
+	display: flex;
+	flex-wrap: wrap;
+	margin: auto;
+	padding-top: 1em;
+}
+.icons > * {
+	flex-grow: 1;
 	margin: 0 13px;
 	cursor: pointer;
 	padding-top: 18px 0px;
 }
+
 .icons a{
 	color: #1d2a42;
 	text-decoration: none;
@@ -512,16 +522,61 @@ a[id^="baking_id"]::before
 	font-weight: 600;
 }
 
+/* FOOTER LOGO, footer logo */
+.footer > a[href*="ckevar"] {
+	position: absolute;
+	color: #555;
+	top: 1em;
+	left: 1em;
+	font-size: 1.5em;
+}
+
+.footer > a[href*="ckevar"]::before {
+	content: 'created by';
+	position: absolute;
+	top: -20%;
+	left: 0%;
+	font-family: 'Poppins', sans-serif;
+	font-size: 0.5em;
+	position: absolute;
+	color: #555;
+
+}
+
+.footer > a[href*="ckevar"]::after {
+	content: '';
+	position: absolute;
+	height: 0.15em;
+	width: 100%;
+	top: 90%;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #555;
+}
+
 @media (max-width: 1000px) {
+	.footer {
+		padding-block: 7em;
+	}
 	.footer h4 {
-		font-size: 1.5em;
+		font-size: 3em;
+		padding-top: 2em;
 	}
 
-	.footer a {
-		font-size: 1.3em;
+	.icons {
+		width: 80%
+	}
+	.icons > i {
+		font-size: 2.5em;
+		margin-top: 2em;
+	}
+	.footer > a[href*="ckevar"] {
+		font-size: 3em;
+	}
+	a[id^="photography_id"]::before,
+	a[id^="baking_id"]::before 
+	{
+		font-size: 0.7em;	
 	}
 
-	.footer i {
-		font-size: 1.3em;
-	}
 }
