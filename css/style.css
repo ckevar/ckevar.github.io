@@ -370,7 +370,9 @@ a[href*="_CV_"]::before {
 	content: '';
 }
 
-a[id^="photography_id"]::before {
+a[id^="photography_id"]::before,
+a[id^="baking_id"]::before 
+{
 	left: 87%;
 	color: #1d2a42;
 }
