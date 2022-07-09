@@ -110,14 +110,6 @@ section {
 	top: -25%;
 }
 
-.header h1::after{
-	position: absolute;
-	content: 'by ckevar';
-	top: 75%;
-	left: 28em;
-	font-size: 0.25em;
-	font-weight: 200;
-}
 .pizza_container {
 	display: flex;
 	flex-wrap: wrap;
