@@ -58,7 +58,7 @@
 		</div>
 
 		<div class="pizza_col pizza_recipe">
-			<h2 id="recipeId">Recipe</h2>
+			<h2 id="recipeId">Dough</h2>
 			<div class="pizzaIngredients">
 				<div class="pizzaIngredient"> 
 					<h3 id="flourId">Flour</h3>
@@ -114,6 +114,15 @@
 		levainAmountFoo(document.getElementById("levainAmountInId"));
 	}
 
+	function themeSelector(themeIdx){
+		if (themeIdx) {theme = themeIdx;}
+		else theme = Math.floor(Math.random() * 6).toString();
+		
+		document.documentElement.style.setProperty('--main-dark-color',pizzaVar.theme[theme].dark);
+		document.documentElement.style.setProperty('--main-middle-color',pizzaVar.theme[theme].clear);
+		document.documentElement.style.setProperty('--font-color-in-middle-background',pizzaVar.theme[theme].font);
+	}
+
 	window.onload = function () {
 		const listLang = document.getElementById("listLang");
 		for (var i = 0; i < pizzaVar.lang.length; i++) {
@@ -122,6 +131,7 @@
 			option.innerHTML = pizzaVar.lang[i].name;
 			listLang.appendChild(option);
 		}
+		themeSelector(5);
 		placeNumbers();
 		computePizza();
 	}

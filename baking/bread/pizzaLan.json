@@ -1,4 +1,13 @@
 pizzaVar = {
+	"theme": [
+		{"dark": "#009246", "clear":"#ce2b37","font":"white"}, 
+		{"dark": "#5a0001", "clear":"#f45b69","font":"white"}, 
+		{"dark": "#0a2342", "clear":"#84bc9c","font":"white"},
+		{"dark": "#202124", "clear":"#e5e5e5","font":"#202124"}, 
+		{"dark": "#1d2a42", "clear":"#fc0","font":"#202124"}, 
+		{"dark": "#003844", "clear":"#ffebc6","font":"#202124"}, 
+		{"dark": "#f05d23", "clear":"#c5d86d","font":"#202124"}, 
+	],
 	"langDefault" : 0,
 	"lang": [
 		{"name":"English",
@@ -70,7 +79,7 @@ pizzaVar = {
 				"pizzaSalt" : {
 					"label" : "SAL [%]",
 				},
-				"recipe" : "Receta",
+				"recipe" : "Masa",
 				"ingredients" : ["Harina", "Agua", "Sal", "Azucar", "Tiempo de Fermentacion"],
 				"author": {
 					"written" : "Christian Alvarado",
@@ -109,7 +118,7 @@ pizzaVar = {
 				"pizzaSalt" : {
 					"label" : "SALE [%]",
 				},
-				"recipe" : "Riceta",
+				"recipe" : "Impasto",
 				"ingredients" : ["Farina", "Aqua", "Sale", "Zucchero", "Tempo di Fermentazione"],
 				"author": {
 					"written" : "Christian Alvarado",

@@ -1,59 +1,7 @@
 :root {
-	--green-italian-flag: #009246;
-	--red-italian-flag: #ce2b37;
-	--font-color-in-dark-background: white;
-	--font-color-in-clear-background: #202124;
-
-	--google-dark-color: #202124;
-	--google-middle-color: #e5e5e5;
-
-	--mine-dark-color: #1d2a42;
-	--mine-middle-color: #fc0;
-
-	--t3-dark-color: #003844;
-	--t3-middle-color: #ffebc6;
-
-	--t4-dark-color: #f05d23;
-	--t4-middle-color: #c5d86d;
-	--t4-font-color: var(--font-color-in-clear-background);
-
-
-	--t5-dark-color: #5a0001;
-	--t5-middle-color: #f45b69;
-	--t5-font-color: var(--font-color-in-dark-background);
-	
-	--t6-dark-color: #0a2342;
-	--t6-middle-color: #84bc9c;
-	--t6-font-color: var(--font-color-in-dark-background);
-	/* THEME ONE */
-	/*
-	--main-dark-color: var(--red-italian-flag);
-	--main-middle-color: var(--green-italian-flag);
-	--font-color-in-dark-background: white;
-	--font-color-in-clear-background: #202124;
-	--font-color-in-middle-background: var(--font-color-in-dark-background);
-	*/
-
-	/* THEME TWO */
-	/*
-	--main-dark-color: var(--mine-dark-color);
-	--main-middle-color: var(--mine-middle-color);
-	--font-color-in-dark-background: white;
-	--font-color-in-clear-background: #202124;
-	--font-color-in-middle-background: var(--font-color-in-clear-background);
-	*/
-
-	/* THEME THREE */
-	/*
-	--main-dark-color: var(--t3-dark-color);
-	--main-middle-color: var(--t3-middle-color);
-	--font-color-in-middle-background: var(--font-color-in-clear-background);
-	*/
-
-	/* THEME FOUR */
-	--main-dark-color: var(--t4-dark-color);
-	--main-middle-color: var(--t4-middle-color);
-	--font-color-in-middle-background: var(--t4-font-color);
+	--main-dark-color: var(--t0-dark-color);
+	--main-middle-color: var(--t0-middle-color);
+	--font-color-in-middle-background: var(--t0-font-color);
 }
 
 *{
@@ -69,6 +17,7 @@ h1 {
 	font-size: 3em;
 	position: relative;
 	margin-left: 1em;
+	margin-top: 0.4em;
 	color: var(--text-header-color);
 }
 
@@ -188,18 +137,6 @@ input[type=number] {
 .pizzaIngredient > *{
 	margin: 0.5em;
 	width: 50%
-}
-
-
-#fermentationTimeId {
-	position: relative;
-}
-#fermentationTimeId::after {
-	position: absolute;
-	content: '1';
-	font-size: 0.7em;
-	top: -20%;
-	left: 99%;
 }
 
 input[type=range] {
