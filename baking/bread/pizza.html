@@ -187,16 +187,15 @@
 	window.onload = function () {
 		const listLang = document.getElementById("listLang");
 
-		for (var i = 0; i < pizzaVar.lang.length; i++) {
+		for (var i = pizzaVar.lang.available.length - 1; i >= 0; i--) {
 			const option = document.createElement("option");
-			option.setAttribute("value", pizzaVar.lang[i].name);
-			option.innerHTML = pizzaVar.lang[i].name;
+			option.setAttribute("value", pizzaVar.lang.available[i].val);
+			option.innerHTML = pizzaVar.lang.available[i].name;
 			listLang.appendChild(option);
 		}
-
+		switchLanguage(listLang);
 		themeSelector(1);
 		placeNumbers();
-		initPizza();
 		computePizza();
 	}
 
@@ -317,13 +316,13 @@
 	function pizzaSaltFoo(arg) {
 		val = arg.value / 10;
 		pizza.percentage.salt = val;
-		document.getElementById("pizzaSaltId").innerHTML = pizzaVar.lang[pizzaVar.langDefault].content.pizzaSalt.label + ' ' + val.toString();
+		document.getElementById("pizzaSaltId").innerHTML = pizzaVar.lang[pizzaVar.lang.default].pizzaSalt.label + ' ' + val.toString();
 		computePizza();
 	}
 	function pizzaHydrationFoo(arg) {
 		val = arg.value;
 		pizza.percentage.hydration = Number(val);
-		document.getElementById("pizzaHydrationId").innerHTML = pizzaVar.lang[pizzaVar.langDefault].content.pizzaHydration.label + ' ' + val;
+		document.getElementById("pizzaHydrationId").innerHTML = pizzaVar.lang[pizzaVar.lang.default].pizzaHydration.label + ' ' + val;
 		computePizza();
 	}
 	function leavenAmountFoo(arg) {
@@ -332,7 +331,7 @@
 		if((levtype == "freshYeast") || levtype == "dryYeast")
 			val = val / 100;
 
-		document.getElementById("levainAmountId").innerHTML = pizzaVar.lang[pizzaVar.langDefault].content.levainAmount.label + ' ' + val.toString();
+		document.getElementById("levainAmountId").innerHTML = pizzaVar.lang[pizzaVar.lang.default].levainAmount.label + ' ' + val.toString();
 		pizza.leavenType = levtype;
 		pizza.percentage.leaven = val;
 		computePizza();
@@ -359,7 +358,7 @@
 
 	function leavenTypeFoo(selector) {
 
-		document.getElementById("levainName").innerHTML = pizzaVar.lang[pizzaVar.langDefault].content.levainType.option[selector.selectedIndex];
+		document.getElementById("levainName").innerHTML = pizzaVar.lang[pizzaVar.lang.default].levainType.option[selector.selectedIndex];
 		const levainAmnt = document.getElementById("levainAmountInId");
 		document.getElementById("fermentationTimeHours").style.display = 'block';
 		document.getElementById("fermentationTimeId").style.display = 'block';
@@ -386,37 +385,33 @@
 		computePizza();
 	}
 	function switchLanguage(listLang) {
-		for (var i = pizzaVar.lang.length - 1; i >= 0; i--) {
-			if (pizzaVar.lang[i].name == listLang.value) {
-				pizzaVar.langDefault = i;
-				break;
-			}
-		}
-		const j = pizzaVar.langDefault;
-		document.getElementById("settingsId").innerHTML = pizzaVar.lang[j].content.settings;
-		document.getElementById("ovenTypeId").innerHTML = pizzaVar.lang[j].content.ovenType.label;
-		document.getElementById("homeOvenId").innerHTML = pizzaVar.lang[j].content.ovenType.option[0];
-		document.getElementById("woodFiredOvenId").innerHTML = pizzaVar.lang[j].content.ovenType.option[1];
-		document.getElementById("levainTypeId").innerHTML = pizzaVar.lang[j].content.levainType.label;
-		document.getElementById("dryYeastId").innerHTML = pizzaVar.lang[j].content.levainType.option[0]
-		document.getElementById("freshYeastId").innerHTML = pizzaVar.lang[j].content.levainType.option[1];
-		document.getElementById("bigaId").innerHTML = pizzaVar.lang[j].content.levainType.option[2];
-		document.getElementById("poolishId").innerHTML = pizzaVar.lang[j].content.levainType.option[3];
-		document.getElementById("sourdoughId").innerHTML = pizzaVar.lang[j].content.levainType.option[4];
-		document.getElementById("motherYeastId").innerHTML = pizzaVar.lang[j].content.levainType.option[5];
-		document.getElementById("levainAmountId").innerHTML = pizzaVar.lang[j].content.levainAmount.label;
-		document.getElementById("pizzaWeightId").innerHTML = pizzaVar.lang[j].content.pizzaWeight.label;
-		document.getElementById("pizzaUnitsId").innerHTML = pizzaVar.lang[j].content.pizzaUnits.label;
-		document.getElementById("pizzaHydrationId").innerHTML = pizzaVar.lang[j].content.pizzaHydration.label;
-		document.getElementById("recipeId").innerHTML = pizzaVar.lang[j].content.recipe;
-		document.getElementById("pizzaSaltId").innerHTML = pizzaVar.lang[j].content.pizzaSalt.label;
-		document.getElementById("flourId").innerHTML = pizzaVar.lang[j].content.ingredients[0];
-		document.getElementById("waterId").innerHTML = pizzaVar.lang[j].content.ingredients[1];
-		document.getElementById("saltId").innerHTML = pizzaVar.lang[j].content.ingredients[2];
-		document.getElementById("sugarId").innerHTML = pizzaVar.lang[j].content.ingredients[3]
-		document.getElementById("fermentationTimeId").innerHTML = pizzaVar.lang[j].content.ingredients[4];
+		if(listLang.value)
+			pizzaVar.lang.default = listLang.value;
+		const j = pizzaVar.lang.default;
+		document.getElementById("settingsId").innerHTML = pizzaVar.lang[j].settings;
+		document.getElementById("ovenTypeId").innerHTML = pizzaVar.lang[j].ovenType.label;
+		document.getElementById("homeOvenId").innerHTML = pizzaVar.lang[j].ovenType.option[0];
+		document.getElementById("woodFiredOvenId").innerHTML = pizzaVar.lang[j].ovenType.option[1];
+		document.getElementById("levainTypeId").innerHTML = pizzaVar.lang[j].levainType.label;
+		document.getElementById("dryYeastId").innerHTML = pizzaVar.lang[j].levainType.option[0]
+		document.getElementById("freshYeastId").innerHTML = pizzaVar.lang[j].levainType.option[1];
+		document.getElementById("bigaId").innerHTML = pizzaVar.lang[j].levainType.option[2];
+		document.getElementById("poolishId").innerHTML = pizzaVar.lang[j].levainType.option[3];
+		document.getElementById("sourdoughId").innerHTML = pizzaVar.lang[j].levainType.option[4];
+		document.getElementById("motherYeastId").innerHTML = pizzaVar.lang[j].levainType.option[5];
+		document.getElementById("levainAmountId").innerHTML = pizzaVar.lang[j].levainAmount.label;
+		document.getElementById("pizzaWeightId").innerHTML = pizzaVar.lang[j].pizzaWeight.label;
+		document.getElementById("pizzaUnitsId").innerHTML = pizzaVar.lang[j].pizzaUnits.label;
+		document.getElementById("pizzaHydrationId").innerHTML = pizzaVar.lang[j].pizzaHydration.label;
+		document.getElementById("recipeId").innerHTML = pizzaVar.lang[j].recipe;
+		document.getElementById("pizzaSaltId").innerHTML = pizzaVar.lang[j].pizzaSalt.label;
+		document.getElementById("flourId").innerHTML = pizzaVar.lang[j].ingredients[0];
+		document.getElementById("waterId").innerHTML = pizzaVar.lang[j].ingredients[1];
+		document.getElementById("saltId").innerHTML = pizzaVar.lang[j].ingredients[2];
+		document.getElementById("sugarId").innerHTML = pizzaVar.lang[j].ingredients[3]
+		document.getElementById("fermentationTimeId").innerHTML = pizzaVar.lang[j].ingredients[4];
 		const selector = document.getElementById("levainTypeSelector"); 
-		document.getElementById("levainName").innerHTML = pizzaVar.lang[pizzaVar.langDefault].content.levainType.option[selector.selectedIndex];
+		document.getElementById("levainName").innerHTML = pizzaVar.lang[pizzaVar.lang.default].levainType.option[selector.selectedIndex];
 		placeNumbers();
 	}
 

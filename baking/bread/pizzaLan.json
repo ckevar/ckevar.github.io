@@ -109,125 +109,122 @@ pizzaVar = {
 		},
 		"pinsa" : {},
 	},
-	"langDefault" : 0,
-	"lang": [
-		{"name":"English",
-			"content" : {
-				"writtenStatus" : "original", 
-				"settings" : "Settings",
-				"ovenType" : {
-					"label" : "OVEN",
-					"num" : 2,
-					"option" : ["Home Oven", "Wood-fired Oven"]
-				},
-				"levainType" : {
-					"label" : "LEAVEN",
-					"num" : 6,
-					"option" : ["Dry Yeast", "Fresh Yeast", "Biga", "Poolish", "Sourdough", "Mother Yeast"],
-					"ref" : [null, null, null, null, null, null]
-				},
-				"levainAmount" : {
-					"label" : "LEAVEN AMOUNT [%]",
-				},
-				"pizzaWeight" : {
-					"label" : "PIZZA WEIGHT [grams]",
-				},
-				"pizzaUnits" : {
-					"label" : "PIZZA UNITS",
-				},
-				"pizzaHydration" : {
-					"label" : "HYDRATION [%]",
-				},
-				"pizzaSalt" : {
-					"label" : "SALT [%]",
-				},
-				"recipe" : "Recipe",
-				"ingredients" : ["Flour", "Water", "Salt", "Sugar", "Fermentation Time"],
-				"author": {
-					"written" : "Christian Alvarado",
-					"corrected" : [],
-					"translated" : null,
-				}
-			} 
-		}, 
-		{"name": "Español",
-			"content" : {
-				"writtenStatus" : "translated", 
-				"settings" : "Configuracion",
-				"ovenType" : {
-					"label" : "HORNO",
-					"num" : 2,
-					"option" : ["Horno de Casa", "Horno a Leña"]
-				},
-				"levainType" : {
-					"label" : "LEVADURA",
-					"num" : 6,
-					"option" : ["Levadura Seca", "Levadura Fresca", "Biga", "Poolish", "Sourdough", "Masa Madre"],
-					"ref" : [null, null, null, null, null, null]
-				},
-				"levainAmount" : {
-					"label" : "PORCENTAGE DE LEVADURA [%]",
-				},
-				"pizzaWeight" : {
-					"label" : "PESO DE LA PIZZA [grams]",
-				},
-				"pizzaUnits" : {
-					"label" : "UNIDADES DE PIZZA ",
-				},
-				"pizzaHydration" : {
-					"label" : "HIDRATACION [%]",
-				},
-				"pizzaSalt" : {
-					"label" : "SAL [%]",
-				},
-				"recipe" : "Masa",
-				"ingredients" : ["Harina", "Agua", "Sal", "Azucar", "Tiempo de Fermentacion"],
-				"author": {
-					"written" : "Christian Alvarado",
-					"corrected" : [],
-					"translated" : "Christian Alvarado",
-				}
-			}	
+	"lang": {
+		"default" : "english",
+		"available" : [
+			{"name":"English","val":"english"}, 
+			{"name":"Español", "val":"spanish"}, 
+			{"name":"Italiano", "val":"italian"}],
+		"english": {
+			"writtenStatus" : "original", 
+			"settings": "Settings",
+			"ovenType" : {
+				"label" : "OVEN",
+				"num" : 2,
+				"option" : ["Home Oven", "Wood-fired Oven"]
+			},
+			"levainType" : {
+				"label" : "LEAVEN",
+				"num" : 6,
+				"option" : ["Dry Yeast", "Fresh Yeast", "Biga", "Poolish", "Sourdough", "Mother Yeast"],
+			},
+			"levainAmount" : {
+				"label" : "LEAVEN AMOUNT [%]",
+			},
+			"pizzaWeight" : {
+				"label" : "PIZZA WEIGHT [grams]",
+			},
+			"pizzaUnits" : {
+				"label" : "PIZZA UNITS",
+			},
+			"pizzaHydration" : {
+				"label" : "HYDRATION [%]",
+			},
+			"pizzaSalt" : {
+				"label" : "SALT [%]",
+			},
+			"recipe" : "Recipe",
+			"ingredients" : ["Flour", "Water", "Salt", "Sugar", "Fermentation Time"],
+			"author": {
+				"written" : "Christian Alvarado",
+				"corrected" : [],
+				"translated" : null,
+			}
 		},
-		{"name": "Italian",
-			"content" : {
-				"writtenStatus" : "translated", 
-				"settings" : "Impostazioni",
-				"ovenType" : {
-					"label" : "FORNO",
-					"num" : 2,
-					"option" : ["Forno Domestico", "Forno a Legna"]
-				},
-				"levainType" : {
-					"label" : "LIEVITO",
-					"num" : 6,
-					"option" : ["Lievito Secco", "Lievito Fresco", "Biga", "Poolish", "Sourdough", "Lievito Madre"],
-					"ref" : [null, null, null, null, null, null]
-				},
-				"levainAmount" : {
-					"label" : "QUANTITÀ DI LIEVIDI [%]",
-				},
-				"pizzaWeight" : {
-					"label" : "PESO DELLA PIZZA [grams]",
-				},
-				"pizzaUnits" : {
-					"label" : "UNIDÀ DE PIZZA ",
-				},
-				"pizzaHydration" : {
-					"label" : "IDRATAZIONE [%]",
-				},
-				"pizzaSalt" : {
-					"label" : "SALE [%]",
-				},
-				"recipe" : "Impasto",
-				"ingredients" : ["Farina", "Aqua", "Sale", "Zucchero", "Tempo di Fermentazione"],
-				"author": {
-					"written" : "Christian Alvarado",
-					"corrected" : [],
-					"translated" : "Christian Alvarado",
-				}
-			}	
+		"spanish": {
+			"writtenStatus" : "translated", 
+			"settings" : "Configuracion",
+			"ovenType" : {
+				"label" : "HORNO",
+				"num" : 2,
+				"option" : ["Horno de Casa", "Horno a Leña"]
+			},
+			"levainType" : {
+				"label" : "LEVADURA",
+				"num" : 6,
+				"option" : ["Levadura Seca", "Levadura Fresca", "Biga", "Poolish", "Sourdough", "Masa Madre"],
+				"ref" : [null, null, null, null, null, null]
+			},
+			"levainAmount" : {
+				"label" : "PORCENTAGE DE LEVADURA [%]",
+			},
+			"pizzaWeight" : {
+				"label" : "PESO DE LA PIZZA [grams]",
+			},
+			"pizzaUnits" : {
+				"label" : "UNIDADES DE PIZZA ",
+			},
+			"pizzaHydration" : {
+				"label" : "HIDRATACION [%]",
+			},
+			"pizzaSalt" : {
+				"label" : "SAL [%]",
+			},
+			"recipe" : "Masa",
+			"ingredients" : ["Harina", "Agua", "Sal", "Azucar", "Tiempo de Fermentacion"],
+			"author": {
+				"written" : "Christian Alvarado",
+				"corrected" : [],
+				"translated" : "Christian Alvarado",
+			}
+		},
+		"italian": {
+			"writtenStatus" : "translated", 
+			"settings" : "Impostazioni",
+			"ovenType" : {
+				"label" : "FORNO",
+				"num" : 2,
+				"option" : ["Forno Domestico", "Forno a Legna"]
+			},
+			"levainType" : {
+				"label" : "LIEVITO",
+				"num" : 6,
+				"option" : ["Lievito Secco", "Lievito Fresco", "Biga", "Poolish", "Sourdough", "Lievito Madre"],
+				"ref" : [null, null, null, null, null, null]
+			},
+			"levainAmount" : {
+				"label" : "QUANTITÀ DI LIEVIDI [%]",
+			},
+			"pizzaWeight" : {
+				"label" : "PESO DELLA PIZZA [grams]",
+			},
+			"pizzaUnits" : {
+				"label" : "UNIDÀ DE PIZZA ",
+			},
+			"pizzaHydration" : {
+				"label" : "IDRATAZIONE [%]",
+			},
+			"pizzaSalt" : {
+				"label" : "SALE [%]",
+			},
+			"recipe" : "Impasto",
+			"ingredients" : ["Farina", "Aqua", "Sale", "Zucchero", "Tempo di Fermentazione"],
+			"author": {
+				"written" : "Christian Alvarado",
+				"corrected" : [],
+				"translated" : "Christian Alvarado",
+			}
 		},
 		// HERE TO ADD ANOTHER LANGUAGE
-	]
+	}, 
 }
