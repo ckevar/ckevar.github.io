@@ -23,6 +23,30 @@
 		<div class="pizza_col">
 			<h2 id="settingsId">Settings</h2>
 			<form>
+				<label for="presets" id="presetsId">PRESETS</label>
+
+				<select name="presets" onchange="presetsFoo(this)" id="presetsSelectorId">
+					<option value="" id="minePizzaId" selected disabled="">Click here If you have no idea</option>
+					<optgroup label="Pizza">
+						<option value="bonciPizza" id="bonciPizzaId">Bonci</option>
+						<option value="cAlvaradoPizza" id="CAlvaradoPizzaId">C. Alvarado</option>
+						<option value="vIacopeeliPizza" id="VIacopeeliPizzaId">V. Iacopelli</option>
+						<option value="vIacopeeliPizzaBiga" id="VIacopeeliPizzaBigaId">V. Iacopelli - Biga</option>
+						<option value="vIacopeeliPizzaPoolish" id="VIacopeeliPizzaPoolishId">V. Iacopelli - Poolish</option>
+					</optgroup>
+					<optgroup label="Pinsa">
+						<option value="vAlvaradoPinsa" id="CAlvaradoPinsaId">C. Alvarado</option>
+						<option value="gZafferanoPinsa" id="GZafferanoPinsaId">G. Zafferano</option>
+						<option value="mMontuoriPinsa" id="MMontuoriPinsaId">M. Montuori</option>
+					</optgroup>
+					<optgroup label="Focaccia">
+						<option value="cAlvaradoFocaccia" id="CAlvaradoFocacciaId">C. Alvarado</option>
+						<option value="gZafferanoFocaccia" id="GZafferanoFocacciaId">G. Zafferano</option>
+					</optgroup>
+					<option value="" id="customId" >Custome</option>
+
+				</select>
+
 				<label for="ovenType" id="ovenTypeId">OVEN</label>
 				<select name="ovenType" onchange="ovenTypeFoo(this)" id="ovenTypeSelector">
 					<option value="homeOven" id="homeOvenId" selected>Home Oven</option>
@@ -30,7 +54,7 @@
 				</select>
 
 				<label for="levainType" id="levainTypeId">LEAVEN</label>
-				<select name="levainType" onchange="levainTypeFoo(this)" id="levainTypeSelector">
+				<select name="levainType" onchange="leavenTypeFoo(this)" id="levainTypeSelector">
 					<option value="dryYeast" id="dryYeastId" selected>Dry Yeast</option>
 					<option value="freshYeast" id="freshYeastId">Fresh Yeast</option>
 					<option value="biga" id="bigaId" disabled="">Biga</option>
@@ -40,7 +64,7 @@
 				</select>
 
 				<label for="levainAmount" id="levainAmountId">LEVAIN AMOUNT [%]</label>
-				<input type="range" name="levainAmount" id="levainAmountInId" min="40" max="60" value="40" onchange="levainAmountFoo(this)">
+				<input type="range" name="levainAmount" id="levainAmountInId" min="40" max="60" value="40" onchange="leavenAmountFoo(this)">
 
 				<label for="pizzaWeight" id="pizzaWeightId">PIZZA WEIGHT [grams]</label>
 				<input type="number" name="pizzaWeight" id="pizzaWeightInId" value="280" onchange="computePizza()">
@@ -58,8 +82,27 @@
 		</div>
 
 		<div class="pizza_col pizza_recipe">
+			<h2 id="prefermentId">Preferment</h2>
+			<div id="prefermentIngredientsId">
+				<div class="pizzaIngredient"> 
+					<h3 id="prefermentFlourId">Flour</h3>
+					<p id="prefermentFlourWeight">100g</p>
+				</div>
+				<div class="pizzaIngredient"> 
+					<h3 id="prefermentWaterId">Water</h3>
+					<p id="prefermentflourWeight">100g</p>
+				</div>
+				<div class="pizzaIngredient"> 
+					<h3 id="prefermentWaterId">Yeast</h3>
+					<p id="prefermentflourWeight">100g</p>
+				</div>
+				<div class="pizzaIngredient"> 
+					<h3 id="prefermentWaterId">Sugar/Honey</h3>
+					<p id="prefermentflourWeight">10g</p>
+				</div>
+			</div>
 			<h2 id="recipeId">Dough</h2>
-			<div class="pizzaIngredients">
+			<div>
 				<div class="pizzaIngredient"> 
 					<h3 id="flourId">Flour</h3>
 					<p id="flourWeight">100g</p>
@@ -86,6 +129,10 @@
 					<h3 id="fermentationTimeId">Fermentation Time</h3>
 					<p id="fermentationTimeHours">2h</p>
 				</div>
+				<div class="pizzaIngredient"> 
+					<h3 id="noteTitleId">Note</h3>
+					<p id="noteContentId">...</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -95,142 +142,228 @@
 		<h3>Reference</h3>
 		<ul>
 			<li><a href="https://www.pizzanapoletana.org/en/ricetta_pizza_napoletana">International regulations for Napolitan Pizza.</a></lu>
-			<li><a href="https://blog.giallozafferano.it/dulcisinforno/pizza-bonci/">Amount of fresh yeast: Pizza Bonci, impasto per pizza lievitazione 24 ore.</a></lu>
+			<li><a href="https://blog.giallozafferano.it/dulcisinforno/pizza-bonci/">Pizza Bonci, impasto per pizza lievitazione 24 ore.</a></lu>
 			<li><a href="https://github.com/hendricius/pizza-dough">Pizza Dough.</a></li>
 			<li><a href="https://pizza-calculator.the-bread-code.io/">Pizza Calculator (inspiration).</a></li>
-			<li><a href="https://youtu.be/WidvoXBsDbI?t=939">Fermentation Time: 3 Secretos de un Pizzaiolo Napoletano.</a></lu>
-			<li><a href="https://calcmasa.com/es/index.html">General Dough Calculator</a></lu>
+			<li><a href="https://youtu.be/WidvoXBsDbI?t=939">Fermentation Time: 3 Secretos de un Pizzaiolo Napoletano.</a></li>
+			<li><a href="https://calcmasa.com/es/index.html">General Dough Calculator</a></li>
+			<li><a href="https://www.youtube.com/watch?v=Qbw5DUDK7Fs">Biga-based Pizza</a></li>
+			<li><a href="https://www.youtube.com/c/vitoiacopelli">Poolish-based Pizza</a></li>
+			<li><a href="https://www.youtube.com/watch?v=C3Gtsc6u5pU">Pinsa Romana con Mauro Montuori</a></li>
+			<li><a href="https://ricette.giallozafferano.it/Pinsa-romana.html">Giallo Zafferano's Pinsa Romana</a></li>
 		</ul>
 	</div>
 	<a href="https://ckevar.github.io"><i>ckevar</i></a>
 </section>
+
 <script type="text/javascript">
-	var pizza = {};
+	let pizza = {};
+	pizza.weight = {};
+	pizza.percentage = {};
+
 	function placeNumbers(){
 		ovenTypeFoo(document.getElementById("ovenTypeSelector"));
-		levainTypeFoo(document.getElementById("levainTypeSelector"));
+		leavenTypeFoo(document.getElementById("levainTypeSelector"));
 		pizzaSaltFoo(document.getElementById("pizzaSaltInId"));
 		pizzaHydrationFoo(document.getElementById("pizzaHydrationInId"));
-		levainAmountFoo(document.getElementById("levainAmountInId"));
+		leavenAmountFoo(document.getElementById("levainAmountInId"));
 	}
 
 	function themeSelector(themeIdx){
-		if (themeIdx) {theme = themeIdx;}
+		if (themeIdx != null) {theme = themeIdx;}
 		else theme = Math.floor(Math.random() * 6).toString();
 		
 		document.documentElement.style.setProperty('--main-dark-color',pizzaVar.theme[theme].dark);
 		document.documentElement.style.setProperty('--main-middle-color',pizzaVar.theme[theme].clear);
 		document.documentElement.style.setProperty('--font-color-in-middle-background',pizzaVar.theme[theme].font);
+		document.documentElement.style.setProperty('--footer-color',pizzaVar.theme[theme].footer);
 	}
 
 	window.onload = function () {
 		const listLang = document.getElementById("listLang");
+
 		for (var i = 0; i < pizzaVar.lang.length; i++) {
 			const option = document.createElement("option");
 			option.setAttribute("value", pizzaVar.lang[i].name);
 			option.innerHTML = pizzaVar.lang[i].name;
 			listLang.appendChild(option);
 		}
-		themeSelector(5);
+
+		themeSelector(1);
 		placeNumbers();
 		computePizza();
 	}
 
 	function computePizza(){
 		var numPizzas = document.getElementById("pizzaUnitsInId").value;
-		pizza.wPizzas = document.getElementById("pizzaWeightInId").value * numPizzas;
-		var twp = pizza.hydration + pizza.salt;
-		
+
+		pizza.percentage.flour = 100;
+
+		pizza.weight.total = document.getElementById("pizzaWeightInId").value * numPizzas;
+		pizza.percentage.total = pizza.percentage.flour + pizza.percentage.hydration + pizza.percentage.salt;
+
+		if (pizza.percentage.oil == null) 
+			pizza.percentage.sugar = 2;
+
 		if (pizza.oven == "homeOven")
-			twp = twp + 2;
+			pizza.percentage.total = pizza.percentage.total + pizza.percentage.sugar + pizza.percentage.oil;
 
 		if((pizza.leavenType == "freshYeast") || (pizza.leavenType == "dryYeast"))
-			twp = twp + pizza.leavenAmount;
+			pizza.percentage.total = pizza.percentage.total + pizza.percentage.leaven;
 
-		twp = twp / 100 + 1;
+		pizza.percentage.total = pizza.percentage.total / 100;
 
-		pizza.flour = pizza.wPizzas / twp;
-		pizza.salty = Math.round(pizza.flour * pizza.salt / 100);
-		pizza.sugar = Math.round(pizza.flour * 2 / 100);
-		pizza.water = pizza.flour * pizza.hydration / 100;
+		pizza.weight.flour = pizza.weight.total / pizza.percentage.total;
+		pizza.weight.salt = Math.round(pizza.weight.flour * pizza.percentage.salt / 100);
+		pizza.weight.sugar = Math.round(pizza.weight.flour * pizza.percentage.sugar / 100);
+		pizza.weight.water = pizza.weight.flour * pizza.percentage.hydration / 100;
 
 		if ((pizza.leavenType == "sourdough")) {
-			pizza.yeast = Math.round(pizza.flour * pizza.leavenAmount / 100);
-			pizza.flour = (pizza.flour - pizza.yeast / 2);
-			pizza.water = (pizza.water - pizza.yeast / 2);
+			pizza.weight.yeast = Math.round(pizza.weight.flour * pizza.percentage.leaven / 100);
+			pizza.weight.flour = (pizza.weight.flour - pizza.weight.yeast / 2);
+			pizza.weight.water = (pizza.weight.water - pizza.weight.yeast / 2);
+
 		} else if (pizza.leavenType == "motherYeast") {
-			pizza.yeast = Math.round(pizza.flour * pizza.leavenAmount / 100);
-			if((pizza.yeast % 3) == 1) 
-				pizza.yeast = pizza.yeast - 1;
-			else if ((pizza.yeast % 3) == 2) 
-				pizza.yeast = pizza.yeast + 1;
-			pizza.flour = (pizza.flour - pizza.yeast * 2 / 3);
-			pizza.water = (pizza.water - pizza.yeast * 1 / 3);
+			pizza.weight.yeast = Math.round(pizza.weight.flour * pizza.percentage.leaven / 100);
+			if((pizza.weight.yeast % 3) == 1) 
+				pizza.weight.yeast = pizza.weight.yeast - 1;
+			else if ((pizza.weight.yeast % 3) == 2) 
+				pizza.weight.yeast = pizza.weight.yeast + 1;
+			pizza.weight.flour = (pizza.weight.flour - pizza.weight.yeast * 2 / 3);
+			pizza.weight.water = (pizza.weight.water - pizza.weight.yeast * 1 / 3);
+
 		} else {
-			pizza.yeast = (pizza.flour * pizza.leavenAmount / 100);
+			pizza.weight.yeast = (pizza.weight.flour * pizza.percentage.leaven / 100);
 			// fresh yeast = (gr_flour x 23) / (percentage_hydration * fermentation_hour * ferementation_temperature);
-			pizza.ft = pizza.flour * 23 / (pizza.hydration * 4 * pizza.yeast)
+			pizza.ft = pizza.weight.flour * 23 / (pizza.percentage.hydration * 4 * pizza.weight.yeast)
 			if (pizza.leavenType == "dryYeast")
 				pizza.ft = pizza.ft / 3;
 
 			document.getElementById("fermentationTimeHours").innerHTML = pizza.ft.toPrecision(4)+'h';
 		}
-		pizza.flour = Math.round(pizza.flour);
-		pizza.water = Math.round(pizza.water);
+		pizza.weight.flour = Math.round(pizza.weight.flour);
+		pizza.weight.water = Math.round(pizza.weight.water);
 
-		document.getElementById("flourWeight").innerHTML = pizza.flour.toString() + 'g';
-		document.getElementById("waterWeight").innerHTML = pizza.water.toString() + 'g';
-		document.getElementById('saltWeight').innerHTML = pizza.salty.toString() + 'g';
-		document.getElementById('sugarWeight').innerHTML = pizza.sugar.toString() + 'g';
-		document.getElementById('levainWeight').innerHTML = pizza.yeast.toPrecision(3) + 'g';
+		document.getElementById("flourWeight").innerHTML = pizza.weight.flour.toString() + 'g';
+		document.getElementById("waterWeight").innerHTML = pizza.weight.water.toString() + 'g';
+		document.getElementById('saltWeight').innerHTML = pizza.weight.salt.toString() + 'g';
+		document.getElementById('sugarWeight').innerHTML = pizza.weight.sugar.toString() + 'g';
+		document.getElementById('levainWeight').innerHTML = pizza.weight.yeast.toPrecision(3) + 'g';
+	}
+
+	/*Input Reaction Functions*/
+	function presetsFoo(selector) {
+		function loadValuesIntoUI () {
+			document.getElementById("ovenTypeSelector").value = pizza.oven;
+			document.getElementById("pizzaWeightInId").value = pizza.weight.total;
+
+			/***********************/
+			tmpElement = document.getElementById("pizzaHydrationInId");
+			tmpElement.value = pizza.percentage.hydration;
+			pizzaHydrationFoo(tmpElement);
+			
+			/***********************/
+			tmpElement = document.getElementById("pizzaSaltInId");
+			tmpElement.value = pizza.percentage.salt * 10;	// Re-arrenges the scale 
+			pizzaSaltFoo(tmpElement);
+
+			/***********************/
+			var tmpElement = document.getElementById("levainTypeSelector");
+			var minmax = returnLeavenAmount(pizza.leavenType);
+			tmpElement.value = pizza.leavenType;
+
+			tmpElement = document.getElementById("levainAmountInId");
+			tmpElement.min = minmax[0];
+			tmpElement.max = minmax[1];
+			if (pizza.leavenType == "freshYeast" || pizza.leavenType == "dryYeast") {
+				// Since Input-Range only allows int numbers and the yeast amount can 
+				// go from below 1, it's better to multiply it by 100;
+				tmpElement.value = (pizza.percentage.leaven * 100).toString();
+			} else {
+				tmpElement.value = pizza.percentage.leaven;
+			}
+			leavenAmountFoo(tmpElement);
+
+			/***********************/
+			if(pizza.preferment) {
+				document.getElementById("prefermentId").style.display = "block";
+				document.getElementById("prefermentIngredientsId").style.display = "block";
+			} else {
+				document.getElementById("prefermentId").style.display = "none";
+				document.getElementById("prefermentIngredientsId").style.display = "none";
+			}
+
+
+		}
+
+		if (selector.value == "bonciPizza") {
+			pizza = pizzaVar.presets.pizza.bonci.features;
+			loadValuesIntoUI();
+
+		} else if (selector.value == "cAlvaradoPizza") {
+			pizza = pizzaVar.presets.pizza.cAlvarado.features;
+			loadValuesIntoUI();
+			
+		} else if (selector.value == "vIacopeeliPizzaBiga") {
+			pizza = pizzaVar.presets.pizza.vIacopeeliBiga.features;
+		}
 	}
 	function pizzaSaltFoo(arg) {
 		val = arg.value / 10;
-		pizza.salt = val;
+		pizza.percentage.salt = val;
 		document.getElementById("pizzaSaltId").innerHTML = pizzaVar.lang[pizzaVar.langDefault].content.pizzaSalt.label + ' ' + val.toString();
 		computePizza();
 	}
 	function pizzaHydrationFoo(arg) {
 		val = arg.value;
-		pizza.hydration = Number(val);
-		document.getElementById("pizzaHydrationId").innerHTML = pizzaVar.lang[pizzaVar.langDefault].content.pizzaHydration.label + ' ' + val.toString();
+		pizza.percentage.hydration = Number(val);
+		document.getElementById("pizzaHydrationId").innerHTML = pizzaVar.lang[pizzaVar.langDefault].content.pizzaHydration.label + ' ' + val;
 		computePizza();
 	}
-	function levainAmountFoo(arg) {
+	function leavenAmountFoo(arg) {
 		const levtype = document.getElementById("levainTypeSelector").value;
-		var val = 0;
+		var val = Number(arg.value);
 		if((levtype == "freshYeast") || levtype == "dryYeast")
-			val = arg.value / 100;
-		else 
-			val = arg.value;
+			val = val / 100;
+
 		document.getElementById("levainAmountId").innerHTML = pizzaVar.lang[pizzaVar.langDefault].content.levainAmount.label + ' ' + val.toString();
 		pizza.leavenType = levtype;
-		pizza.leavenAmount = val;
+		pizza.percentage.leaven = val;
 		computePizza();
 	}
 
-	function levainTypeFoo(selector) {
+	function returnLeavenAmount(value) {
+		var minmax = [];
+		if(value == "freshYeast") {
+			minmax[0] = 40;
+			minmax[1] = 60;
+
+		} else if (value == "dryYeast") {
+			minmax[0] = 13;
+			minmax[1] = 20;
+		}
+		else if ((value == "sourdough") || (value == "motherYeast")) {
+			minmax[0] = 10;
+			minmax[1] = 20;
+			document.getElementById("fermentationTimeHours").style.display = 'none';
+			document.getElementById("fermentationTimeId").style.display = 'none';
+		}
+		return minmax;
+	}
+
+	function leavenTypeFoo(selector) {
 
 		document.getElementById("levainName").innerHTML = pizzaVar.lang[pizzaVar.langDefault].content.levainType.option[selector.selectedIndex];
 		const levainAmnt = document.getElementById("levainAmountInId");
 		document.getElementById("fermentationTimeHours").style.display = 'block';
 		document.getElementById("fermentationTimeId").style.display = 'block';
-		if(selector.value == "freshYeast") {
-			levainAmnt.min = 40;
-			levainAmnt.max = 60;
 
-		} else if (selector.value == "dryYeast") {
-			levainAmnt.min = 13;
-			levainAmnt.max = 20;
-		}
-		else if ((selector.value == "sourdough") || (selector.value == "motherYeast")) {
-			levainAmnt.min = 10;
-			levainAmnt.max = 20;
-			document.getElementById("fermentationTimeHours").style.display = 'none';
-			document.getElementById("fermentationTimeId").style.display = 'none';
+		const minmax = returnLeavenAmount(selector.value);
 
-		}
-		levainAmountFoo(levainAmnt);
+		levainAmnt.min = minmax[0];
+		levainAmnt.max = minmax[1];
+
+		leavenAmountFoo(levainAmnt);
 		computePizza();
 
 	}
@@ -238,6 +371,7 @@
 		if (selector.value == "homeOven") {
 			document.getElementById("sugarId").style.display = "block";
 			document.getElementById("sugarWeight").style.display = "block";
+
 		} else if (selector.value == "woodFiredOven") {
 			document.getElementById("sugarId").style.display = "none";
 			document.getElementById("sugarWeight").style.display = "none";

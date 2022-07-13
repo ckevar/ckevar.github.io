@@ -1,6 +1,7 @@
 pizzaVar = {
 	"theme": [
-		{"dark": "#009246", "clear":"#ce2b37","font":"white"}, 
+		{"dark": "#009246", "clear":"#ce2b37","font":"white","footer":"#009246"}, 
+		{"dark": "#ce2b37", "clear":"#FFF1BD","font":"#202124","footer":"#009246"}, 
 		{"dark": "#5a0001", "clear":"#f45b69","font":"white"}, 
 		{"dark": "#0a2342", "clear":"#84bc9c","font":"white"},
 		{"dark": "#202124", "clear":"#e5e5e5","font":"#202124"}, 
@@ -8,6 +9,106 @@ pizzaVar = {
 		{"dark": "#003844", "clear":"#ffebc6","font":"#202124"}, 
 		{"dark": "#f05d23", "clear":"#c5d86d","font":"#202124"}, 
 	],
+	"presets" : {
+		"pizza" : {
+			"bonci" : {
+				"author":"Bonci",
+				"features": {
+					"weight" : {
+						"total" : 931,
+						"flour" : 500,
+					},
+					"percentage" : {
+						"hydration" : 80,
+						"oil" : 3.6,
+						"sugar" : 0,
+						"salt" : 2,
+						"leaven" : 0.6, 
+					},
+					"leavenType" : "freshYeast",
+					"oven" : "homeOven",
+					"preferment" : false,
+					"note" : "For a portion of 40x30cm, a taglai pizza"
+				}
+			},
+			"cAlvarado" : {
+				"author" : "C. Alvarado",
+				"features" : {
+					"weight" : {
+						"total" : 280,
+					},
+					"percentage" : {
+						"hydration" : 63,
+						"oil" : 0,
+						"sugar": 2,
+						"salt" : 2.6,
+						"leaven" : 10,
+					},
+					"leavenType" : "motherYeast",
+					"oven" : "homeOven",
+					"preferment" : false,
+					"note" : "Around 6h of bulk fermentation and 24h in the fridge."
+				}
+			},
+			"vIacopeeliBiga" : {
+				"author" : "C. Alvarado",
+				"features" : {
+					"weight" : {
+						"total" : 324,
+					},
+					"percentage" : {
+						"hydration" : 75,
+						"oil" : 0,
+						"sugar": 0,
+						"salt" : 3,
+						"leaven" : 0.3,
+						"biga" : 75,
+					},
+					"leavenType" : "freshYeast",
+					"oven" : "homeOven",
+					"preferment" : true,
+					"prefermentType" : "biga", 
+					"note" : "Leave the biga in the fridge from 16 to 24 hours",
+					"biga" : {
+						"percentage" : {
+							"hydration" : 50,
+							"leaven" : 0.6,
+						}
+					}
+				}
+			},
+			"vIacopeeliPoolish" : {
+				"author" : "C. Alvarado",
+				"features" : {
+					"weight" : {
+						"total" : 260,
+					},
+					"percentage" : {
+						"hydration" : 64.5,
+						"oil" : 0,
+						"sugar": 0,
+						"salt" : 2.6,
+						"leaven" : 0.3,
+						"poolish" : 39,
+					},
+					"leavenType" : "freshYeast",
+					"oven" : "homeOven",
+					"preferment" : true,
+					"prefermentType" : "poolish", 
+					"note" : "Leave the biga in the fridge from 16 to 24 hours",
+					"poolish" : {
+						"percentage" : {
+							"hydration" : 100,
+							"leaven" : 1.6,
+							"sugar" : 1.6,
+						}
+					}
+				}
+			},
+
+		},
+		"pinsa" : {},
+	},
 	"langDefault" : 0,
 	"lang": [
 		{"name":"English",
