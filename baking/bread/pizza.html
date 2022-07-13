@@ -23,8 +23,9 @@
 		<div class="pizza_col">
 			<h2 id="settingsId">Settings</h2>
 			<form>
-				<label for="presets" id="presetsId">PRESETS</label>
 
+				<!-- 
+				<label for="presets" id="presetsId">PRESETS</label>
 				<select name="presets" onchange="presetsFoo(this)" id="presetsSelectorId">
 					<option value="" id="minePizzaId" selected disabled="">Click here If you have no idea</option>
 					<optgroup label="Pizza">
@@ -44,8 +45,7 @@
 						<option value="gZafferanoFocaccia" id="GZafferanoFocacciaId">G. Zafferano</option>
 					</optgroup>
 					<option value="" id="customId" >Custome</option>
-
-				</select>
+				</select> -->
 
 				<label for="ovenType" id="ovenTypeId">OVEN</label>
 				<select name="ovenType" onchange="ovenTypeFoo(this)" id="ovenTypeSelector">
@@ -82,6 +82,7 @@
 		</div>
 
 		<div class="pizza_col pizza_recipe">
+			<!-- 
 			<h2 id="prefermentId">Preferment</h2>
 			<div id="prefermentIngredientsId">
 				<div class="pizzaIngredient"> 
@@ -100,7 +101,7 @@
 					<h3 id="prefermentWaterId">Sugar/Honey</h3>
 					<p id="prefermentflourWeight">10g</p>
 				</div>
-			</div>
+			</div> -->
 			<h2 id="recipeId">Dough</h2>
 			<div>
 				<div class="pizzaIngredient"> 
@@ -157,9 +158,13 @@
 </section>
 
 <script type="text/javascript">
-	let pizza = {};
-	pizza.weight = {};
-	pizza.percentage = {};
+	let pizza = {
+		weight: {}, 
+		percentage: {
+			oil: 0, 
+			sugar: 0}
+		};
+
 
 	function placeNumbers(){
 		ovenTypeFoo(document.getElementById("ovenTypeSelector"));
@@ -191,6 +196,7 @@
 
 		themeSelector(1);
 		placeNumbers();
+		initPizza();
 		computePizza();
 	}
 
@@ -202,7 +208,7 @@
 		pizza.weight.total = document.getElementById("pizzaWeightInId").value * numPizzas;
 		pizza.percentage.total = pizza.percentage.flour + pizza.percentage.hydration + pizza.percentage.salt;
 
-		if (pizza.percentage.oil == null) 
+		if (pizza.percentage.oil == 0) 
 			pizza.percentage.sugar = 2;
 
 		if (pizza.oven == "homeOven")
@@ -303,7 +309,7 @@
 		} else if (selector.value == "cAlvaradoPizza") {
 			pizza = pizzaVar.presets.pizza.cAlvarado.features;
 			loadValuesIntoUI();
-			
+
 		} else if (selector.value == "vIacopeeliPizzaBiga") {
 			pizza = pizzaVar.presets.pizza.vIacopeeliBiga.features;
 		}
