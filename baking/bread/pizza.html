@@ -21,7 +21,7 @@
 	<div class="pizza_container">
 
 		<div class="pizza_col">
-			<h2 id="settingsId">Settings</h2>
+			<h2 id="settingsId"></h2>
 			<form>
 
 				<!-- 
@@ -47,35 +47,35 @@
 					<option value="" id="customId" >Custome</option>
 				</select> -->
 
-				<label for="ovenType" id="ovenTypeId">OVEN</label>
+				<label for="ovenType" id="ovenTypeId"></label>
 				<select name="ovenType" onchange="ovenTypeFoo(this)" id="ovenTypeSelector">
-					<option value="homeOven" id="homeOvenId" selected>Home Oven</option>
-					<option value="woodFiredOven" id="woodFiredOvenId">Wood-fired Oven</option>
+					<option value="homeOven" id="homeOvenId" selected></option>
+					<option value="woodFiredOven" id="woodFiredOvenId"></option>
 				</select>
 
-				<label for="levainType" id="levainTypeId">LEAVEN</label>
+				<label for="levainType" id="levainTypeId"></label>
 				<select name="levainType" onchange="leavenTypeFoo(this)" id="levainTypeSelector">
-					<option value="dryYeast" id="dryYeastId" selected>Dry Yeast</option>
-					<option value="freshYeast" id="freshYeastId">Fresh Yeast</option>
-					<option value="biga" id="bigaId" disabled="">Biga</option>
-					<option value="poolish" id="poolishId" disabled="">Poolish</option>
-					<option value="sourdough" id="sourdoughId">Sourdough</option>
-					<option value="motherYeast" id="motherYeastId">Mother yeast</option>
+					<option value="dryYeast" id="dryYeastId" selected></option>
+					<option value="freshYeast" id="freshYeastId"></option>
+					<option value="biga" id="bigaId" disabled=""></option>
+					<option value="poolish" id="poolishId" disabled=""></option>
+					<option value="sourdough" id="sourdoughId"></option>
+					<option value="motherYeast" id="motherYeastId"></option>
 				</select>
 
-				<label for="levainAmount" id="levainAmountId">LEVAIN AMOUNT [%]</label>
+				<label for="levainAmount" id="levainAmountId"></label>
 				<input type="range" name="levainAmount" id="levainAmountInId" min="40" max="60" value="40" onchange="leavenAmountFoo(this)">
 
-				<label for="pizzaWeight" id="pizzaWeightId">PIZZA WEIGHT [grams]</label>
+				<label for="pizzaWeight" id="pizzaWeightId"></label>
 				<input type="number" name="pizzaWeight" id="pizzaWeightInId" value="280" onchange="computePizza()">
 
-				<label for="pizzaUnits" id="pizzaUnitsId">NUMBER OF PIZZAS</label>
+				<label for="pizzaUnits" id="pizzaUnitsId"></label>
 				<input type="number" name="pizzaUnits" id="pizzaUnitsInId" value="1" min="1" onchange="computePizza()">
 
-				<label for="pizzaHydration" id="pizzaHydrationId">HYDRATION [%]</label>
+				<label for="pizzaHydration" id="pizzaHydrationId"></label>
 				<input type="range" name="pizzaHydration" id="pizzaHydrationInId" min="60" max="100" value="62.5" onchange="pizzaHydrationFoo(this)">
 
-				<label for="pizzaSalt" id="pizzaSaltId">SALT [%]</label>
+				<label for="pizzaSalt" id="pizzaSaltId"></label>
 				<input type="range" name="pizzaSalt" id="pizzaSaltInId" min="20" max="30" value="26" onchange="pizzaSaltFoo(this)">
 
 			</form>
@@ -105,34 +105,34 @@
 			<h2 id="recipeId">Dough</h2>
 			<div>
 				<div class="pizzaIngredient"> 
-					<h3 id="flourId">Flour</h3>
-					<p id="flourWeight">100g</p>
+					<h3 id="flourId"></h3>
+					<p id="flourWeight"></p>
 				</div>
 				<div class="pizzaIngredient"> 
-					<h3 id="waterId">Water</h3>
-					<p id="waterWeight">62.3g</p>
+					<h3 id="waterId"></h3>
+					<p id="waterWeight"></p>
 				</div>
 				<div class="pizzaIngredient">
-					<h3 id="saltId">Salt</h3>
-					<p id="saltWeight">2g</p>
+					<h3 id="saltId"></h3>
+					<p id="saltWeight"></p>
 				</div>
 
 				<div class="pizzaIngredient">
-					<h3 id="sugarId">Sugar</h3>
-					<p id="sugarWeight">2g</p>
+					<h3 id="sugarId"></h3>
+					<p id="sugarWeight"></p>
 				</div>
 
 				<div class="pizzaIngredient"> 
-					<h3 id="levainName">Dry Yeast</h3>
-					<p id="levainWeight">2g</p>
+					<h3 id="levainName"></h3>
+					<p id="levainWeight"></p>
 				</div>
 				<div class="pizzaIngredient"> 
-					<h3 id="fermentationTimeId">Fermentation Time</h3>
-					<p id="fermentationTimeHours">2h</p>
+					<h3 id="fermentationTimeId"></h3>
+					<p id="fermentationTimeHours"></p>
 				</div>
 				<div class="pizzaIngredient"> 
-					<h3 id="noteTitleId">Note</h3>
-					<p id="noteContentId">...</p>
+					<h3 id="noteTitleId"></h3>
+					<p id="noteContentId"></p>
 				</div>
 			</div>
 		</div>
