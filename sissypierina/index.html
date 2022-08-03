@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sissy Pierina</title>
+	
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,700;1,600&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- <script type="text/javascript" src="js/info.js"></script> -->
+</head>
+<body>
+
+	<section class="header">
+		<nav>
+			<div id="nav-links-id">
+				<i class="fa fa-times" onclick="hide_menu()"></i>
+				<ul>
+					<li><a href="">ISTRUZIONE</a></li>
+					<li><a href="">ESPERIENZA</a></li>
+					<li><a href="">PREMI</a></li>
+					<li><a href="">SKILLS</a></li>
+				</ul>
+			</div>
+			<i class="fa fa-bars" onclick="show_menu()"></i>
+		</nav>
+	</section>
+
+</body>
+
+<script type="text/javascript">
+	const navLinks = document.getElementById('nav-links-id');
+	function show_menu() {
+		navLinks.style.width = "50%";
+	}
+	function hide_menu() {
+		navLinks.style.width = "0%";
+	}
+</script>
+
+</html>
