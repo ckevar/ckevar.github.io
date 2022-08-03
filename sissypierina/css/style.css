@@ -7,8 +7,8 @@
 :root {
 	--nav_text_color:  black;
 	--background_color:  white;
-	--nav_text_secondary_color: white;
-	--background_secondary_color: black;
+	--nav_text_secondary_color: black;
+	--background_secondary_color: pink;
 }
 
 .header {
@@ -63,7 +63,7 @@ nav .fa {
 	nav .fa {
 		display: block;
 		color: var(--nav_text_secondary_color);
-		margin: 0.35rem;
+		margin: 0.7em;
 		font-size: 2.5rem;
 		cursor: pointer;
 	}
@@ -84,12 +84,9 @@ nav .fa {
 		overflow: hidden;
 	}
 
-	#nav-links-id ul {
-		padding: 1em;
-	}
 	#nav-links-id ul li {
 		display: block;
-		padding: 2em 3em;
+		padding: 1.2em 3em;
 	}
 
 	#nav-links-id ul li a {
