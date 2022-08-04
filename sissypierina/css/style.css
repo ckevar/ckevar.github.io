@@ -15,6 +15,11 @@
 h1 {
 	font-weight: 200;
 	font-size: 3rem;
+	color: var(--primary_color);
+}
+
+h3 {
+	color: var(--secondary-color);
 }
 
 section {
@@ -85,7 +90,6 @@ nav .fa {
 .profile > div {
 	flex-grow: 1;
 	flex-basis: calc(700px - 48%);
-	/*margin-inline: 1em;*/
 }
 
 .profile-buttons {
@@ -111,6 +115,7 @@ nav .fa {
 .section_title {
 	width: 80%;
 	margin: auto;
+	color:  var(--secondary-color);
 }
 .section_title::after {
 	content: '';
