@@ -142,7 +142,7 @@ nav .fa {
 .section_cv > ul > li{
 	list-style: none;
 	flex-grow: 1;
-	flex-basis: calc(700px - 31%);
+	flex-basis: calc(700px - 25%);
 	margin: 5% 1em;
 }
 
@@ -159,7 +159,9 @@ nav .fa {
 }
 
 /* Prizes section */
-
+#prizes_section {
+	min-height: 20vh;
+}
 #prizes_list {
 	margin-top: 5em;
 	width: 30%;
@@ -183,13 +185,17 @@ nav .fa {
 
 
 /* Skills section */
+#skills_section {
+	min-height: 60vh;
+}
 #skills_list {
-	margin-top: 1em;
+	margin-top: 3em;
 	background: #FFE56C;
 	width: 50%;
 	padding: 1em;
 	border-radius: 1em;
 	display: block;
+	box-shadow: 0 0 1em #999;
 }
 
 #skills_list > li {
@@ -206,11 +212,15 @@ nav .fa {
 	box-shadow: 0 0 1em #999;
 }
 
+
 /** CONTACT LIST **/
+#contact_section {
+	min-height: 60vh;
+}
 #contact_list {
 	width: 30%;
 	position: relative;
-	margin-top: 2em;
+	margin-top: 3em;
 	display: block;
 }
 
@@ -219,6 +229,7 @@ nav .fa {
 	background: var(--secondary-color);
 	transition: 0.5s;
 	cursor: pointer;
+	margin-inline: auto;
 }
 
 #contact_list > li:hover {
@@ -239,7 +250,7 @@ nav .fa {
 #contact_list > li::before {
 	font-family: FontAwesome;
 	position: absolute;
-	left: -1.2em;
+	left: 0.5em;
 	color: var(--nav_text_color);
 	font-size: 1.5rem;
 }
@@ -344,7 +355,11 @@ nav .fa {
 		width: 55%;
 	}
 
+	#skills_list {
+		width: 60%;
+	}
+
 	#contact_list {
-		width: 55%;
+		width: 70%;
 	}
 }
