@@ -181,12 +181,48 @@ nav .fa {
 	flex-basis: calc(700px - 40%);
 }
 
-#skills_list > li, #prizes_list > li {
+#skills_list > li, #prizes_list > li, #contact_list > li {
 	background: var(--secondary-color);
 	color: white;
 	padding: 1em;
 	border-radius: 1em;
 	box-shadow: 0 0 1em #999;
+}
+
+/** CONTACT LIST **/
+#contact_list {
+	width: 30%;
+	position: relative;
+	margin-top: 2em;
+}
+
+#contact_list > li {
+	width: 100%;
+}
+
+#contact_list > li:hover {
+	width: 110%;
+}
+
+#contact_list > li::before {
+	font-family: FontAwesome;
+	position: absolute;
+	left: -1.2em;
+	color: var(--nav_text_color);
+	font-size: 1.5rem;
+}
+
+
+#contact_list .phone::before {
+	content: '\f095';
+}
+
+#contact_list .email::before {
+	content: '\f0e0';
+}
+
+#contact_list .address::before {
+	content: '\f015'; 
 }
 
 @media (max-width:  1000px) {
@@ -235,9 +271,10 @@ nav .fa {
 	}
 
 	#prizes_list {
-		/*margin-top: 5em;*/
 		width: 55%;
 	}
 
-
+	#contact_list {
+		width: 55%;
+	}
 }

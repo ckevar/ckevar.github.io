@@ -365,7 +365,7 @@ a[href*=".pdf?0"]::before {
 
 a[href*="github"]::before {
 	font-family: FontAwesome;
-	content: '\f09b';
+	content: '\f015';
 }
 
 a[href*="_CV_"]::before {
