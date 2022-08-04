@@ -8,8 +8,8 @@
 	--nav_text_color:  black;
 	--background_color:  white;
 	--nav_text_secondary_color: black;
-	--primary_color: #EE9FE3;
-	--secondary-color: #6E2964;
+	--primary_color: #2728B3;
+	--secondary-color: #FFE56C;
 }
 
 h1 {
@@ -127,6 +127,7 @@ nav .fa {
 
 .section_cv {
 	margin-top: 5em;
+	min-height: 100vh;
 }
 
 .section_cv > ul {
@@ -156,6 +157,8 @@ nav .fa {
 	margin-left:  1em;
 }
 
+/* Prizes section */
+
 #prizes_list {
 	margin-top: 5em;
 	width: 30%;
@@ -177,13 +180,26 @@ nav .fa {
 	font-size: 3rem;
 }
 
-#skills_list > li {
-	flex-basis: calc(700px - 40%);
+
+/* Skills section */
+#skills_list {
+	margin-top: 1em;
+	background: var(--secondary-color);
+	width: 50%;
+	padding: 1em;
+	border-radius: 1em;
+	display: block;
 }
 
-#skills_list > li, #prizes_list > li, #contact_list > li {
+#skills_list > li {
+	list-style-type: disc;
+	color: black;
+	margin: 1% 1em;
+}
+
+#prizes_list > li, #contact_list > li {
 	background: var(--secondary-color);
-	color: white;
+	color: black;
 	padding: 1em;
 	border-radius: 1em;
 	box-shadow: 0 0 1em #999;
@@ -194,14 +210,29 @@ nav .fa {
 	width: 30%;
 	position: relative;
 	margin-top: 2em;
+	display: block;
 }
 
 #contact_list > li {
-	width: 100%;
+	width: 60%;
+	background: var(--secondary-color);
+	transition: 0.5s;
+	cursor: pointer;
 }
 
 #contact_list > li:hover {
-	width: 110%;
+	width: 70%;
+	background: black;
+	color: white;
+}
+
+#contact_list > li:hover::after {
+	position: absolute;
+	font-family: FontAwesome;
+	content: '\f0ea';
+	left:  75%;
+	padding-top: 0.25em;
+	color: white;
 }
 
 #contact_list > li::before {
@@ -211,7 +242,6 @@ nav .fa {
 	color: var(--nav_text_color);
 	font-size: 1.5rem;
 }
-
 
 #contact_list .phone::before {
 	content: '\f095';
@@ -223,6 +253,45 @@ nav .fa {
 
 #contact_list .address::before {
 	content: '\f015'; 
+}
+
+.footer {
+	position: relative;
+	background: var(--secondary-color);
+	min-height: 20vh;
+}
+
+/* FOOTER LOGO, footer logo */
+.footer > a[href*="ckevar"] {
+	position: absolute;
+	color: #555;
+	top: 1em;
+	left: 1em;
+	font-size: 1.5rem;
+	text-decoration: none;
+}
+
+.footer > a[href*="ckevar"]::before {
+	content: 'created by';
+	position: absolute;
+	top: -20%;
+	left: 0%;
+	font-family: 'Poppins', sans-serif;
+	font-size: 0.7rem;
+	position: absolute;
+	color: #555;
+
+}
+
+.footer > a[href*="ckevar"]::after {
+	content: '';
+	position: absolute;
+	height: 0.15rem;
+	width: 100%;
+	top: 90%;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #555;
 }
 
 @media (max-width:  1000px) {

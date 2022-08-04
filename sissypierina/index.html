@@ -70,10 +70,14 @@
 	<section class="section_cv" id="contact_section">
 		<h1 class="section_title">Conttato</h1>
 		<ul id="contact_list">
-			<li class="email">pierys.20@gmail.com</li>
-			<li class="phone">(+39) 3204458575</li>
-			<li class="address">Via Santa Marta 56, Pisa - Italia</li>
+			<li class="email" onclick="copyMe(this)">pierys.20@gmail.com</li>
+			<li class="phone" onclick="copyMe(this)">(+39) 3204458575</li>
+			<li class="address" onclick="copyMe(this)">Via Santa Marta 56, Pisa - Italia</li>
 		</ul>
+	</section>
+
+	<section class="footer">
+		<a href="https://ckevar.github.io"><i>ckevar</i></a>
 	</section>
 
 </body>
@@ -168,6 +172,11 @@
 	window.onload = function () {
 		load_info("it");
 	}
-</script>
 
+
+	function copyMe(lmnt) {
+		navigator.clipboard.writeText(lmnt.innerHTML);
+	}
+
+</script>
 </html>
