@@ -105,7 +105,7 @@ nav .fa {
 	padding-inline:  1em;
 	border-radius: 1.5em;
 	cursor: pointer;
-	transition: 0.5s;
+	transition: 1s;
 	box-shadow: 0 0 1em #aaa;
 }
 
@@ -137,14 +137,34 @@ nav .fa {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
+	counter-reset: item-counter;
 }
 
-.section_cv > ul > li{
+.section_cv > ul > li {
 	list-style: none;
 	flex-grow: 1;
-	flex-basis: calc(700px - 25%);
-	margin: 5% 1em;
+	flex-basis: calc(700px - 35%);
+	margin: 3em 3em;
+	box-shadow: 0 0 1em #999;
+	padding: 1em;
+	border-radius: 1em;
+	position: relative;
 }
+
+.section_cv > ul > li::before {
+	counter-increment: item-counter;
+	content: counter(item-counter);
+	position: absolute;
+	left: -0.5em;
+	top: -0.5em;
+	font-size: 1.5rem;
+	background: var(--primary_color);
+	width: 1.5em;
+	height: 1.5em;
+	text-align: center;
+	border-radius: 50%;
+}
+
 
 .section_cv > ul > li h3 {
 	font-weight: 200;
@@ -160,27 +180,10 @@ nav .fa {
 
 /* Prizes section */
 #prizes_section {
-	min-height: 20vh;
+	min-height: 10vh;
 }
 #prizes_list {
-	margin-top: 5em;
 	width: 30%;
-	counter-reset: counter-name;
-	position: relative;
-}
-
-#prizes_list > li::before{
-	counter-increment: counter-name;
-	content: counter(counter-name);
-	position: absolute;
-	left:  -1.2em;
-	color: var(--nav_text_color);
-	width: 1.5em;
-	height: 1.5em;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 3rem;
 }
 
 
@@ -192,7 +195,7 @@ nav .fa {
 	margin-top: 3em;
 	background: #FFE56C;
 	width: 50%;
-	padding: 1em;
+	padding: 2em;
 	border-radius: 1em;
 	display: block;
 	box-shadow: 0 0 1em #999;
@@ -201,7 +204,13 @@ nav .fa {
 #skills_list > li {
 	list-style-type: disc;
 	color: black;
-	margin: 1% 1em;
+	margin: 0;
+	padding: 0.5em;
+	box-shadow: none;
+}
+
+#skills_list > li::before {
+	content: none;
 }
 
 #prizes_list > li, #contact_list > li {
@@ -219,7 +228,6 @@ nav .fa {
 }
 #contact_list {
 	width: 30%;
-	position: relative;
 	margin-top: 3em;
 	display: block;
 }
@@ -242,7 +250,7 @@ nav .fa {
 	position: absolute;
 	font-family: FontAwesome;
 	content: '\f0ea';
-	left:  75%;
+	left:  90%;
 	padding-top: 0.25em;
 	color: white;
 }
@@ -250,9 +258,11 @@ nav .fa {
 #contact_list > li::before {
 	font-family: FontAwesome;
 	position: absolute;
-	left: 0.5em;
+	left: -2em;
+	top:  0.5em;
 	color: var(--nav_text_color);
 	font-size: 1.5rem;
+	background: white;
 }
 
 #contact_list .phone::before {
@@ -271,6 +281,37 @@ nav .fa {
 	position: relative;
 	background: var(--secondary-color);
 	min-height: 20vh;
+}
+
+.footer ul {
+	text-align: right;
+	padding-top: 3em;
+	padding-right: 3em;
+}
+
+.footer li {
+	list-style: none;
+	display: inline-block;
+	margin: 1em 2em;
+}
+
+.footer li a {
+	color: white;
+	text-decoration: none;
+}
+
+.footer ul li::after {
+	content: '';
+	width: 0%;
+	height: 0.2em;
+	background: white;
+	display: block;
+	margin: auto;
+	transition: 0.5s;
+}
+
+.footer ul li:hover::after {
+	width: 100%;
 }
 
 /* FOOTER LOGO, footer logo */
@@ -352,7 +393,7 @@ nav .fa {
 	}
 
 	#prizes_list {
-		width: 55%;
+		width: 90%;
 	}
 
 	#skills_list {
@@ -361,5 +402,16 @@ nav .fa {
 
 	#contact_list {
 		width: 70%;
+	}
+
+	.footer {
+		min-height: 30vh;
+	}
+
+	.footer ul {
+		padding-right: 1em;
+	}
+	.footer li {
+		display: block;
 	}
 }
