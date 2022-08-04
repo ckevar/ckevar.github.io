@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Sissy Pierina</title>
+	<title>Sissy Gonzales</title>
 	
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<!-- <script type="text/javascript" src="js/info.js"></script> -->
+	<script type="text/javascript" src="js/info.json"></script>
 </head>
 <body>
 
@@ -21,8 +21,8 @@
 			<div id="nav-links-id">
 				<i class="fa fa-times" onclick="hide_menu()"></i>
 				<ul>
-					<li><a href="">ISTRUZIONE</a></li>
-					<li><a href="">ESPERIENZA</a></li>
+					<li><a href="#experience_section">ESPERIENZA</a></li>
+					<li><a href="#education_section">ISTRUZIONE</a></li>
 					<li><a href="">PREMI</a></li>
 					<li><a href="">SKILLS</a></li>
 				</ul>
@@ -35,7 +35,7 @@
 			</div>
 			<div>
 				<h3 id="current_position_id">Studentessa della laurea magistrale in Marketing e ricerche di mercato </h3>
-				<h1>Pierina Sissy Gonzáles Palacios</h1>
+				<h1>Sissy Gonzáles</h1>
 				<p>8 anni di esperienza in diversi settori della comunicazione mi hanno permesso di sviluppare la mia professione in un profilo multidisciplinare, con la capacità di adattarmi alle esigenze del mio pubblico di riferimento, a seconda dell'azienda o dell'organizzazione che rappresento</p>
 				<div class="profile-buttons">
 					<div>Scarica CV</div>
@@ -45,15 +45,83 @@
 		</div>
 	</section>
 
+	<section class="section_cv" id="experience_section">
+		<h1 class="section_title">ESPERIENZA LAVORATIVA</h1>
+		<ul id="experience_list">
+		</ul>
+	</section>
+
+	<section class="section_cv" id="education_section">
+		<h1 class="section_title">ISTRUZIONE</h1>
+		<ul id="education_list"></ul>
+	</section>
+
 </body>
 
 <script type="text/javascript">
 	const navLinks = document.getElementById('nav-links-id');
+	const experience_list = document.getElementById('experience_list');
+	const education_list = document.getElementById('education_list');
+
+
 	function show_menu() {
 		navLinks.style.width = "50%";
 	}
 	function hide_menu() {
 		navLinks.style.width = "0%";
+	}
+
+
+	function load_experience(lang) {
+		var i_end = cv_info.experience.length;
+		for (var i = 0; i < i_end; i++) {
+			var ele = document.createElement('li');
+			var ele_position = document.createElement("h2");
+			var ele_employer = document.createElement("h3");
+			var cv_info_tmp = cv_info.experience[i][lang];
+
+			ele_position.innerHTML = cv_info_tmp.position;
+			ele_employer.innerHTML = cv_info_tmp.employer + "<br>| " + cv_info_tmp.period;
+			
+			var j_end = cv_info_tmp.description.length;
+			console.log(j_end)
+			if (j_end == 1) {
+				var ele_description = document.createElement("p");
+				ele_description.innerHTML = cv_info_tmp.description[0];
+				console.log(cv_info_tmp.description[0]);
+			} else {
+				var ele_description = document.createElement("ul");
+				for(var j = 0; j < j_end; j++) {
+					ele_description.innerHTML += "<li>" + cv_info_tmp.description[j] + "</li>"
+				}
+			}
+
+			ele.appendChild(ele_position);
+			ele.appendChild(ele_employer);
+			ele.appendChild(ele_description);
+			experience_list.appendChild(ele);
+
+		}
+	}
+	function load_education(lang) {
+		var i_end = cv_info.education.length;
+		for (var i = 0; i < i_end; i++) {
+			var ele = document.createElement("li"); 
+			var ele_institution = document.createElement("h2");
+			var ele_description = document.createElement("p");
+			var cv_info_tmp = cv_info.education[i][lang];
+
+			ele_institution.innerHTML = cv_info_tmp.institution;
+			ele_description.innerHTML = cv_info_tmp.description;
+
+			ele.appendChild(ele_institution);
+			ele.appendChild(ele_description);
+			education_list.appendChild(ele);
+		}
+	}
+	window.onload = function () {
+		load_experience("it");
+		load_education("it");
 	}
 </script>
 

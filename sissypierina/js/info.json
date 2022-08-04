@@ -1,0 +1,139 @@
+cv_info = {
+	"experience" : [
+		{ 
+			"it" : 
+			{
+				"position" : "Content Manager",
+				"employer": "Associazione mondiale delle donne giornaliste e scrittrici AMMPE",
+				"period": "2021 - 2022",
+				"description" : ["Responsabile della creazione di contenuti da pubblicare sulle reti sociali della nostra associazione, come Facebook (AMMPE WORLD), risvegliando l'interesse del nostro pubblico ad attrarre."]
+			}, 
+			"esp" : {
+				"position" : "Content Manager",
+				"employer" : "Asociación Mundial de mujeres periodistas y escritoras AMMPE",
+				"period" : "2021 - 2022",
+				"description" : ["Encargada de la creación de contenido para ser publicado en alguno de los activos digitales de nuestra asociación, como Facebook (AMMPE WORLD), despertando el interés de nuestra audiencia a fin de atraer y fidelizar a más socias."]
+			}
+		},
+
+		{
+			"it" : {
+				"position" : "Content Manager",
+				"employer" : "Inclinados hacia América Latina - UNIPI",
+				"period" : "Nov 2018 - Mag 2020",
+				"description" : ["Questo è un programma di borse di studio dell'Università di Pisa e il mio obiettivo era creare contenuti utili per gli studenti in tempo di pandemia."]
+			},
+			"esp" : {
+				"position" : "Content Manager", 
+				"employer" : "Inclinados hacia América Latina - UNIPI",
+				"period" : "Nov 2018 - May 2020",
+				"description" : ["Inclinados hacia América Latina, es un programa de becarios de la Universidad de Pisa y mi objetivo era crear contenido útil para los estudiantes en tiempos de pandemia."]
+			}
+		},
+
+		{
+			"it" : {				
+				"position" : "Orientamento allo studente",
+				"employer" : "Tutor Senior UNIPI",
+				"period" : "2019",
+				"description":	["Studente Tutor Senior, scelto su bando tra i migliori studenti della Facoltà di Economia dell'Università di Pisa, per fornire informazioni, orientamento e supporto agli studenti, di maniera fisica o virtualmente."]
+			}, 
+			"esp" : {
+				"position" : "Orientación y guía al estudiante",
+				"employer" : "Tutor Senior Unipi",
+				"period" : "2019",
+				"description" : ["Estudiante Tutor Senior, escogida por convocatoria entre los mejores alumnos de la facultad de Economía de la Universidad de Pisa, para atender y brindar información, apoyo, orientación y soporte a los estudiantes, de manera física o virtual."]
+			}
+		}, 
+
+		{
+			"it" : {
+				"position" : "Relazioni pubbliche",
+				"employer" : "Ospedale dell'Amicizia Santa Rosa II Perù-Corea",
+				"period" : "2015 - 2016",
+				"description" : ["Responsabile della gestione della comunicazione interna ed esterna dell'ospedale; della creazione, progettazione e redazione del bollettino istituzionale e dei comunicati stampa.","Fotografia, protocollo e organizzazione di eventi istituzionali. Realizzazione di campagne di servizio pubblico e community manager dei social networkistituzionali."]
+			},
+			"esp" : {
+				"position" : "Relacionista Pública",
+				"period" : "2015 - 2016",
+				"employer" : "Hospital de la Amistad Perú-Corea Santa Rosa II",
+				"description" : ["Encargada de la gestión de la comunicación interna y externa del hospital, de la creación, diseño y redacción del boletín institucional y de las notas de prensa.","Fotografía, protocolo y organización de eventos institucionales. Realización de campañas de servicio público y community manager de las redes socialesinstitucionales."]
+			}
+		},
+
+		{
+			"it" : {
+				"position" : "Stage in Gestione della Comunicazione",
+				"employer" : "Compagnia mineraria di fosfati Miski Mayo SRL",
+				"period" : "2014",
+				"description" : ["Apprendista comunicatore in ambito istituzionale e comunitario."]
+			}, 
+			"esp" : {
+				"position" : "Internship en la Gerencia de comunicación",
+				"period" : "2014",
+				"employer" : "Compañía minera de fosfatos Miski Mayo SRL",
+				"description" : ["Aprendiz de Comunicadora en el ámbito institucional y comunitario."]
+			}
+		}
+
+	],
+
+	"education" : [
+		{
+			"it" : {
+				"institution" : "Università Nazionale di Piura - Perù",
+				"description" : "Laureato del Master in Comunicazione Sociale 2016-2018"
+			},
+			"esp" : {
+				"institution" : "Universidad Nacional de Piura - Perú",
+				"description" : "Egresada de la Maestría en Comunicación Social | 2016-2018"
+			}
+		},
+
+		{
+			"it" : {
+				"institution" : "Università di Pisa - Italia",
+				"description" : "Studente di Master in Marketing e Ricerche di Mercato 2019 - 2021. Attualmente sto preparando la mia tesi e punto a laurearmi a settembre 2022."
+			},
+			"esp" : {
+				"institution" : "Università di Pisa - Italia",
+				"description" : "Estudiante de la maestría en Marketing e investigación de mercados | 2019 -2021 Actualmente preparo la tesis y me proyecto a la graduación en Setiembre 2022"
+			}
+		},
+
+		{
+			"it" : {
+				"institution" : "Università di Pisa - Italia",
+				"description" : "Erasmus nel Dipartimento di Economia Management / Marketing. Vincitrice di una borsa di studio per scambi internazionali settembre 2016 - luglio 2017."
+			},
+			"esp" : {
+				"institution" : "Università di Pisa - Italia",
+				"description" : "Erasmus en el Departamento de Economía Management / Marketing. Ganadora de un beca de intercambio internacional |Septiembre 2016 - Julio 2017."
+			}
+		},
+
+		{
+			"it" : {
+				"institution" : "Università Nazionale di Piura - Perù",
+				"description" : "Laurea in Scienze della Comunicazione | Marzo 2007 - Maggio 2012"
+			},
+			"esp" : {
+				"institution" : "Universidad Nacional de Piura - Perú",
+				"description" : "Licenciada en Ciencias de la Comunicación | Marzo 2007 - Mayo 2012"
+			}
+		},
+
+		{
+			"it" : {
+				"institution" : "Pontificia Università Cattolica del Perù",
+				"description" : "Scambio come borsista per studiare durante un semestre presso il Dipartimento di Arti e Scienze della Comunicazione nella specializzazione di Pubblicità | Agosto 2010 - Dicembre 2010."
+			},
+			"esp" : {
+				"institution" : "Pontificia Universidad Católica del Perú",
+				"description" : "Intercambio como estudiante becada para estudiar por un semestre en el Departamento de Ciencias y artes de la comunicación en la especialización de Publicidad | Agosto 2010 - Diciembre2010"
+			}
+		}
+
+	]
+
+}

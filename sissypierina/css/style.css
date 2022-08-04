@@ -16,7 +16,7 @@ h1 {
 	font-size: 3rem;
 }
 
-.header {
+section {
 	min-height: 100vh;
 	width: 100%;
 	background: var(--background_color);
@@ -72,7 +72,7 @@ nav .fa {
 	top:  50%;
 	left:  50%;
 	transform: translate(-50%, -50%);
-	/*flex-wrap: wrap;*/
+	flex-wrap: wrap;
 }
 .profile img {
 	height: 300px;
@@ -83,14 +83,14 @@ nav .fa {
 
 .profile > div {
 	flex-grow: 1;
-	/*max-width: 48%;*/
-	margin-inline: 1em;
+	flex-basis: calc(700px - 48%);
+	/*margin-inline: 1em;*/
 }
 
 .profile-buttons {
 	display: inline-flex;
 	justify-content: space-between;
-	width: 45%;
+	width: 50%;
 }
 
 .profile-buttons > div {
@@ -110,8 +110,64 @@ nav .fa {
 	background: var(--background_secondary_color);
 }
 
+.section_title {
+	width: 80%;
+	margin: auto;
+}
+.section_title::after {
+	content: '';
+	width: 100%;
+	height: 0.1em;
+	/*background: #2E9942;*/
+	background: pink;
+	display: block;
+}
+
+.section_cv {
+	margin-top: 5em;
+}
+
+.section_cv > ul {
+	width: 80%;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.section_cv > ul > li{
+	list-style: none;
+	flex-grow: 1;
+	flex-basis: calc(700px - 31%);
+	margin: 5% 1em;
+}
+
+.section_cv > ul > li h3 {
+	font-weight: 200;
+}
+
+.section_cv > ul > li li{
+	margin-left:  1em;
+}
+
+/*#education_list > li {
+	background: pink;
+	padding: 1em;
+	border-radius: 0.5em;
+	box-shadow: 0 0 0.5em #aaa;
+}*/
 
 @media (max-width:  1000px) {
+	
+	.profile img {
+		height: 50vw;
+		border:  0.4em solid white;
+	}
+
+	.profile-buttons  {
+		width: 100%;
+	}
+
 	nav .fa {
 		display: block;
 		color: var(--nav_text_secondary_color);
