@@ -139,15 +139,15 @@ cv_info = {
 	"prizes" : [
 		{
 			"it" : {
-				"description" : "Vincitrice del PRIMO POSTO per il miglior progetto di analisi e ricerca di marketing per l'azienda FATER GROUP, organizzato dall'Università di Pisa - Italia, 2019."
+				"description" : "Vincitrice del <i>primo posto</i> per il miglior progetto di analisi e ricerca di marketing per l'azienda FATER GROUP, organizzato dall'Università di Pisa - Italia, 2019."
 			},
 			"esp" : {
-				"description" : "Ganadora del PRIMER PUESTO al mejor proyecto de análisis e investigación de marketing para la empresa FATER GROUP, organizado por la Universidad de Pisa - Italia, 2019."
+				"description" : "Ganadora del <i>primer puesto</i> al mejor proyecto de análisis e investigación de marketing para la empresa FATER GROUP, organizado por la Universidad de Pisa - Italia, 2019."
 			}
 		},
 		{
 			"it" : {
-				"description" : "Vincitore del PRIMO POSTO al Publimatch - Olimpiadi della pubblicità, organizzato dalla Pontificia Universidad Católica del Perú, 2010."
+				"description" : "Vincitore del <i>primo posto</i> al Publimatch - Olimpiadi della pubblicità, organizzato dalla Pontificia Universidad Católica del Perú, 2010."
 			},
 			"esp" : {
 				"description" : "Ganadora del PRIMER PUESTO en el Publimatch - Olimpiadas Publicitarias, organizado por la Pontificia Universidad Católica del Perú, 2010."
@@ -159,15 +159,14 @@ cv_info = {
 		{
 			"it" : {
 				"description" : [
-					"Conoscenze di Office: Excel, Word, Power Point.",
+					"Conoscenze di Software: Excel, Word, Power Point e Illustrator",
 					"Competenze sui social media: Facebook, Instagram, Twitter.",
-					"Software di progettazione: Illustrator.",
-					"Conoscenza di Rstudio | Stata | Limesurvey.",
+					"Responsabilità e dedizione: media dei voti degli esami durante la magistrale in Italia: 27/30.",
 					"Fotografia: ho vinto il premio per la migliore fotografia creativa nel 2011.",
 					"Certificato di Google per il superamento del corso di Digital Marketing.",
 					"Conoscenza del commercio elettronico.",
 					"Capacità di risoluzionare problemi.",
-					"Responsabilità e dedizione: media dei voti degli esami durante la magistrale in Italia: 27/30."
+					"Conoscenza di Rstudio, Stata, Limesurvey.",
 				] 
 			},
 			"esp" : {
@@ -175,12 +174,12 @@ cv_info = {
 					"Manejo del office: Excel, Word, Power Point.",
 					"Manejo de Redes sociales: Facebook, Instagram, twitter.",
 					"Manejo de programas de diseño: Illustrator.",
-					"Manejo de Rstudio | Stata | Limesurvey",
+					"Responsable y dedicada: Promedio de notas de los exámenes durante la maestría en Italia: 27/30.",
 					"Fotografía: Gané el premio a mejor fotografía creativa en el 2011.",
 					"Certificado de Google por la superación del curso de Marketing Digital.",
 					"Conocimientos en E-commerce.",
 					"Empática y con capacidad de solución de problemas.",
-					"Responsable y dedicada: Promedio de notas de los exámenes durante la maestría en Italia: 27/30."
+					"Manejo de Rstudio | Stata | Limesurvey",
 				]
 			}
 		}

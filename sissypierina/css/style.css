@@ -9,6 +9,7 @@
 	--background_color:  white;
 	--nav_text_secondary_color: black;
 	--background_secondary_color: pink;
+	--secondary-color: #181694;
 }
 
 h1 {
@@ -54,7 +55,7 @@ nav .fa {
 	content: '';
 	width: 0%;
 	height: 0.2em;
-	background: var(--nav_text_color);
+	background: var(--secondary-color);
 	display: block;
 	margin: auto;
 	transition: 0.5s;
@@ -146,8 +147,46 @@ nav .fa {
 	font-weight: 200;
 }
 
+.section_cv > ul > li h2 {
+	color: var(--secondary-color);
+}
+
 .section_cv > ul > li li{
 	margin-left:  1em;
+}
+
+#prizes_list {
+	margin-top: 5em;
+	width: 30%;
+	counter-reset: counter-name;
+	position: relative;
+}
+
+#prizes_list > li::before{
+	counter-increment: counter-name;
+	content: counter(counter-name);
+	position: absolute;
+	left:  -1.2em;
+	color: var(--secondary-color);
+	width: 1.5em;
+	height: 1.5em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 3rem;
+	/*background: grey;*/
+}
+
+#skills_list > li {
+	flex-basis: calc(700px - 40%);
+}
+
+#skills_list > li, #prizes_list > li {
+	background: #181694;
+	color: white;
+	padding: 1em;
+	border-radius: 1em;
+	box-shadow: 0 0 1em #999;
 }
 
 @media (max-width:  1000px) {
@@ -194,5 +233,11 @@ nav .fa {
 		color: var(--nav_text_secondary_color);
 		font-size: 1rem;
 	}
+
+	#prizes_list {
+		/*margin-top: 5em;*/
+		width: 55%;
+	}
+
 
 }
