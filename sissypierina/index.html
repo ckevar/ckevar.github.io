@@ -23,15 +23,16 @@
 				<ul>
 					<li><a href="#experience_section">ESPERIENZA</a></li>
 					<li><a href="#education_section">ISTRUZIONE</a></li>
-					<li><a href="">PREMI</a></li>
-					<li><a href="">SKILLS</a></li>
+					<li><a href="#prizes_section">PREMI</a></li>
+					<li><a href="#skills_section">SKILLS</a></li>
+					<li><a href="#skills_section">CONTTATO</a></li>
 				</ul>
 			</div>
 			<i class="fa fa-bars" onclick="show_menu()"></i>
 		</nav>
 		<div class="profile">
 			<div>
-				<img src="img/profile.png">
+				<img src="img/profile.jpg">
 			</div>
 			<div>
 				<h3 id="current_position_id">Studentessa della laurea magistrale in Marketing e ricerche di mercato </h3>
@@ -46,14 +47,24 @@
 	</section>
 
 	<section class="section_cv" id="experience_section">
-		<h1 class="section_title">ESPERIENZA LAVORATIVA</h1>
+		<h1 class="section_title">Esperienza Lavorativa</h1>
 		<ul id="experience_list">
 		</ul>
 	</section>
 
 	<section class="section_cv" id="education_section">
-		<h1 class="section_title">ISTRUZIONE</h1>
+		<h1 class="section_title">Istruzione</h1>
 		<ul id="education_list"></ul>
+	</section>
+
+	<section class="section_cv" id="prizes_section">
+		<h1 class="section_title">Premi</h1>
+		<ul id="prizes_list"></ul>
+	</section>
+
+	<section class="section_cv" id="skills_section">
+		<h1 class="section_title">Skills</h1>
+		<ul id="skills_list"></ul>
 	</section>
 
 </body>
@@ -62,7 +73,8 @@
 	const navLinks = document.getElementById('nav-links-id');
 	const experience_list = document.getElementById('experience_list');
 	const education_list = document.getElementById('education_list');
-
+	const prizes_list = document.getElementById('prizes_list');
+	const skills_list = document.getElementById('skills_list');
 
 	function show_menu() {
 		navLinks.style.width = "50%";
@@ -75,53 +87,77 @@
 	function load_experience(lang) {
 		var i_end = cv_info.experience.length;
 		for (var i = 0; i < i_end; i++) {
-			var ele = document.createElement('li');
-			var ele_position = document.createElement("h2");
-			var ele_employer = document.createElement("h3");
+			var node = document.createElement('li');
+			var node_position = document.createElement("h2");
+			var node_employer = document.createElement("h3");
 			var cv_info_tmp = cv_info.experience[i][lang];
 
-			ele_position.innerHTML = cv_info_tmp.position;
-			ele_employer.innerHTML = cv_info_tmp.employer + "<br>| " + cv_info_tmp.period;
+			node_position.innerHTML = cv_info_tmp.position;
+			node_employer.innerHTML = cv_info_tmp.employer + "<br>| " + cv_info_tmp.period;
 			
 			var j_end = cv_info_tmp.description.length;
 			console.log(j_end)
 			if (j_end == 1) {
-				var ele_description = document.createElement("p");
-				ele_description.innerHTML = cv_info_tmp.description[0];
-				console.log(cv_info_tmp.description[0]);
+				var node_description = document.createElement("p");
+				node_description.innerHTML = cv_info_tmp.description[0];
 			} else {
-				var ele_description = document.createElement("ul");
+				var node_description = document.createElement("ul");
 				for(var j = 0; j < j_end; j++) {
-					ele_description.innerHTML += "<li>" + cv_info_tmp.description[j] + "</li>"
+					node_description.innerHTML += "<li>" + cv_info_tmp.description[j] + "</li>"
 				}
 			}
 
-			ele.appendChild(ele_position);
-			ele.appendChild(ele_employer);
-			ele.appendChild(ele_description);
-			experience_list.appendChild(ele);
-
+			node.appendChild(node_position);
+			node.appendChild(node_employer);
+			node.appendChild(node_description);
+			experience_list.appendChild(node);
 		}
 	}
 	function load_education(lang) {
 		var i_end = cv_info.education.length;
 		for (var i = 0; i < i_end; i++) {
-			var ele = document.createElement("li"); 
-			var ele_institution = document.createElement("h2");
-			var ele_description = document.createElement("p");
+			var node = document.createElement("li"); 
+			var node_institution = document.createElement("h2");
+			var node_description = document.createElement("p");
 			var cv_info_tmp = cv_info.education[i][lang];
 
-			ele_institution.innerHTML = cv_info_tmp.institution;
-			ele_description.innerHTML = cv_info_tmp.description;
+			node_institution.innerHTML = cv_info_tmp.institution;
+			node_description.innerHTML = cv_info_tmp.description;
 
-			ele.appendChild(ele_institution);
-			ele.appendChild(ele_description);
-			education_list.appendChild(ele);
+			node.appendChild(node_institution);
+			node.appendChild(node_description);
+			education_list.appendChild(node);
 		}
 	}
+	function load_prizes(lang) {
+		var i_end = cv_info.prizes.length;
+		for (var i = 0; i < i_end; i++) {
+			var node = document.createElement("li");
+			var node_description = document.createElement("p");
+			node_description.innerHTML = cv_info.prizes[i][lang].description;
+			node.appendChild(node_description);
+			prizes_list.appendChild(node);
+		}
+	}
+
+	function load_skill(lang) {
+		var cv_info_tmp = cv_info.skills[0][lang].description; 
+		var i_end = cv_info_tmp.length;
+		for (var i = 0; i < i_end; i++) {
+			var node = document.createElement("li");
+			node.innerHTML = cv_info_tmp[i];
+			skills_list.appendChild(node);
+		}
+	}
+
+	function load_info(lang) {
+		load_experience(lang);
+		load_education(lang);
+		load_prizes(lang);
+		load_skill(lang);
+	}
 	window.onload = function () {
-		load_experience("it");
-		load_education("it");
+		load_info("it");
 	}
 </script>
 
