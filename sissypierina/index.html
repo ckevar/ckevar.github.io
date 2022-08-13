@@ -20,13 +20,15 @@
 		<nav>
 			<div id="nav-links-id">
 				<i class="fa fa-times" onclick="hide_menu()"></i>
-				<ul>
-					<li><a href="#experience_section">ESPERIENZA</a></li>
+				<ul id="nav-links-id_list">
+					<!-- <li><a href="#experience_section">ESPERIENZA</a></li>
 					<li><a href="#education_section">ISTRUZIONE</a></li>
 					<li><a href="#prizes_section">PREMI</a></li>
 					<li><a href="#skills_section">SKILLS</a></li>
-					<li><a href="#contact_section">CONTTATO</a></li>
-					<!-- <li><a onclick="switchLanguage()">ESPANOL</a></li> -->
+					<li><a href="#contact_section">CONTATTO</a></li>
+					<li> <select id="lang_list">
+					</select>
+					</li> -->
 				</ul>
 			</div>
 			<i class="fa fa-bars" onclick="show_menu()"></i>
@@ -36,12 +38,12 @@
 				<img src="img/profile.jpg">
 			</div>
 			<div>
-				<h3 id="current_position_id">Studentessa della laurea magistrale in Marketing e ricerche di mercato </h3>
+				<h3 id="current_position_id"></h3>
 				<h1>Sissy Gonzáles</h1>
-				<p>8 anni di esperienza in diversi settori della comunicazione mi hanno permesso di sviluppare la mia professione in un profilo multidisciplinare, con la capacità di adattarmi alle esigenze del mio pubblico di riferimento, a seconda dell'azienda o dell'organizzazione che rappresento</p>
+				<p id="profile_description">8 anni di esperienza in diversi settori della comunicazione mi hanno permesso di sviluppare la mia professione in un profilo multidisciplinare, con la capacità di adattarmi alle esigenze del mio pubblico di riferimento, a seconda dell'azienda o dell'organizzazione che rappresento</p>
 				<div class="profile-buttons">
-					<div>Scarica CV</div>
-					<div>Contatto</div>
+					<!-- <div></div> -->
+					<a href="" id="cv_id">Scarica CV</a>
 				</div>
 			</div>
 		</div>
@@ -69,7 +71,7 @@
 	</section>
 
 	<section class="section_cv" id="contact_section">
-		<h1 class="section_title">Conttato</h1>
+		<h1 class="section_title">Contatto</h1>
 		<ul id="contact_list">
 			<li class="email" onclick="copyMe(this)">pierys.20@gmail.com</li>
 			<li class="phone" onclick="copyMe(this)">(+39) 3204458575</li>
@@ -85,7 +87,7 @@
 			<li><a href="#education_section">ISTRUZIONE</a></li>
 			<li><a href="#prizes_section">PREMI</a></li>
 			<li><a href="#skills_section">SKILLS</a></li>
-			<li><a href="#contact_section">CONTTATO</a></li>
+			<li><a href="#contact_section">CONTATTO</a></li>
 		</ul>
 	</section>
 
@@ -98,6 +100,12 @@
 	const education_list = document.getElementById('education_list');
 	const prizes_list = document.getElementById('prizes_list');
 	const skills_list = document.getElementById('skills_list');
+	var lang_list;
+	const current_position = document.getElementById('current_position_id');
+	const profile_description = document.getElementById('profile_description');
+	const cv_button = document.getElementById('cv_id');
+	const nav_links_list = document.getElementById('nav-links-id_list');
+
 
 	function show_menu() {
 		navLinks.style.width = "50%";
@@ -173,14 +181,101 @@
 		}
 	}
 
-	function load_info(lang) {
+	function load_languages(lang) {
+		var cv_info_tmp = cv_info.lang.list;
+		var i_end = cv_info_tmp.length;
+
+		for (var i = 0; i < i_end; i++) {
+			var node = document.createElement("option");
+			node.setAttribute("value", cv_info_tmp[i].code);
+			node.setAttribute("onclick", "switchLanguage(this)");
+			if (lang == cv_info_tmp[i].code)
+				node.setAttribute("selected","");
+			node.innerHTML = cv_info_tmp[i].lang;
+			lang_list.appendChild(node);
+		}
+	}
+
+	function load_profile(lang) {
+		var cv_info_tmp = cv_info.profile.info[lang];
+		current_position.innerHTML = cv_info_tmp.position;
+		profile_description.innerHTML = cv_info_tmp.description[0];
+		cv_button.innerHTML = cv_info_tmp.cv.name;
+	}
+
+	function load_nav(lang) {
+		var cv_info_tmp = cv_info.sections[lang];
+		var cv_info_href = cv_info.sections.href;
+
+		var i_end = cv_info_tmp.nav.length;
+		
+		for (var i = 0; i < i_end; i++) {
+			var node = document.createElement('li');
+			var nodeA = document.createElement('a');
+
+			nodeA.innerHTML = cv_info_tmp.nav[i];
+			nodeA.setAttribute("href", "#" + cv_info_href[i]);
+
+			node.appendChild(nodeA);
+			nav_links_list.appendChild(node);
+		}
+
+		var node = document.createElement('li');
+		var nodeSelect = document.createElement('select');
+
+		nodeSelect.setAttribute("id", "lang_list");
+		node.appendChild(nodeSelect);
+		nav_links_list.appendChild(node);		
+		lang_list = document.getElementById('lang_list');
+	}
+
+	function load_sections(lang) {
+		var cv_info_tmp = cv_info.sections[lang]
+
+		document.getElementById('experience_section').firstChild.nextSibling.innerHTML = cv_info_tmp.sections[0];
+		document.getElementById('education_section').firstChild.nextSibling.innerHTML = cv_info_tmp.sections[1];
+		document.getElementById('prizes_section').firstChild.nextSibling.innerHTML = cv_info_tmp.sections[2];
+		document.getElementById('skills_section').firstChild.nextSibling.innerHTML = cv_info_tmp.sections[3];
+		document.getElementById('contact_section').firstChild.nextSibling.innerHTML = cv_info_tmp.sections[4];
+	}
+
+	function load_info() {
+		lang = cv_info.lang.def;
+		load_nav(lang);
+		load_profile(lang);
+		load_sections(lang);
 		load_experience(lang);
 		load_education(lang);
 		load_prizes(lang);
 		load_skill(lang);
+		load_languages(lang);
+
+
 	}
+
+	function unload_info() {
+		function unload_info_(elemnt) {
+			var child = elemnt.lastElementChild;
+			while(child) {
+				elemnt.removeChild(child);
+				child = elemnt.lastElementChild;
+			}
+		}
+		unload_info_(experience_list);
+		unload_info_(education_list);
+		unload_info_(prizes_list);
+		unload_info_(skills_list);
+		unload_info_(nav_links_list);
+	}
+
+	function switchLanguage(lang_selected) {
+		cv_info.lang.def = lang_selected.value;
+		unload_info();
+		load_info();
+	}
+
 	window.onload = function () {
-		load_info("it");
+		load_info();
 	}
 
 

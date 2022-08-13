@@ -1,7 +1,71 @@
 cv_info = {
+	"lang" : {
+		"def" : "ita",
+		"list" : [
+			{
+				"code":"ita",
+				"lang":"ITALIANO"
+			},
+			{
+				"code": "esp",
+				"lang": "ESPAÑOL"
+			}
+		] 
+	},
+
+	"sections" : {
+		"href" : ["experience_section", "education_section", "prizes_section", "skills_section", "contact_section"],
+		"ita" : {
+			"sections" : ["Esperienza Lavorativa", "Instruzzione", "Premi", "Skills", "Contatto"],
+			"nav" :["ESPERIENZA", "ISTRUZIONE", "PREMI", "SKILLS", "CONTATTO"],
+		},
+		"esp" : {
+			"sections" : ["Experiencia Lavoral", "Educacion", "Premios", "Habilidades", "Contacto"],
+			"nav" : ["EXPERIENCIA", "EDUCACION", "PREMIOS", "HABILIDADES", "CONTACTO"],
+		}
+	},
+
+	"profile" : {
+		"name" : "Sissy Gonzáles",
+		"info" : {
+			"ita" : {
+				"position" : "Studentessa della laurea magistrale in Marketing e ricerche di mercato",
+				"description" : ["8 anni di esperienza in diversi settori della comunicazione mi hanno permesso di sviluppare la mia professione in un profilo multidisciplinare, con la capacità di adattarmi alle esigenze dell'azienda o dell'organizzazione che rappresento."],
+				"cv" : {
+					"name" : "Scarica CV",
+					"href" : null
+				}
+			},
+			"esp" : {
+				"position" : "Estudiante de Maestria en Marketing e Investigación de Mercado",
+				"description" : ["8 años de experiencia en diferentes áreas de la comunicación me han permitido desarrollar mi profesión con un perfil multidisciplinar, con capacidad de adaptación a las necesidades de la empresa u organización que represento."],
+				"cv" : {
+					"name": "Descargar CV",
+					"href" : null
+				}
+			}
+		}
+	},
+
 	"experience" : [
+		{
+			"ita" : 
+			{
+				"position" : "Redattrice",
+				"employer" : "HackerCar/Prensa Iberica",
+				"period" : "Maggio 2022 - Finora",
+				"description" : ["Scrivo per HackerCar le notizie più importanti su motori, tecnologia e sicurezza informatica."]
+			},
+			"esp" : {
+				"position" : "Redactora",
+				"employer" : "HackerCar/Prensa Iberica",
+				"period" : "Mayo 2022 - Presente",
+				"description" : ["Escribo para HackerCar las noticias mas importantes del campo automotor, tecnologia y seguridad informatica."]
+			}
+		},
+
 		{ 
-			"it" : 
+			"ita" : 
 			{
 				"position" : "Content Manager",
 				"employer": "Associazione mondiale delle donne giornaliste e scrittrici AMMPE",
@@ -17,52 +81,52 @@ cv_info = {
 		},
 
 		{
-			"it" : {
+			"ita" : {
 				"position" : "Content Manager",
 				"employer" : "Inclinados hacia América Latina - UNIPI",
 				"period" : "Nov 2018 - Mag 2020",
-				"description" : ["Questo è un programma di borse di studio dell'Università di Pisa e il mio obiettivo era creare contenuti utili per gli studenti in tempo di pandemia."]
+				"description" : ["Questo è un programma di borse di studio dell'Università di Pisa e il mio lavoro era creare contenuti utili per gli studenti in tempo di pandemia."]
 			},
 			"esp" : {
 				"position" : "Content Manager", 
 				"employer" : "Inclinados hacia América Latina - UNIPI",
 				"period" : "Nov 2018 - May 2020",
-				"description" : ["Inclinados hacia América Latina, es un programa de becarios de la Universidad de Pisa y mi objetivo era crear contenido útil para los estudiantes en tiempos de pandemia."]
+				"description" : ["Inclinados hacia América Latina, es un programa de becarios de la Universidad de Pisa y mi trabajo era crear contenido útil para los estudiantes en tiempos de pandemia."]
 			}
 		},
 
 		{
-			"it" : {				
+			"ita" : {				
 				"position" : "Orientamento allo studente",
 				"employer" : "Tutor Senior UNIPI",
 				"period" : "2019",
-				"description":	["Studente Tutor Senior, scelto su bando tra i migliori studenti della Facoltà di Economia dell'Università di Pisa, per fornire informazioni, orientamento e supporto agli studenti, di maniera fisica o virtualmente."]
+				"description":	["Studentessa Tutor Senior, scelta su bando tra i migliori studenti della Facoltà di Economia dell'Università di Pisa, per fornire informazioni, orientamento e supporto agli studenti."]
 			}, 
 			"esp" : {
 				"position" : "Orientación y guía al estudiante",
 				"employer" : "Tutor Senior Unipi",
 				"period" : "2019",
-				"description" : ["Estudiante Tutor Senior, escogida por convocatoria entre los mejores alumnos de la facultad de Economía de la Universidad de Pisa, para atender y brindar información, apoyo, orientación y soporte a los estudiantes, de manera física o virtual."]
+				"description" : ["Estudiante Tutor Senior, escogida por convocatoria entre los mejores alumnos de la facultad de Economía de la Universidad de Pisa, para atender y brindar información, apoyo, orientación y soporte a los estudiantes."]
 			}
 		}, 
 
 		{
-			"it" : {
+			"ita" : {
 				"position" : "Relazioni pubbliche",
-				"employer" : "Ospedale dell'Amicizia Santa Rosa II Perù-Corea",
+				"employer" : "ospedale dell'amicizia Perù - Corea Santa Rosa II",
 				"period" : "2015 - 2016",
-				"description" : ["Responsabile della gestione della comunicazione interna ed esterna dell'ospedale; della creazione, progettazione e redazione del bollettino istituzionale e dei comunicati stampa.","Fotografia, protocollo e organizzazione di eventi istituzionali. Realizzazione di campagne di servizio pubblico e community manager dei social networkistituzionali."]
+				"description" : ["Responsabile della gestione della comunicazione interna ed esterna dell'ospedale; della creazione, progettazione e redazione del bollettino istituzionale e dei comunicati stampa.","Fotografia, protocollo e organizzazione di eventi istituzionali. Realizzazione di campagne di servizio pubblico e community manager dei social network istituzionale."]
 			},
 			"esp" : {
 				"position" : "Relacionista Pública",
 				"period" : "2015 - 2016",
 				"employer" : "Hospital de la Amistad Perú-Corea Santa Rosa II",
-				"description" : ["Encargada de la gestión de la comunicación interna y externa del hospital, de la creación, diseño y redacción del boletín institucional y de las notas de prensa.","Fotografía, protocolo y organización de eventos institucionales. Realización de campañas de servicio público y community manager de las redes socialesinstitucionales."]
+				"description" : ["Encargada de la gestión de la comunicación interna y externa del hospital, de la creación, diseño y redacción del boletín institucional y de las notas de prensa.","Fotografía, protocolo y organización de eventos institucionales. Realización de campañas de servicio público y community manager de las redes sociales institucionales."]
 			}
 		},
 
 		{
-			"it" : {
+			"ita" : {
 				"position" : "Stage in Gestione della Comunicazione",
 				"employer" : "Compagnia mineraria di fosfati Miski Mayo SRL",
 				"period" : "2014",
@@ -80,7 +144,7 @@ cv_info = {
 
 	"education" : [
 		{
-			"it" : {
+			"ita" : {
 				"institution" : "Università Nazionale di Piura - Perù",
 				"description" : "Laureato del Master in Comunicazione Sociale 2016-2018"
 			},
@@ -91,18 +155,18 @@ cv_info = {
 		},
 
 		{
-			"it" : {
+			"ita" : {
 				"institution" : "Università di Pisa - Italia",
-				"description" : "Studente di Master in Marketing e Ricerche di Mercato 2019 - 2021. Attualmente sto preparando la mia tesi e punto a laurearmi a settembre 2022."
+				"description" : "Studente di Master in Marketing e Ricerche di Mercato 2019 - 2021. Attualmente sto preparando la mia tesi."
 			},
 			"esp" : {
 				"institution" : "Università di Pisa - Italia",
-				"description" : "Estudiante de la maestría en Marketing e investigación de mercados | 2019 -2021 Actualmente preparo la tesis y me proyecto a la graduación en Setiembre 2022"
+				"description" : "Estudiante de la maestría en Marketing e investigación de mercados | 2019 -2021 Actualmente preparo la tesis."
 			}
 		},
 
 		{
-			"it" : {
+			"ita" : {
 				"institution" : "Università di Pisa - Italia",
 				"description" : "Erasmus nel Dipartimento di Economia Management / Marketing. Vincitrice di una borsa di studio per scambi internazionali settembre 2016 - luglio 2017."
 			},
@@ -113,7 +177,7 @@ cv_info = {
 		},
 
 		{
-			"it" : {
+			"ita" : {
 				"institution" : "Università Nazionale di Piura - Perù",
 				"description" : "Laurea in Scienze della Comunicazione | Marzo 2007 - Maggio 2012"
 			},
@@ -124,7 +188,7 @@ cv_info = {
 		},
 
 		{
-			"it" : {
+			"ita" : {
 				"institution" : "Pontificia Università Cattolica del Perù",
 				"description" : "Scambio come borsista per studiare durante un semestre presso il Dipartimento di Arti e Scienze della Comunicazione nella specializzazione di Pubblicità | Agosto 2010 - Dicembre 2010."
 			},
@@ -138,7 +202,7 @@ cv_info = {
 
 	"prizes" : [
 		{
-			"it" : {
+			"ita" : {
 				"description" : "Vincitrice del <i>primo posto</i> per il miglior progetto di analisi e ricerca di marketing per l'azienda FATER GROUP, organizzato dall'Università di Pisa - Italia, 2019."
 			},
 			"esp" : {
@@ -146,8 +210,8 @@ cv_info = {
 			}
 		},
 		{
-			"it" : {
-				"description" : "Vincitore del <i>primo posto</i> al Publimatch - Olimpiadi della pubblicità, organizzato dalla Pontificia Universidad Católica del Perú, 2010."
+			"ita" : {
+				"description" : "Vincitrice del <i>primo posto</i> al Publimatch - Olimpiadi della pubblicità, organizzato dalla Pontificia Universidad Católica del Perú, 2010."
 			},
 			"esp" : {
 				"description" : "Ganadora del PRIMER PUESTO en el Publimatch - Olimpiadas Publicitarias, organizado por la Pontificia Universidad Católica del Perú, 2010."
@@ -157,7 +221,7 @@ cv_info = {
 
 	"skills" : [
 		{
-			"it" : {
+			"ita" : {
 				"description" : [
 					"Conoscenze di Software: Excel, Word, Power Point ed Illustrator.",
 					"Competenze sui social media: Facebook, Instagram, Twitter.",
@@ -165,7 +229,7 @@ cv_info = {
 					"Fotografia: ho vinto il premio per la migliore fotografia creativa nel 2011.",
 					"Certificato di Google per il superamento del corso di Digital Marketing.",
 					"Conoscenza del commercio elettronico.",
-					"Capacità di risoluzionare problemi.",
+					"Capacità per trovare soluzioni ai problemi.",
 					"Conoscenza di Rstudio, Stata, Limesurvey.",
 				] 
 			},
