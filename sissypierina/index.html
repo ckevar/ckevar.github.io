@@ -4,7 +4,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Sissy Gonzales</title>
-	
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,14 +20,6 @@
 			<div id="nav-links-id">
 				<i class="fa fa-times" onclick="hide_menu()"></i>
 				<ul id="nav-links-id_list">
-					<!-- <li><a href="#experience_section">ESPERIENZA</a></li>
-					<li><a href="#education_section">ISTRUZIONE</a></li>
-					<li><a href="#prizes_section">PREMI</a></li>
-					<li><a href="#skills_section">SKILLS</a></li>
-					<li><a href="#contact_section">CONTATTO</a></li>
-					<li> <select id="lang_list">
-					</select>
-					</li> -->
 				</ul>
 			</div>
 			<i class="fa fa-bars" onclick="show_menu()"></i>
@@ -40,9 +31,8 @@
 			<div>
 				<h3 id="current_position_id"></h3>
 				<h1>Sissy Gonzáles</h1>
-				<p id="profile_description">8 anni di esperienza in diversi settori della comunicazione mi hanno permesso di sviluppare la mia professione in un profilo multidisciplinare, con la capacità di adattarmi alle esigenze del mio pubblico di riferimento, a seconda dell'azienda o dell'organizzazione che rappresento</p>
+				<p id="profile_description"></p>
 				<div class="profile-buttons">
-					<!-- <div></div> -->
 					<a href="" id="cv_id">Scarica CV</a>
 				</div>
 			</div>
@@ -82,12 +72,12 @@
 	<section class="footer">
 		<a href="https://ckevar.github.io"><i>ckevar</i></a>
 
-		<ul>
-			<li><a href="#experience_section">ESPERIENZA</a></li>
+		<ul id="nav-links-id_list_footer">
+<!-- 			<li><a href="#experience_section">ESPERIENZA</a></li>
 			<li><a href="#education_section">ISTRUZIONE</a></li>
 			<li><a href="#prizes_section">PREMI</a></li>
 			<li><a href="#skills_section">SKILLS</a></li>
-			<li><a href="#contact_section">CONTATTO</a></li>
+			<li><a href="#contact_section">CONTATTO</a></li> -->
 		</ul>
 	</section>
 
@@ -100,11 +90,12 @@
 	const education_list = document.getElementById('education_list');
 	const prizes_list = document.getElementById('prizes_list');
 	const skills_list = document.getElementById('skills_list');
-	var lang_list;
+	var lang_list_header, lang_list_footer;
 	const current_position = document.getElementById('current_position_id');
 	const profile_description = document.getElementById('profile_description');
 	const cv_button = document.getElementById('cv_id');
 	const nav_links_list = document.getElementById('nav-links-id_list');
+	const nav_links_list_footer = document.getElementById('nav-links-id_list_footer');
 
 
 	function show_menu() {
@@ -121,13 +112,16 @@
 			var node = document.createElement('li');
 			var node_position = document.createElement("h2");
 			var node_employer = document.createElement("h3");
+			var node_link = document.createElement("a");
 			var cv_info_tmp = cv_info.experience[i][lang];
 
 			node_position.innerHTML = cv_info_tmp.position;
 			node_employer.innerHTML = cv_info_tmp.employer + "<br>| " + cv_info_tmp.period;
-			
+			node_link.innerHTML = "Link"
+			node_link.setAttribute("href", cv_info_tmp.link);
+
+			// Load Description
 			var j_end = cv_info_tmp.description.length;
-			console.log(j_end)
 			if (j_end == 1) {
 				var node_description = document.createElement("p");
 				node_description.innerHTML = cv_info_tmp.description[0];
@@ -140,6 +134,7 @@
 
 			node.appendChild(node_position);
 			node.appendChild(node_employer);
+			if(cv_info_tmp.link) node.appendChild(node_link);
 			node.appendChild(node_description);
 			experience_list.appendChild(node);
 		}
@@ -181,7 +176,7 @@
 		}
 	}
 
-	function load_languages(lang) {
+	function load_languages(lang, lang_list_x) {
 		var cv_info_tmp = cv_info.lang.list;
 		var i_end = cv_info_tmp.length;
 
@@ -192,7 +187,7 @@
 			if (lang == cv_info_tmp[i].code)
 				node.setAttribute("selected","");
 			node.innerHTML = cv_info_tmp[i].lang;
-			lang_list.appendChild(node);
+			lang_list_x.appendChild(node);
 		}
 	}
 
@@ -203,7 +198,7 @@
 		cv_button.innerHTML = cv_info_tmp.cv.name;
 	}
 
-	function load_nav(lang) {
+	function load_nav(navId, lang, lang_list_x) {
 		var cv_info_tmp = cv_info.sections[lang];
 		var cv_info_href = cv_info.sections.href;
 
@@ -217,16 +212,21 @@
 			nodeA.setAttribute("href", "#" + cv_info_href[i]);
 
 			node.appendChild(nodeA);
-			nav_links_list.appendChild(node);
+			navId.appendChild(node);
 		}
 
 		var node = document.createElement('li');
 		var nodeSelect = document.createElement('select');
 
-		nodeSelect.setAttribute("id", "lang_list");
+		nodeSelect.setAttribute("id", lang_list_x);
 		node.appendChild(nodeSelect);
-		nav_links_list.appendChild(node);		
-		lang_list = document.getElementById('lang_list');
+		navId.appendChild(node);
+
+		if (lang_list_x == "lang_list_footer")
+			lang_list_footer = document.getElementById(lang_list_x);
+		
+		else if(lang_list_x == "lang_list_header")
+			lang_list_header = document.getElementById(lang_list_x);
 	}
 
 	function load_sections(lang) {
@@ -241,16 +241,17 @@
 
 	function load_info() {
 		lang = cv_info.lang.def;
-		load_nav(lang);
+		
+		load_nav(nav_links_list, lang, "lang_list_header", lang_list_header);
+		load_nav(nav_links_list_footer, lang, "lang_list_footer", lang_list_footer);
 		load_profile(lang);
 		load_sections(lang);
 		load_experience(lang);
 		load_education(lang);
 		load_prizes(lang);
 		load_skill(lang);
-		load_languages(lang);
-
-
+		load_languages(lang, lang_list_header);
+		load_languages(lang, lang_list_footer);
 	}
 
 	function unload_info() {
@@ -266,6 +267,7 @@
 		unload_info_(prizes_list);
 		unload_info_(skills_list);
 		unload_info_(nav_links_list);
+		unload_info_(nav_links_list_footer);
 	}
 
 	function switchLanguage(lang_selected) {

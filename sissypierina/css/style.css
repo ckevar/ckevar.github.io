@@ -104,8 +104,6 @@ nav .fa {
 
 .profile-buttons {
 	display: inline-flex;
-	/*justify-content: space-between;*/
-	/*width: 60%;*/
 }
 
 .profile-buttons > a {
@@ -365,8 +363,17 @@ nav .fa {
 		border:  0.4em solid white;
 	}
 
+	.profile div {
+		margin-block:  2em;
+		text-align: center;
+	}
+
 	.profile-buttons  {
 		width: 100%;
+	}
+
+	.profile-buttons a {
+		margin: auto;
 	}
 
 	nav .fa {
@@ -405,6 +412,10 @@ nav .fa {
 
 	#nav-links-id select {
 		background: var(--primary_color);
+	}
+
+	#profile_description {
+		display: none;
 	}
 
 	#prizes_list {

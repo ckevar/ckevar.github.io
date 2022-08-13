@@ -54,13 +54,15 @@ cv_info = {
 				"position" : "Redattrice",
 				"employer" : "HackerCar/Prensa Iberica",
 				"period" : "Maggio 2022 - Finora",
-				"description" : ["Scrivo per HackerCar le notizie più importanti su motori, tecnologia e sicurezza informatica."]
+				"description" : ["Scrivo per HackerCar le notizie più importanti su motori, tecnologia e sicurezza informatica."],
+				"link" : "https://hackercar.com/author/pierina-gonzales/"
 			},
 			"esp" : {
 				"position" : "Redactora",
 				"employer" : "HackerCar/Prensa Iberica",
 				"period" : "Mayo 2022 - Presente",
-				"description" : ["Escribo para HackerCar las noticias mas importantes del campo automotor, tecnologia y seguridad informatica."]
+				"description" : ["Escribo para HackerCar las noticias mas importantes del campo automotor, tecnologia y seguridad informatica."],
+				"link" : "https://hackercar.com/author/pierina-gonzales/"
 			}
 		},
 
