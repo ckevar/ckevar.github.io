@@ -273,6 +273,7 @@
 
 	function switchLanguage(lang_selected) {
 		cv_info.lang.def = lang_selected.value;
+		alert("Language selected " + cv_info.lang.def);
 		unload_info();
 		load_info();
 	}
