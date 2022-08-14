@@ -184,7 +184,7 @@
 		for (var i = 0; i < i_end; i++) {
 			var node = document.createElement("option");
 			node.setAttribute("value", cv_info_tmp[i].code);
-			node.setAttribute("onclick", "switchLanguage(this)");
+			// node.setAttribute("onclick", "switchLanguage(this)");
 			if (lang == cv_info_tmp[i].code)
 				node.setAttribute("selected","");
 			node.innerHTML = cv_info_tmp[i].lang;
@@ -218,6 +218,7 @@
 
 		var node = document.createElement('li');
 		var nodeSelect = document.createElement('select');
+		nodeSelect.setAttribute("onchange", "switchLanguage(this)");
 
 		nodeSelect.setAttribute("id", lang_list_x);
 		node.appendChild(nodeSelect);
@@ -272,9 +273,7 @@
 	}
 
 	function switchLanguage(lang_selected) {
-		alert("Language selected ");
 		cv_info.lang.def = lang_selected.value;
-		// alert("Language selected " + cv_info.lang.def);
 		unload_info();
 		load_info();
 	}
